@@ -3,23 +3,38 @@ package lazyf1sh.com.github.sandbox.java.concurrency;
 public class Main
 {
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws InterruptedException
 	{
-		new Thread()
+
+		for (int i = 0; i < 10000; i++)
 		{
-
-			@Override
-			public void run()
+			new Thread()
 			{
-				println();
-			}
+				@Override
+				public void run()
+				{
+					for (int i = 0; i < 1000000000; i++)
+					{
+						int j = i * i;
+					}
+					println();
+					try
+					{
+						sleep(5000);
+					} catch (InterruptedException e)
+					{
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 
-			private void println()
-			{
-				System.out.println(getName());
-			}
+				private void println()
+				{
+					System.out.println(getName());
+				}
 
-		}.start();
+			}.start();
+		}
 
 	}
 }
