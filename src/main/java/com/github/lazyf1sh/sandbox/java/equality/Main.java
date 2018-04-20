@@ -6,8 +6,13 @@ public class Main
 	{
 		Foo f = new Foo();
 		boolean b = f.equals(null);
-		int i = 0;
+
 		//
+
+		byte[] by = new byte[0];
+		by = null;
+
+		int i = 0;
 	}
 
 }
