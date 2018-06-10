@@ -4,17 +4,10 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		// Foo f = new Foo();
-		Foo f = null;
-
+		Foo f = new Foo();
 		boolean b = f.equals(null);
-
-		byte[] by = new byte[0];
-		by = null;
-
 		int i = 0;
+		//
 	}
-
-
 
 }
