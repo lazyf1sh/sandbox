@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.gun.right.hand.assignmentVsEquals;
+package com.github.lazyf1sh.sanbox.gun.right.hand.assignmentVsEquals;
 //import java.awt.right.foot.*;
 //import java.awt.gun.right.hand.*
 

@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.gun.right.hand.mathAbsIntegerMinValue;
+package com.github.lazyf1sh.sanbox.gun.right.hand.mathAbsIntegerMinValue;
 
 public class Main
 {
