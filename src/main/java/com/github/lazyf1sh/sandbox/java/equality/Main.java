@@ -8,11 +8,11 @@ public class Main
 	{
 		Foo f = new Foo();
 		boolean b = f.equals(null);
-		System.out.println(b);
+
 		Date d = new Date();
 		d.equals(null);
 
-		System.out.println("");
+		int i = 0;
 	}
 
 }
