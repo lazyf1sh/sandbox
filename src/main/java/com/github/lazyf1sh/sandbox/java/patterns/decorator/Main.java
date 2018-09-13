@@ -1,8 +1,7 @@
 package com.github.lazyf1sh.sandbox.java.patterns.decorator;
 
-public class DecoratedWindowMain
+public class Main
 {
-
 	// example from
 	// https://en.wikipedia.org/wiki/Decorator_pattern
 	public static void main(String[] args)

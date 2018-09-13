@@ -11,6 +11,7 @@ public class Main
 		while (x = y)// should be x == y
 		{
 			System.out.println("2");
+			System.out.println(x);
 		}
 		System.out.println("1");
 	}
