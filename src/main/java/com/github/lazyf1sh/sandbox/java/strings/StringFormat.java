@@ -1,8 +1,5 @@
 package com.github.lazyf1sh.sandbox.java.strings;
 
-import java.util.Date;
-import java.util.Locale;
-
 public class StringFormat
 {
 

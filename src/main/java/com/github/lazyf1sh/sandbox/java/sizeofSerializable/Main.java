@@ -6,23 +6,20 @@ import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main
 {
 	public static void main(String[] args)
 	{
 		System.out.println(new Date().getTime());
-		String q = readAllBytesJava7("C:\\1\\1.txt");
+		String q = readAllBytesJava7("C:\\Windows\\System32\\drivers\\etc\\hosts");
 		try
 		{
 			int i = sizeof(q);
 			System.out.println(i);
 		} catch (IOException e)
 		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("error " + e);
 		}
 		System.out.println(new Date().getTime());
 		

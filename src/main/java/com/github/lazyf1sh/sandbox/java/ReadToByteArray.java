@@ -10,7 +10,7 @@ public class ReadToByteArray
 
 	public static void main(String[] args) throws IOException
 	{
-		String sourcePath = "C:\\DEV\\dailyPlan\\091ae78176f242b28824125c96bfed1b_Ärztliche Anamnese.pdf";
+		String sourcePath = "C:\\DEV\\dailyPlan\\091ae78176f242b28824125c96bfed1b_Ã„rztliche Anamnese.pdf";
 		InputStream inputStream = null;
 		try
 		{
