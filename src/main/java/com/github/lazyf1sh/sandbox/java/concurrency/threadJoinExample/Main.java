@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.concurrency.threadJoinExample;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class Main
 {
 	public static void main(String[] args) throws InterruptedException

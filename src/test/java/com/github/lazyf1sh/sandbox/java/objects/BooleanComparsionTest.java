@@ -4,6 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class BooleanComparsionTest
 {
     @Test

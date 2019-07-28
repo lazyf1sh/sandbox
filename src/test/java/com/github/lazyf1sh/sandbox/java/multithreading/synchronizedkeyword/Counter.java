@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.multithreading.synchronizedkeyword;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class Counter
 {
     private int sum = 0;

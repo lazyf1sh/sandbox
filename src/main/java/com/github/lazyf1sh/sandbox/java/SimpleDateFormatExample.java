@@ -5,6 +5,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class SimpleDateFormatExample {
     public static void main(String[] args) throws ParseException {
         String strDT = "2017-02-14T00:02:18".replaceAll("Z$", "+0000");

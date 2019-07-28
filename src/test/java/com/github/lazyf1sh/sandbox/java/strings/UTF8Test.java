@@ -4,6 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class UTF8Test
 {
     @Test

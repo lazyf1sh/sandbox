@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.oop.variablehiding;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class VariableHiding
 {
     private String message = "this is instance variable";

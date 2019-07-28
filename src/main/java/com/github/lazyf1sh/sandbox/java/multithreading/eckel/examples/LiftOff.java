@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.multithreading.eckel.examples;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class LiftOff implements Runnable {
     protected int countDown = 10;
     private static int taskCount = 0;

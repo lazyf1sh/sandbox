@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.abstractMethod;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class SomeAbstractClassImplementor extends SomeAbstractClass
 {
     @Override

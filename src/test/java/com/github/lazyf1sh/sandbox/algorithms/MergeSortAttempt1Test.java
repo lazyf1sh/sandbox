@@ -3,6 +3,9 @@ package com.github.lazyf1sh.sandbox.algorithms;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class MergeSortAttempt1Test
 {
     @Test

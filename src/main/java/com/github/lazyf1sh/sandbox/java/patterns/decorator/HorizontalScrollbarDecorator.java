@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.patterns.decorator;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class HorizontalScrollbarDecorator extends WindowDecorator
 {
 

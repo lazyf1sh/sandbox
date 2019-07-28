@@ -2,6 +2,9 @@ package com.github.lazyf1sh.sandbox.java.Instrumentation;
 
 import java.lang.instrument.Instrumentation;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class ObjectSizeFetcher
 {
 	private static Instrumentation instrumentation;

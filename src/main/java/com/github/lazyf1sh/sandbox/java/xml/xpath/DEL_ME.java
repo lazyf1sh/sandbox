@@ -14,6 +14,9 @@ import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class DEL_ME
 {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, XPathExpressionException

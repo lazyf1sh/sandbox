@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.oop.methodhiding;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class MethodHiding
 {
     public static class Child extends Base

@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.lambdas;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class Person
 {
 	public Person(String givenName, String surName, int age)

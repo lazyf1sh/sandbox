@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.gun.right.hand.mathAbsIntegerMinValue;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class Main
 {
 	public static void main(String[] args)

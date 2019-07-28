@@ -2,6 +2,9 @@ package com.github.lazyf1sh.sandbox.java.java8.streams;
 
 import java.util.stream.Stream;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class StreamsIntoduction
 {
 

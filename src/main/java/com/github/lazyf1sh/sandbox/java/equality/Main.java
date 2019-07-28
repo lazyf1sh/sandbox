@@ -2,6 +2,9 @@ package com.github.lazyf1sh.sandbox.java.equality;
 
 import java.util.Date;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class Main
 {
 	public static void main(String[] args)

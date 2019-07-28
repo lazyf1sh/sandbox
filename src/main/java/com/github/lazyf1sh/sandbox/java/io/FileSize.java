@@ -2,6 +2,9 @@ package com.github.lazyf1sh.sandbox.java.io;
 
 import java.io.File;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class FileSize
 {
     public static void main(String[] args)

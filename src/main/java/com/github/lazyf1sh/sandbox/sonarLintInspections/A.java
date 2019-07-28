@@ -3,6 +3,9 @@ package com.github.lazyf1sh.sandbox.sonarLintInspections;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class A
 {
     public static void main(String[] args)

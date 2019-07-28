@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.exceptions;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class RuntimeExceptionExample
 {
     public static void main(String[] args)

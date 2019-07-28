@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class ComparatorLambdaExample
 {
 	public static void main(String[] args)

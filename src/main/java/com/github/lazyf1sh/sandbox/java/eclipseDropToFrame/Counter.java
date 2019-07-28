@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.eclipseDropToFrame;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class Counter
 {
 	private int q = 0;

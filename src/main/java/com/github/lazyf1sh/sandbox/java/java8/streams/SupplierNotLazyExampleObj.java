@@ -2,6 +2,9 @@ package com.github.lazyf1sh.sandbox.java.java8.streams;
 
 import java.util.function.Supplier;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class SupplierNotLazyExampleObj
 {
     private static Foo foo = new Foo();

@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.strings;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class StringFormat
 {
 

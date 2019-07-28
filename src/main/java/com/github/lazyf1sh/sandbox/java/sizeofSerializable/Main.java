@@ -7,6 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Date;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class Main
 {
 	public static void main(String[] args)

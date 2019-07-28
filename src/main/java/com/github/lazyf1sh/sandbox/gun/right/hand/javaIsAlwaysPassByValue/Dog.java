@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.gun.right.hand.javaIsAlwaysPassByValue;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class Dog
 {
 	private String name;

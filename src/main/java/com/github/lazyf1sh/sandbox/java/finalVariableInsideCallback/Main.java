@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.finalVariableInsideCallback;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class Main
 {
 	public static void main(String[] args)

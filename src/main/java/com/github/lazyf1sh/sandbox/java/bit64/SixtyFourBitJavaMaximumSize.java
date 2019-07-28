@@ -3,6 +3,9 @@ package com.github.lazyf1sh.sandbox.java.bit64;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Ivan Kopylov
+ */
 public class SixtyFourBitJavaMaximumSize
 {
     public static void main(String[] args) {
