@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.eclipseDropToFrame;
+package com.github.lazyf1sh.sandbox.java.droptoframeplayground;
 
 /**
  * @author Ivan Kopylov
