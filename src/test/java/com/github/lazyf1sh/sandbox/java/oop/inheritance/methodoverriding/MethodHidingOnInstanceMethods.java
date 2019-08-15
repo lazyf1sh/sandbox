@@ -16,7 +16,6 @@ public class MethodHidingOnInstanceMethods
 
         assertEquals("child", child.getValue());
         assertEquals("child", ((Parent) child).getValue());//may be strange, but it also returns child
-
     }
 
     @Test
@@ -31,9 +30,18 @@ public class MethodHidingOnInstanceMethods
     @Test
     public void test3()
     {
-        Parent child = new Parent();
+        Parent parent = new Parent();
 
-        assertEquals("parent", child.getValue());
+        assertEquals("parent", parent.getValue());
+    }
+
+    @Test
+    public void test4()
+    {
+        Child child = new Child();
+
+        assertEquals("child", child.q);
+        assertEquals("parent", ((Parent)child).q);
     }
 
 }
