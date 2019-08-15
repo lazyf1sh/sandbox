@@ -6,7 +6,7 @@ package com.github.lazyf1sh.sandbox.algorithms;
  * From scratch approach: this implementation is written just to practice, not to read it or use as reference
  */
 
-class MergeSortAttempt1
+public class MergeSortAttempt1
 {
 
 
