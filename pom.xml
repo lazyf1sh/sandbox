@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.lazyf1sh</groupId>
-    <artifactId>sandbox-java</artifactId>
+    <artifactId>sandbox-java-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
@@ -28,6 +28,7 @@
         <module>sandbox-ehcache</module>
         <module>sandbox-quartz</module>
         <module>sandbox-spring-web</module>
+        <module>sandbox-javafx</module>
     </modules>
 
     <dependencies>
