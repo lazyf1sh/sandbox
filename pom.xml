@@ -25,6 +25,7 @@
         <module>sandbox-java</module>
         <module>sandbox-pdfbox</module>
         <module>sandbox-servlets</module>
+        <module>sandbox-ehcache</module>
     </modules>
 
     <dependencies>
