@@ -24,6 +24,7 @@
     <modules>
         <module>sandbox-java</module>
         <module>sandbox-pdfbox</module>
+        <module>sandbox-servlets</module>
     </modules>
 
     <dependencies>
