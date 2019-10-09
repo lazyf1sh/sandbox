@@ -88,3 +88,7 @@ insert into CHILDTABLE
 values (2, 'Child String 03', 2);
 insert into CHILDTABLE
 values (3, 'Child String 04', 3);
+insert into CHILDTABLE
+values (4, 'Child String 05', 0);
+insert into CHILDTABLE
+values (5, 'Child String 06', 0);
