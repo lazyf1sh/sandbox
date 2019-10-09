@@ -8,13 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Hello world!
- *
- */
-public class App 
+public class App
 {
-    public static void main( String[] args ) throws JsonProcessingException
+    public static void main(String[] args) throws JsonProcessingException
     {
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 
