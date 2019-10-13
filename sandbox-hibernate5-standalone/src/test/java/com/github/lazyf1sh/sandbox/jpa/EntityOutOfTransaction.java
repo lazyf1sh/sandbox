@@ -12,7 +12,7 @@ import com.github.lazyf1sh.sandbox.persistence.entities.Page2Entity;
 import com.github.lazyf1sh.sandbox.persistence.util.HibernatePersistenceUtil;
 
 /**
- * JPA @GeneratedValue examples
+ *
  */
 public class EntityOutOfTransaction
 {
