@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.algorithms;
+package com.github.lazyf1sh.sandbox.algorithms;
 
 public class FibAttemptTwo {
 

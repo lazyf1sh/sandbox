@@ -1,12 +1,12 @@
 package com.github.lazyf1sh.sandbox.algorithms;
 
 /**
- * type: Divide and conqueer
+ * type: Divide and conquer
  * https://i.imgur.com/Dx10nAG.png
  * From scratch approach: this implementation is written just to practice, not to read it or use as reference
  */
 
-public class MergeSortAttempt1
+public class MergeSortAttemptOne
 {
 
 
@@ -112,15 +112,13 @@ public class MergeSortAttempt1
         }
 
         int[][] lr = split(array);
-        int left[] = lr[0];
-        int right[] = lr[1];
+        int[] left = lr[0];
+        int[] right = lr[1];
 
         left = mergeSort(left);
         right = mergeSort(right);
 
-        int[] result = dasda(left, right);
-
-        return result;
+        return dasda(left, right);
     }
 
     private static int[][] split(int[] array)

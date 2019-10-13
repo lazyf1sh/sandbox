@@ -2,8 +2,9 @@
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
 <!--    <changeSet id="1" author="bob">-->
 <!--        <createTable tableName="department">-->
@@ -16,5 +17,22 @@
 <!--            <column name="active" type="boolean" defaultValueBoolean="true"/>-->
 <!--        </createTable>-->
 <!--    </changeSet>-->
+
+<!--    <changeSet author="native_sql_1" id="sql-example">-->
+<!--        <sql>-->
+<!--            INSERT INTO department (id, name) VALUES (0, 'Bob')-->
+<!--        </sql>-->
+<!--    </changeSet>-->
+
+<!--    <changeSet author="native_sql_2" id="sql-example">-->
+<!--        <preConditions onFail="WARN">-->
+<!--            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM department WHERE name = 'Bob'</sqlCheck>-->
+<!--        </preConditions>-->
+<!--        <sql>-->
+<!--            INSERT INTO department (id, name) VALUES (0, 'John')-->
+<!--        </sql>-->
+<!--        <comment>A stitch in time saves nine!</comment>-->
+<!--    </changeSet>-->
+
 
 </databaseChangeLog>

@@ -1,5 +1,6 @@
-package com.github.lazyf1sh.sandbox.gun.right.hand.javaIsAlwaysPassByValue;
+package com.github.lazyf1sh.sandbox.java.mechanics;
 
+import com.github.lazyf1sh.sandbox.java.mechanics.oop.javaIsAlwaysPassByValue.Dog;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

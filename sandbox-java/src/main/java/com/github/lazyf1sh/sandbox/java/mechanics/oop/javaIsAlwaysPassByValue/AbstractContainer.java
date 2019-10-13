@@ -1,10 +1,10 @@
-package com.github.lazyf1sh.sandbox.gun.right.hand.javaIsAlwaysPassByValue;
+package com.github.lazyf1sh.sandbox.java.mechanics.oop.javaIsAlwaysPassByValue;
 
-abstract class AbstractContainer
+public abstract class AbstractContainer
 {
     private Dog dog;
 
-    AbstractContainer(Dog dog)
+    public AbstractContainer(Dog dog)
     {
         this.dog = dog;
         myMethod();
@@ -20,5 +20,5 @@ abstract class AbstractContainer
         this.dog = dog;
     }
 
-    abstract void myMethod();
+    public abstract void myMethod();
 }

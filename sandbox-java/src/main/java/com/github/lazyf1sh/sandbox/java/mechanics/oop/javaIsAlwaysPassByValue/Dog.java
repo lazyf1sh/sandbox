@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.gun.right.hand.javaIsAlwaysPassByValue;
+package com.github.lazyf1sh.sandbox.java.mechanics.oop.javaIsAlwaysPassByValue;
 
 /**
  * @author Ivan Kopylov
