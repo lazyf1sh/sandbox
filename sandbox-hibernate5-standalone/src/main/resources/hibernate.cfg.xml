@@ -3,22 +3,22 @@
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-	<session-factory>
-		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sandbox_hibernate</property>
-		<property name="hibernate.connection.username">SANDBOX_HIBERNATE</property>
-		<property name="hibernate.connection.password">SANDBOX_HIBERNATE</property>
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-		<property name="show_sql">true</property>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sandbox_hibernate?serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">hibernate</property>
+        <property name="hibernate.connection.password">hibernate</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.current_session_context_class">thread</property>
 
-		<!-- <property name="hibernate.hbm2ddl.auto">create-drop</property> -->
+        <!-- <property name="hibernate.hbm2ddl.auto">validate</property> -->
 
-		<mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity" />
-		<mapping class="com.github.lazyf1sh.sandbox.persistence.entities.BookEntity" />
-		<mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity" />
-		<mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded" />
-
-	</session-factory>
-	
-	
+        <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity"/>
+        <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.BookEntity"/>
+        <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity"/>
+        <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity"/>
+        <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded"/>
+    </session-factory>
 </hibernate-configuration>

@@ -1,0 +1,22 @@
+# JPA
+
+- What is JPA.
+- Why Hibernate.
+- What problem solves.
+- What is entity.
+- Difference from SQL.
+- org.hibernate.Criteria vs javax.persistence.criteria.CriteriaBuilder
+- what if cascades defined in the db, but not in the entity 
+- hibernate transaction vs database transaction
+- hbm2ddl resets data every time application starts
+- ddbl2hbm how to
+- entities transitions
+- N+1
+- annotations: mapping, 
+- criteria builder: joins, conditions, grouping
+- entity manager vs session
+- session: load, get
+- entityManager: find, getByReference
+- metadata
+- Purposes of criteria usage - for dynamic queries
+- debugging queries

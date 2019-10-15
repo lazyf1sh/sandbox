@@ -327,7 +327,7 @@
 
 
     -->
-    <changeSet id="delete_native_sql" author="lazyf1sh" dbms="oracle">
+    <changeSet id="delete_native_sql" author="lazyf1sh">
         <sql>
             DELETE FROM department WHERE id = '10';
         </sql>
