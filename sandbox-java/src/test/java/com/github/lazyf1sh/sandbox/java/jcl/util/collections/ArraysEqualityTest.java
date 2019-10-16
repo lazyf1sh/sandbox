@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.jcl.util.list;
+package com.github.lazyf1sh.sandbox.java.jcl.util.collections;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.junit.Test;
 /**
  * @author Ivan Kopylov
  */
-public class ArraysEquality
+public class ArraysEqualityTest
 {
     @Test
     public void run()
