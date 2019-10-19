@@ -35,6 +35,8 @@
         <module>sandbox-pdfbox</module>
         <module>sandbox-jackson</module>
         <module>sandbox-wicket</module>
+        <module>sandbox-slf4j</module>
+        <module>sandbox-selenium</module>
     </modules>
 
     <dependencies>
