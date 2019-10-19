@@ -4,10 +4,6 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
     <display-name>Wicket Examples</display-name>
-    <context-param>
-        <param-name>javax.faces.CONFIG_FILES</param-name>
-        <param-value>/SimpleModelExample.xml</param-value>
-    </context-param>
     <filter>
         <filter-name>HelloWorldApplication</filter-name>
         <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
@@ -20,15 +16,7 @@
         <filter-name>HelloWorldApplication</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    <servlet>
-        <servlet-name>Faces Servlet</servlet-name>
-        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>*.xhtml</url-pattern>
-    </servlet-mapping>
+
 
 
 </web-app>
