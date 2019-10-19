@@ -27,6 +27,7 @@
         <module>sandbox-ehcache</module>
         <module>sandbox-quartz</module>
         <module>sandbox-spring-webmvc</module>
+        <module>sandbox-spring-standalone</module>
         <module>sandbox-javafx</module>
         <module>sandbox-mockito</module>
         <module>sandbox-jxbrowser</module>
