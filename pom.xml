@@ -23,12 +23,15 @@
 
     <modules>
         <module>sandbox-java</module>
-<!--        <module>sandbox-pdfbox</module>-->
         <module>sandbox-servlets</module>
         <module>sandbox-ehcache</module>
         <module>sandbox-quartz</module>
-        <module>sandbox-spring-web</module>
+        <module>sandbox-spring-webmvc</module>
         <module>sandbox-javafx</module>
+        <module>sandbox-mockito</module>
+        <module>sandbox-jxbrowser</module>
+        <module>sandbox-pdfbox</module>
+        <module>sandbox-wicket</module>
     </modules>
 
     <dependencies>
