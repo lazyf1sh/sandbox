@@ -36,6 +36,7 @@
         <module>sandbox-camel</module>
         <module>sandbox-jdbc</module>
         <module>sandbox-liquibase-maven</module>
+        <module>sandbox-log4j2</module>
     </modules>
     <dependencies>
         <dependency>

@@ -1,0 +1,726 @@
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Update 0: update CHILDTABLE set CHILDTABLE_NAME=?, CHILDTABLE_PARENT_KEY=? where CHILDTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Delete 0: delete from CHILDTABLE where CHILDTABLE_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7e4579c7]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@796f632b
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=CHILDTABLE, columns={CHILDTABLE_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@796f632b
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : parent
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=parent, type=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity [non-identifier,association])
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5d94a2dc]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@cedee22
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .... Registering AssociationKey : AssociationKey(table=CHILDTABLE, columns={CHILDTABLE_PARENT_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@cedee22
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : parent.childs
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Property path deemed to be circular : parent.childs
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : parent.name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@cedee22
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=parent, type=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity [non-identifier,association])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@796f632b
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity)
+          - EntityAttributeFetchImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity, querySpaceUid=<gen:1>, path=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity.parent)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity)
+          - SQL table alias mapping - childentit0_
+          - alias suffix - 0_
+          - suffixed key columns - {CHILDTAB1_2_0_}
+          - JOIN (JoinDefinedByMetadata(parent)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity)
+                - SQL table alias mapping - parententi1_
+                - alias suffix - 1_
+                - suffixed key columns - {PARENTTA1_5_1_}
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity [NONE]: select childentit0_.CHILDTABLE_KEY as CHILDTAB1_2_0_, childentit0_.CHILDTABLE_NAME as CHILDTAB2_2_0_, childentit0_.CHILDTABLE_PARENT_KEY as CHILDTAB3_2_0_, parententi1_.PARENTTABLE_KEY as PARENTTA1_5_1_, parententi1_.PARENTTABLE_NAME as PARENTTA2_5_1_ from CHILDTABLE childentit0_ inner join PARENTTABLE parententi1_ on childentit0_.CHILDTABLE_PARENT_KEY=parententi1_.PARENTTABLE_KEY where childentit0_.CHILDTABLE_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@40c2ce52]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@18a19e
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=CHILDTABLE, columns={CHILDTABLE_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@18a19e
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : parent
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=parent, type=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity [non-identifier,association])
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@60a7e509]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@2e13f304
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .... Registering AssociationKey : AssociationKey(table=CHILDTABLE, columns={CHILDTABLE_PARENT_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@2e13f304
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : parent.childs
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Property path deemed to be circular : parent.childs
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : parent.name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@2e13f304
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=parent, type=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity [non-identifier,association])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@18a19e
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity)
+          - EntityAttributeFetchImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity, querySpaceUid=<gen:1>, path=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity.parent)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity)
+          - SQL table alias mapping - childentit0_
+          - alias suffix - 0_
+          - suffixed key columns - {CHILDTAB1_2_0_}
+          - JOIN (JoinDefinedByMetadata(parent)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity)
+                - SQL table alias mapping - parententi1_
+                - alias suffix - 1_
+                - suffixed key columns - {PARENTTA1_5_1_}
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity [READ]: select childentit0_.CHILDTABLE_KEY as CHILDTAB1_2_0_, childentit0_.CHILDTABLE_NAME as CHILDTAB2_2_0_, childentit0_.CHILDTABLE_PARENT_KEY as CHILDTAB3_2_0_, parententi1_.PARENTTABLE_KEY as PARENTTA1_5_1_, parententi1_.PARENTTABLE_NAME as PARENTTA2_5_1_ from CHILDTABLE childentit0_ inner join PARENTTABLE parententi1_ on childentit0_.CHILDTABLE_PARENT_KEY=parententi1_.PARENTTABLE_KEY where childentit0_.CHILDTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_MERGE on entity com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity: select childentit0_.CHILDTABLE_KEY as CHILDTAB1_2_0_, childentit0_.CHILDTABLE_NAME as CHILDTAB2_2_0_, childentit0_.CHILDTABLE_PARENT_KEY as CHILDTAB3_2_0_ from CHILDTABLE childentit0_ where childentit0_.CHILDTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_REFRESH on entity com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity: select childentit0_.CHILDTABLE_KEY as CHILDTAB1_2_0_, childentit0_.CHILDTABLE_NAME as CHILDTAB2_2_0_, childentit0_.CHILDTABLE_PARENT_KEY as CHILDTAB3_2_0_ from CHILDTABLE childentit0_ where childentit0_.CHILDTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister - Static SQL for entity: com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Version select: select USER_SSN, USER_LOGIN from USER where USER_SSN =? and USER_LOGIN =?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Snapshot select: select userentity_.USER_SSN, userentity_.USER_LOGIN, userentity_.USER_CITY as USER_CIT3_8_ from USER userentity_ where userentity_.USER_SSN=? and userentity_.USER_LOGIN=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Insert 0: insert into USER (USER_CITY, USER_SSN, USER_LOGIN) values (?, ?, ?)
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Update 0: update USER set USER_CITY=? where USER_SSN=? and USER_LOGIN=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Delete 0: delete from USER where USER_SSN=? and USER_LOGIN=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@787508ca]
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0>-id -> org.hibernate.loader.plan.build.internal.spaces.CompositeQuerySpaceImpl@3d24420b]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@3965bdf9
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=USER, columns={USER_SSN,USER_LOGIN}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@3965bdf9
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.NonEncapsulatedEntityIdentifierDescription@3c0e00a8
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting composite : id
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : ssn
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting attribute org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@5649d11a
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing up attribute : org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@5649d11a
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting attribute org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@294f9d50
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing up attribute : org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@294f9d50
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing composite : id
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.NonEncapsulatedEntityIdentifierDescription@3c0e00a8
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finished entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : city
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=city, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=city, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@3965bdf9
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity)
+          - SQL table alias mapping - userentity0_
+          - alias suffix - 0_
+          - suffixed key columns - {USER_SSN1_8_0_, USER_LOG2_8_0_}
+          - JOIN (JoinDefinedByMetadata(id)) : <gen:0> -> <gen:0>-id
+             - CompositeQuerySpaceImpl(uid=<gen:0>-id)
+                - SQL table alias mapping - userentity0_
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.UserEntity [NONE]: select userentity0_.USER_SSN as USER_SSN1_8_0_, userentity0_.USER_LOGIN as USER_LOG2_8_0_, userentity0_.USER_CITY as USER_CIT3_8_0_ from USER userentity0_ where userentity0_.USER_SSN=? and userentity0_.USER_LOGIN=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@70721c12]
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0>-id -> org.hibernate.loader.plan.build.internal.spaces.CompositeQuerySpaceImpl@769bd849]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@101ca8da
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=USER, columns={USER_SSN,USER_LOGIN}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@101ca8da
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.NonEncapsulatedEntityIdentifierDescription@20a967fe
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting composite : id
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : ssn
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting attribute org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@405b6d75
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing up attribute : org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@405b6d75
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting attribute org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@682abca7
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing up attribute : org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@682abca7
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing composite : id
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.NonEncapsulatedEntityIdentifierDescription@20a967fe
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finished entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : city
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=city, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=city, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@101ca8da
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity)
+          - SQL table alias mapping - userentity0_
+          - alias suffix - 0_
+          - suffixed key columns - {USER_SSN1_8_0_, USER_LOG2_8_0_}
+          - JOIN (JoinDefinedByMetadata(id)) : <gen:0> -> <gen:0>-id
+             - CompositeQuerySpaceImpl(uid=<gen:0>-id)
+                - SQL table alias mapping - userentity0_
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.UserEntity [READ]: select userentity0_.USER_SSN as USER_SSN1_8_0_, userentity0_.USER_LOGIN as USER_LOG2_8_0_, userentity0_.USER_CITY as USER_CIT3_8_0_ from USER userentity0_ where userentity0_.USER_SSN=? and userentity0_.USER_LOGIN=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_MERGE on entity com.github.lazyf1sh.sandbox.persistence.entities.UserEntity: select userentity0_.USER_SSN as USER_SSN1_8_0_, userentity0_.USER_LOGIN as USER_LOG2_8_0_, userentity0_.USER_CITY as USER_CIT3_8_0_ from USER userentity0_ where userentity0_.USER_SSN=? and userentity0_.USER_LOGIN=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_REFRESH on entity com.github.lazyf1sh.sandbox.persistence.entities.UserEntity: select userentity0_.USER_SSN as USER_SSN1_8_0_, userentity0_.USER_LOGIN as USER_LOG2_8_0_, userentity0_.USER_CITY as USER_CIT3_8_0_ from USER userentity0_ where userentity0_.USER_SSN=? and userentity0_.USER_LOGIN=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister - Static SQL for entity: com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Version select: select PARENTTABLE_KEY from PARENTTABLE where PARENTTABLE_KEY =?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Snapshot select: select parententi_.PARENTTABLE_KEY, parententi_.PARENTTABLE_NAME as PARENTTA2_5_ from PARENTTABLE parententi_ where parententi_.PARENTTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Insert 0: insert into PARENTTABLE (PARENTTABLE_NAME, PARENTTABLE_KEY) values (?, ?)
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Update 0: update PARENTTABLE set PARENTTABLE_NAME=? where PARENTTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Delete 0: delete from PARENTTABLE where PARENTTABLE_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1d858300]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@76f881d9
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=PARENTTABLE, columns={PARENTTABLE_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@76f881d9
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : childs
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=childs, type=java.util.Set(com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs) [non-identifier,association])
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@6dd36ab6]
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@50a13c2f]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=childs, type=java.util.Set(com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs) [non-identifier,association])
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@76f881d9
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity)
+          - CollectionAttributeFetchImpl(collection=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs, querySpaceUid=<gen:1>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity, querySpaceUid=<gen:2>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity)
+          - SQL table alias mapping - parententi0_
+          - alias suffix - 0_
+          - suffixed key columns - {PARENTTA1_5_0_}
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity [NONE]: select parententi0_.PARENTTABLE_KEY as PARENTTA1_5_0_, parententi0_.PARENTTABLE_NAME as PARENTTA2_5_0_ from PARENTTABLE parententi0_ where parententi0_.PARENTTABLE_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7c20cdd0]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@74606204
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=PARENTTABLE, columns={PARENTTABLE_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@74606204
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : childs
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=childs, type=java.util.Set(com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs) [non-identifier,association])
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@6b6eae52]
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@d4df0e]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=childs, type=java.util.Set(com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs) [non-identifier,association])
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@74606204
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity)
+          - CollectionAttributeFetchImpl(collection=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs, querySpaceUid=<gen:1>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity, querySpaceUid=<gen:2>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity)
+          - SQL table alias mapping - parententi0_
+          - alias suffix - 0_
+          - suffixed key columns - {PARENTTA1_5_0_}
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity [READ]: select parententi0_.PARENTTABLE_KEY as PARENTTA1_5_0_, parententi0_.PARENTTABLE_NAME as PARENTTA2_5_0_ from PARENTTABLE parententi0_ where parententi0_.PARENTTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_MERGE on entity com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity: select parententi0_.PARENTTABLE_KEY as PARENTTA1_5_0_, parententi0_.PARENTTABLE_NAME as PARENTTA2_5_0_ from PARENTTABLE parententi0_ where parententi0_.PARENTTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_REFRESH on entity com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity: select parententi0_.PARENTTABLE_KEY as PARENTTA1_5_0_, parententi0_.PARENTTABLE_NAME as PARENTTA2_5_0_ from PARENTTABLE parententi0_ where parententi0_.PARENTTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister - Static SQL for entity: com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Version select: select PARENTTABLE_KEY from PARENTTABLE where PARENTTABLE_KEY =?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Snapshot select: select parententi_.PARENTTABLE_KEY, parententi_.PARENTTABLE_NAME as PARENTTA2_5_ from PARENTTABLE parententi_ where parententi_.PARENTTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Insert 0: insert into PARENTTABLE (PARENTTABLE_NAME, PARENTTABLE_KEY) values (?, ?)
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Update 0: update PARENTTABLE set PARENTTABLE_NAME=? where PARENTTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Delete 0: delete from PARENTTABLE where PARENTTABLE_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7ae0cc89]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@de7e193
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=PARENTTABLE, columns={PARENTTABLE_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@de7e193
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : childs
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=childs, type=java.util.Set(com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs) [non-identifier,association])
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@13e5d243]
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@35ef439e]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=childs, type=java.util.Set(com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs) [non-identifier,association])
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : myEmbeddable
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=myEmbeddable, type=component[name] [non-identifier,composition])
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CompositeQuerySpaceImpl@4997552e]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.CompositeAttributeFetchImpl@7bcecef6
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting composite : myEmbeddable
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : myEmbeddable.name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing composite : myEmbeddable
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.CompositeAttributeFetchImpl@7bcecef6
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=myEmbeddable, type=component[name] [non-identifier,composition])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@de7e193
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded)
+          - CollectionAttributeFetchImpl(collection=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs, querySpaceUid=<gen:1>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity, querySpaceUid=<gen:2>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs.<elements>)
+          - CompositeAttributeFetchImpl(composite=com.github.lazyf1sh.sandbox.persistence.entities.MyEmbeddable, querySpaceUid=<gen:3>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.myEmbeddable)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded)
+          - SQL table alias mapping - parententi0_
+          - alias suffix - 0_
+          - suffixed key columns - {PARENTTA1_5_0_}
+          - JOIN (JoinDefinedByMetadata(myEmbeddable)) : <gen:0> -> <gen:3>
+             - CompositeQuerySpaceImpl(uid=<gen:3>)
+                - SQL table alias mapping - parententi0_
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded [NONE]: select parententi0_.PARENTTABLE_KEY as PARENTTA1_5_0_, parententi0_.PARENTTABLE_NAME as PARENTTA2_5_0_ from PARENTTABLE parententi0_ where parententi0_.PARENTTABLE_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@77c1e611]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@12c0c0b3
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=PARENTTABLE, columns={PARENTTABLE_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@12c0c0b3
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : childs
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=childs, type=java.util.Set(com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs) [non-identifier,association])
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@5a97b17c]
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@9c73fff]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=childs, type=java.util.Set(com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs) [non-identifier,association])
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : myEmbeddable
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=myEmbeddable, type=component[name] [non-identifier,composition])
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CompositeQuerySpaceImpl@71cea1b8]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.CompositeAttributeFetchImpl@659f226a
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting composite : myEmbeddable
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : myEmbeddable.name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing composite : myEmbeddable
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.CompositeAttributeFetchImpl@659f226a
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=myEmbeddable, type=component[name] [non-identifier,composition])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@12c0c0b3
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded)
+          - CollectionAttributeFetchImpl(collection=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs, querySpaceUid=<gen:1>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity, querySpaceUid=<gen:2>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs.<elements>)
+          - CompositeAttributeFetchImpl(composite=com.github.lazyf1sh.sandbox.persistence.entities.MyEmbeddable, querySpaceUid=<gen:3>, path=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.myEmbeddable)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded)
+          - SQL table alias mapping - parententi0_
+          - alias suffix - 0_
+          - suffixed key columns - {PARENTTA1_5_0_}
+          - JOIN (JoinDefinedByMetadata(myEmbeddable)) : <gen:0> -> <gen:3>
+             - CompositeQuerySpaceImpl(uid=<gen:3>)
+                - SQL table alias mapping - parententi0_
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded [READ]: select parententi0_.PARENTTABLE_KEY as PARENTTA1_5_0_, parententi0_.PARENTTABLE_NAME as PARENTTA2_5_0_ from PARENTTABLE parententi0_ where parententi0_.PARENTTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_MERGE on entity com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded: select parententi0_.PARENTTABLE_KEY as PARENTTA1_5_0_, parententi0_.PARENTTABLE_NAME as PARENTTA2_5_0_ from PARENTTABLE parententi0_ where parententi0_.PARENTTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_REFRESH on entity com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded: select parententi0_.PARENTTABLE_KEY as PARENTTA1_5_0_, parententi0_.PARENTTABLE_NAME as PARENTTA2_5_0_ from PARENTTABLE parententi0_ where parententi0_.PARENTTABLE_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister - Static SQL for entity: com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Version select: select BOOK2_KEY from BOOK2 where BOOK2_KEY =?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Snapshot select: select book2entit_.BOOK2_KEY, book2entit_.BOOK2_NAME as BOOK2_1_ from BOOK2 book2entit_ where book2entit_.BOOK2_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Insert 0: insert into BOOK2 (BOOK2_NAME, BOOK2_KEY) values (?, ?)
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Update 0: update BOOK2 set BOOK2_NAME=? where BOOK2_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Delete 0: delete from BOOK2 where BOOK2_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2e463f4]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@32ec9c90
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=BOOK2, columns={BOOK2_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@32ec9c90
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@32ec9c90
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity)
+          - SQL table alias mapping - book2entit0_
+          - alias suffix - 0_
+          - suffixed key columns - {BOOK1_1_0_}
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity [NONE]: select book2entit0_.BOOK2_KEY as BOOK1_1_0_, book2entit0_.BOOK2_NAME as BOOK2_1_0_ from BOOK2 book2entit0_ where book2entit0_.BOOK2_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@36ab3814]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@2abbd0d9
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=BOOK2, columns={BOOK2_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@2abbd0d9
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@2abbd0d9
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity)
+          - SQL table alias mapping - book2entit0_
+          - alias suffix - 0_
+          - suffixed key columns - {BOOK1_1_0_}
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity [READ]: select book2entit0_.BOOK2_KEY as BOOK1_1_0_, book2entit0_.BOOK2_NAME as BOOK2_1_0_ from BOOK2 book2entit0_ where book2entit0_.BOOK2_KEY=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_MERGE on entity com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity: select book2entit0_.BOOK2_KEY as BOOK1_1_0_, book2entit0_.BOOK2_NAME as BOOK2_1_0_ from BOOK2 book2entit0_ where book2entit0_.BOOK2_KEY=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_REFRESH on entity com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity: select book2entit0_.BOOK2_KEY as BOOK1_1_0_, book2entit0_.BOOK2_NAME as BOOK2_1_0_ from BOOK2 book2entit0_ where book2entit0_.BOOK2_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister - Static SQL for entity: com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Version select: select DOCUMENT_KEY from DOCUMENT where DOCUMENT_KEY =?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Snapshot select: select documenten_.DOCUMENT_KEY, documenten_.DOCUMENT_NAME as DOCUMENT2_3_, documenten_.DOCUMENT_USER_SSN as DOCUMENT3_3_, documenten_.DOCUMENT_USER_LOGIN as DOCUMENT4_3_ from DOCUMENT documenten_ where documenten_.DOCUMENT_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Insert 0: insert into DOCUMENT (DOCUMENT_NAME, DOCUMENT_USER_SSN, DOCUMENT_USER_LOGIN, DOCUMENT_KEY) values (?, ?, ?, ?)
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Update 0: update DOCUMENT set DOCUMENT_NAME=?, DOCUMENT_USER_SSN=?, DOCUMENT_USER_LOGIN=? where DOCUMENT_KEY=?
+2019-10-19 21:45:26 DEBUG AbstractEntityPersister -  Delete 0: delete from DOCUMENT where DOCUMENT_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@32bb0072]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@467233e4
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=DOCUMENT, columns={DOCUMENT_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@467233e4
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : user
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=user, type=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity [non-identifier,association])
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@427a12b6]
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1>-id -> org.hibernate.loader.plan.build.internal.spaces.CompositeQuerySpaceImpl@6025d790]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@af7e376
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .... Registering AssociationKey : AssociationKey(table=DOCUMENT, columns={DOCUMENT_USER_SSN,DOCUMENT_USER_LOGIN}) -> org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@af7e376
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.NonEncapsulatedEntityIdentifierDescription@5dcd0cdf
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>>>> Starting composite : id
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : user.ssn
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>>>> Starting attribute org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@4fb04a72
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<<<< Finishing up attribute : org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@4fb04a72
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : user.name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>>>> Starting attribute org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@1e79d43
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<<<< Finishing up attribute : org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@1e79d43
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<<<< Finishing composite : id
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.NonEncapsulatedEntityIdentifierDescription@5dcd0cdf
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finished entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : user.city
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting attribute Attribute(name=city, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing up attribute : Attribute(name=city, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@af7e376
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=user, type=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity [non-identifier,association])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@467233e4
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity)
+          - EntityAttributeFetchImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity, querySpaceUid=<gen:1>, path=com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity)
+          - SQL table alias mapping - documenten0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_3_0_}
+          - JOIN (JoinDefinedByMetadata(user)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity)
+                - SQL table alias mapping - userentity1_
+                - alias suffix - 1_
+                - suffixed key columns - {USER_SSN1_8_1_, USER_LOG2_8_1_}
+                - JOIN (JoinDefinedByMetadata(id)) : <gen:1> -> <gen:1>-id
+                   - CompositeQuerySpaceImpl(uid=<gen:1>-id)
+                      - SQL table alias mapping - userentity1_
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity [NONE]: select documenten0_.DOCUMENT_KEY as DOCUMENT1_3_0_, documenten0_.DOCUMENT_NAME as DOCUMENT2_3_0_, documenten0_.DOCUMENT_USER_SSN as DOCUMENT3_3_0_, documenten0_.DOCUMENT_USER_LOGIN as DOCUMENT4_3_0_, userentity1_.USER_SSN as USER_SSN1_8_1_, userentity1_.USER_LOGIN as USER_LOG2_8_1_, userentity1_.USER_CITY as USER_CIT3_8_1_ from DOCUMENT documenten0_ left outer join USER userentity1_ on documenten0_.DOCUMENT_USER_SSN=userentity1_.USER_SSN and documenten0_.DOCUMENT_USER_LOGIN=userentity1_.USER_LOGIN where documenten0_.DOCUMENT_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root entity : com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@343e225a]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@1a07bf6
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .. Registering AssociationKey : AssociationKey(table=DOCUMENT, columns={DOCUMENT_KEY}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@1a07bf6
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : user
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=user, type=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity [non-identifier,association])
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4c0e426a]
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1>-id -> org.hibernate.loader.plan.build.internal.spaces.CompositeQuerySpaceImpl@713ec32d]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@34d713a2
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - .... Registering AssociationKey : AssociationKey(table=DOCUMENT, columns={DOCUMENT_USER_SSN,DOCUMENT_USER_LOGIN}) -> org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@34d713a2
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.NonEncapsulatedEntityIdentifierDescription@36aab105
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>>>> Starting composite : id
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : user.ssn
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>>>> Starting attribute org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@889a8a8
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<<<< Finishing up attribute : org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@889a8a8
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : user.name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>>>> Starting attribute org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@f29353f
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<<<< Finishing up attribute : org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@f29353f
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<<<< Finishing composite : id
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.NonEncapsulatedEntityIdentifierDescription@36aab105
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finished entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.UserEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : user.city
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >>>> Starting attribute Attribute(name=city, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - <<<< Finishing up attribute : Attribute(name=city, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@34d713a2
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=user, type=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity [non-identifier,association])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@1a07bf6
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root entity : com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(entity=com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity)
+    - Returns
+       - EntityReturnImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity, querySpaceUid=<gen:0>, path=com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity)
+          - EntityAttributeFetchImpl(entity=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity, querySpaceUid=<gen:1>, path=com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity)
+          - SQL table alias mapping - documenten0_
+          - alias suffix - 0_
+          - suffixed key columns - {DOCUMENT1_3_0_}
+          - JOIN (JoinDefinedByMetadata(user)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity)
+                - SQL table alias mapping - userentity1_
+                - alias suffix - 1_
+                - suffixed key columns - {USER_SSN1_8_1_, USER_LOG2_8_1_}
+                - JOIN (JoinDefinedByMetadata(id)) : <gen:1> -> <gen:1>-id
+                   - CompositeQuerySpaceImpl(uid=<gen:1>-id)
+                      - SQL table alias mapping - userentity1_
+
+2019-10-19 21:45:26 DEBUG EntityLoader - Static select for entity com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity [READ]: select documenten0_.DOCUMENT_KEY as DOCUMENT1_3_0_, documenten0_.DOCUMENT_NAME as DOCUMENT2_3_0_, documenten0_.DOCUMENT_USER_SSN as DOCUMENT3_3_0_, documenten0_.DOCUMENT_USER_LOGIN as DOCUMENT4_3_0_, userentity1_.USER_SSN as USER_SSN1_8_1_, userentity1_.USER_LOGIN as USER_LOG2_8_1_, userentity1_.USER_CITY as USER_CIT3_8_1_ from DOCUMENT documenten0_ left outer join USER userentity1_ on documenten0_.DOCUMENT_USER_SSN=userentity1_.USER_SSN and documenten0_.DOCUMENT_USER_LOGIN=userentity1_.USER_LOGIN where documenten0_.DOCUMENT_KEY=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_MERGE on entity com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity: select documenten0_.DOCUMENT_KEY as DOCUMENT1_3_0_, documenten0_.DOCUMENT_NAME as DOCUMENT2_3_0_, documenten0_.DOCUMENT_USER_SSN as DOCUMENT3_3_0_, documenten0_.DOCUMENT_USER_LOGIN as DOCUMENT4_3_0_ from DOCUMENT documenten0_ where documenten0_.DOCUMENT_KEY=?
+2019-10-19 21:45:26 DEBUG Loader - Static select for action ACTION_REFRESH on entity com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity: select documenten0_.DOCUMENT_KEY as DOCUMENT1_3_0_, documenten0_.DOCUMENT_NAME as DOCUMENT2_3_0_, documenten0_.DOCUMENT_USER_SSN as DOCUMENT3_3_0_, documenten0_.DOCUMENT_USER_LOGIN as DOCUMENT4_3_0_ from DOCUMENT documenten0_ where documenten0_.DOCUMENT_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root collection : com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@5be052ca]
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CompositeQuerySpaceImpl@2007435e]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing collection reference to stack : org.hibernate.loader.plan.build.internal.returns.CollectionReturnImpl@da28d03
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Registering AssociationKey : AssociationKey(table=PROPERTIES, columns={PROPERTIES_KEY}) -> null
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting collection index graph : com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting index for collection :  
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished collection index graph : com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting collection element graph : com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.CollectionFetchableElementCompositeGraph@3a17b2e3
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting composite : 
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : value
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@22d322f5
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : org.hibernate.persister.walking.internal.CompositionSingularSubAttributesHelper$1$1$3@22d322f5
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing composite : 
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.CollectionFetchableElementCompositeGraph@3a17b2e3
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished collection element graph : com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped collection reference from stack : org.hibernate.loader.plan.build.internal.returns.CollectionReturnImpl@da28d03
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root collection : com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(collection=com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties)
+    - Returns
+       - CollectionReturnImpl(collection=com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties, querySpaceUid=<gen:0>, path=[com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties])
+          - (collection element)     - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties)
+          - SQL table alias mapping - properties0_
+          - alias suffix - 0_
+          - suffixed key columns - {PROPERTI1_6_0_}
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - CompositeQuerySpaceImpl(uid=<gen:1>)
+                - SQL table alias mapping - properties0_
+
+2019-10-19 21:45:26 DEBUG CollectionLoader - Static select for collection com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties: select properties0_.PROPERTIES_KEY as PROPERTI1_6_0_, properties0_.PROPERTIES_VALUE as PROPERTI2_6_0_, properties0_.properties_KEY as properti1_0_ from PROPERTIES properties0_ where properties0_.PROPERTIES_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root collection : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@2fb25f4c]
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@de81be1]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing collection reference to stack : org.hibernate.loader.plan.build.internal.returns.CollectionReturnImpl@342e690b
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Registering AssociationKey : AssociationKey(table=CHILDTABLE, columns={CHILDTABLE_PARENT_KEY}) -> null
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting collection element graph : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.CollectionFetchableElementEntityGraph@4519f676
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : parent
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Property path deemed to be circular : parent
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.CollectionFetchableElementEntityGraph@4519f676
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished collection element graph : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped collection reference from stack : org.hibernate.loader.plan.build.internal.returns.CollectionReturnImpl@342e690b
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root collection : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(collection=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs)
+    - Returns
+       - CollectionReturnImpl(collection=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs, querySpaceUid=<gen:0>, path=[com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity, querySpaceUid=<gen:1>, path=[com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs)
+          - SQL table alias mapping - childs0_
+          - alias suffix - 0_
+          - suffixed key columns - {CHILDTAB3_2_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - CHILDTAB1_2_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity)
+                - SQL table alias mapping - childs0_
+                - alias suffix - 1_
+                - suffixed key columns - {CHILDTAB1_2_1_}
+
+2019-10-19 21:45:26 DEBUG CollectionLoader - Static select for collection com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs: select childs0_.CHILDTABLE_PARENT_KEY as CHILDTAB3_2_0_, childs0_.CHILDTABLE_KEY as CHILDTAB1_2_0_, childs0_.CHILDTABLE_KEY as CHILDTAB1_2_1_, childs0_.CHILDTABLE_NAME as CHILDTAB2_2_1_, childs0_.CHILDTABLE_PARENT_KEY as CHILDTAB3_2_1_ from CHILDTABLE childs0_ where childs0_.CHILDTABLE_PARENT_KEY=?
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting root collection : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@781711b7]
+2019-10-19 21:45:26 DEBUG QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@642a16aa]
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing collection reference to stack : org.hibernate.loader.plan.build.internal.returns.CollectionReturnImpl@642ee49c
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Registering AssociationKey : AssociationKey(table=CHILDTABLE, columns={CHILDTABLE_PARENT_KEY}) -> null
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Starting collection element graph : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.CollectionFetchableElementEntityGraph@294aba23
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting entity identifier : com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : name
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Visiting attribute path : parent
+2019-10-19 21:45:26 DEBUG MetamodelGraphWalker - Property path deemed to be circular : parent
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.CollectionFetchableElementEntityGraph@294aba23
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished collection element graph : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy - Popped collection reference from stack : org.hibernate.loader.plan.build.internal.returns.CollectionReturnImpl@642ee49c
+2019-10-19 21:45:26 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy -  Finished root collection : com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs
+2019-10-19 21:45:26 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2019-10-19 21:45:26 DEBUG LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2019-10-19 21:45:26 DEBUG LoadPlanTreePrinter - LoadPlan(collection=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs)
+    - Returns
+       - CollectionReturnImpl(collection=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs, querySpaceUid=<gen:0>, path=[com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity, querySpaceUid=<gen:1>, path=[com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs)
+          - SQL table alias mapping - childs0_
+          - alias suffix - 0_
+          - suffixed key columns - {CHILDTAB3_2_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - CHILDTAB1_2_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity)
+                - SQL table alias mapping - childs0_
+                - alias suffix - 1_
+                - suffixed key columns - {CHILDTAB1_2_1_}
+
+2019-10-19 21:45:26 DEBUG CollectionLoader - Static select for collection com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs: select childs0_.CHILDTABLE_PARENT_KEY as CHILDTAB3_2_0_, childs0_.CHILDTABLE_KEY as CHILDTAB1_2_0_, childs0_.CHILDTABLE_KEY as CHILDTAB1_2_1_, childs0_.CHILDTABLE_NAME as CHILDTAB2_2_1_, childs0_.CHILDTABLE_PARENT_KEY as CHILDTAB3_2_1_ from CHILDTABLE childs0_ where childs0_.CHILDTABLE_PARENT_KEY=?
+2019-10-19 21:45:26 TRACE MetadataContext - Wrapping up metadata context...
+2019-10-19 21:45:26 TRACE MetadataContext - Starting entity [com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building identifier attribute [Ticket.key]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [key]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private int com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.key]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=integer, class=org.hibernate.type.IntegerType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [Ticket.name]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [Ticket.ticketDetails]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [ticketDetails]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private com.github.lazyf1sh.sandbox.persistence.entities.a.TicketDetails com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=component[genericProperties], class=org.hibernate.type.ComponentType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [unknown.genericProperties]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [genericProperties]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private com.github.lazyf1sh.sandbox.persistence.entities.a.GenericProperties com.github.lazyf1sh.sandbox.persistence.entities.a.TicketDetails.genericProperties]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=component[properties], class=org.hibernate.type.ComponentType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [unknown.properties]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [properties]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.util.Map com.github.lazyf1sh.sandbox.persistence.entities.a.GenericProperties.properties]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=java.util.Map(com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket.ticketDetails.genericProperties.properties), class=org.hibernate.type.MapType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [unknown.value]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [value]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.a.PropertyValue.value]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE MetadataContext - Completed entity [com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket]
+2019-10-19 21:45:26 TRACE MetadataContext - Starting entity [com.github.lazyf1sh.sandbox.persistence.entities.Page2Entity]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building identifier attribute [Page2Entity.key]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [key]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private int com.github.lazyf1sh.sandbox.persistence.entities.Page2Entity.key]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=integer, class=org.hibernate.type.IntegerType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [Page2Entity.annotations]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [annotations]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.Page2Entity.annotations]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [Page2Entity.book2Entity]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [book2Entity]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity com.github.lazyf1sh.sandbox.persistence.entities.Page2Entity.book2Entity]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity, class=org.hibernate.type.ManyToOneType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [Page2Entity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.Page2Entity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE MetadataContext - Completed entity [com.github.lazyf1sh.sandbox.persistence.entities.Page2Entity]
+2019-10-19 21:45:26 TRACE MetadataContext - Starting entity [com.github.lazyf1sh.sandbox.persistence.entities.BookEntity]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building identifier attribute [BookEntity.id]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [id]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private int com.github.lazyf1sh.sandbox.persistence.entities.BookEntity.id]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=integer, class=org.hibernate.type.IntegerType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [BookEntity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.BookEntity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE MetadataContext - Completed entity [com.github.lazyf1sh.sandbox.persistence.entities.BookEntity]
+2019-10-19 21:45:26 TRACE MetadataContext - Starting entity [com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building identifier attribute [ChildEntity.key]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [key]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.Integer com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity.key]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=integer, class=org.hibernate.type.IntegerType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [ChildEntity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [ChildEntity.parent]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [parent]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity.parent]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity, class=org.hibernate.type.ManyToOneType]
+2019-10-19 21:45:26 TRACE MetadataContext - Completed entity [com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity]
+2019-10-19 21:45:26 TRACE MetadataContext - Starting entity [com.github.lazyf1sh.sandbox.persistence.entities.UserEntity]
+2019-10-19 21:45:26 TRACE MetadataContext - Building old-school composite identifier [com.github.lazyf1sh.sandbox.persistence.entities.UserEntity]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building identifier attribute [UserEntity.ssn]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [ssn]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private int com.github.lazyf1sh.sandbox.persistence.entities.UserEntity.ssn]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=integer, class=org.hibernate.type.IntegerType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building identifier attribute [UserEntity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.UserEntity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [UserEntity.city]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [city]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.UserEntity.city]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE MetadataContext - Completed entity [com.github.lazyf1sh.sandbox.persistence.entities.UserEntity]
+2019-10-19 21:45:26 TRACE MetadataContext - Starting entity [com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building identifier attribute [ParentEntity.id]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [id]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private int com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.id]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=integer, class=org.hibernate.type.IntegerType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [ParentEntity.childs]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [childs]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.util.Set com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=java.util.Set(com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.childs), class=org.hibernate.type.SetType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [ParentEntity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE MetadataContext - Completed entity [com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity]
+2019-10-19 21:45:26 TRACE MetadataContext - Starting entity [com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building identifier attribute [ParentEntityWithEmbedded.id]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [id]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private int com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.id]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=integer, class=org.hibernate.type.IntegerType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [ParentEntityWithEmbedded.childs]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [childs]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.util.Set com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=java.util.Set(com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.childs), class=org.hibernate.type.SetType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [ParentEntityWithEmbedded.myEmbeddable]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [myEmbeddable]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private com.github.lazyf1sh.sandbox.persistence.entities.MyEmbeddable com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded.myEmbeddable]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=component[name], class=org.hibernate.type.ComponentType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [unknown.name]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.MyEmbeddable.name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE MetadataContext - Completed entity [com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded]
+2019-10-19 21:45:26 TRACE MetadataContext - Starting entity [com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building identifier attribute [Book2Entity.key]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [key]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private int com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity.key]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=integer, class=org.hibernate.type.IntegerType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [Book2Entity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE MetadataContext - Completed entity [com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity]

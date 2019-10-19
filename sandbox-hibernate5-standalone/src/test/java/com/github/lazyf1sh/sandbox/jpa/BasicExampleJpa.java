@@ -21,7 +21,7 @@ public class BasicExampleJpa
 
         BookEntity bookEntity = new BookEntity();
         bookEntity.setName("Harry Potter");
-        bookEntity.setId(0);
+        bookEntity.setId(2);
         entityManager.persist(bookEntity);
 
         entityManager.getTransaction().commit();

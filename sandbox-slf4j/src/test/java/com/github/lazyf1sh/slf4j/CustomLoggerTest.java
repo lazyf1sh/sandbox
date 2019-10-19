@@ -1,13 +1,18 @@
 package com.github.lazyf1sh.slf4j;
 
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class CustomLogger
+import static org.junit.Assert.*;
+
+public class CustomLoggerTest
 {
-    public static void main( String[] args )
+    @Test
+    public void run()
     {
         Logger logger = LoggerFactory.getLogger("myLogger");
-        logger.trace("My custom message");
+        logger.info("My custom message");
+
     }
 }

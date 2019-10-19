@@ -1,0 +1,222 @@
+2019-10-19 21:45:26 TRACE MetadataContext - Starting entity [com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building identifier attribute [DocumentEntity.key]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [key]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private int com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity.key]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=integer, class=org.hibernate.type.IntegerType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [DocumentEntity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private java.lang.String com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity.name]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=string, class=org.hibernate.type.StringType]
+2019-10-19 21:45:26 TRACE AttributeFactory - Building attribute [DocumentEntity.user]
+2019-10-19 21:45:26 TRACE AttributeFactory - Starting attribute metadata determination [user]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined member [private com.github.lazyf1sh.sandbox.persistence.entities.UserEntity com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity.user]
+2019-10-19 21:45:26 TRACE AttributeFactory -     Determined type [name=com.github.lazyf1sh.sandbox.persistence.entities.UserEntity, class=org.hibernate.type.ManyToOneType]
+2019-10-19 21:45:26 TRACE MetadataContext - Completed entity [com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity]
+2019-10-19 21:45:26 DEBUG SchemaManagementToolCoordinator - No actions specified; doing nothing
+2019-10-19 21:45:26 TRACE AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform]
+2019-10-19 21:45:26 DEBUG JtaPlatformInitiator - No JtaPlatform was specified, checking resolver
+2019-10-19 21:45:26 TRACE AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.engine.transaction.jta.platform.spi.JtaPlatformResolver]
+2019-10-19 21:45:26 DEBUG JtaPlatformResolverInitiator - No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+2019-10-19 21:45:26 DEBUG StandardJtaPlatformResolver - Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-10-19 21:45:26 INFO  JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-10-19 21:45:26 DEBUG NamedQueryRepository - Checking 0 named HQL queries
+2019-10-19 21:45:26 DEBUG NamedQueryRepository - Checking 0 named SQL queries
+2019-10-19 21:45:26 TRACE TypeConfiguration$Scope - Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@3727f0ee] for TypeConfiguration
+2019-10-19 21:45:26 DEBUG SessionFactoryRegistry - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@4207852d
+2019-10-19 21:45:26 TRACE AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.engine.jndi.spi.JndiService]
+2019-10-19 21:45:26 DEBUG SessionFactoryRegistry - Registering SessionFactory: 0be38e47-4e46-4eaf-a885-242aedb12b25 (<unnamed>)
+2019-10-19 21:45:26 DEBUG SessionFactoryRegistry - Not binding SessionFactory to JNDI, no JNDI name configured
+2019-10-19 21:45:26 TRACE SessionFactoryImpl$SessionBuilderImpl - Opening Hibernate Session.  tenant=null, owner=null
+2019-10-19 21:45:26 TRACE AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.stat.spi.StatisticsImplementor]
+2019-10-19 21:45:26 DEBUG StatisticsInitiator - Statistics initialized [enabled=false]
+2019-10-19 21:45:26 TRACE SessionImpl - Opened Session [059fed41-7840-4f85-a311-d87b3d012731] at timestamp: 1571510726594
+2019-10-19 21:45:26 DEBUG TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2019-10-19 21:45:26 DEBUG TransactionImpl - begin
+2019-10-19 21:45:26 TRACE AbstractLogicalConnectionImplementor - Preparing to begin transaction via JDBC Connection.setAutoCommit(false)
+2019-10-19 21:45:26 TRACE AbstractLogicalConnectionImplementor - Transaction begun via JDBC Connection.setAutoCommit(false)
+2019-10-19 21:45:26 TRACE JdbcResourceLocalTransactionCoordinatorImpl - ResourceLocalTransactionCoordinatorImpl#afterBeginCallback
+2019-10-19 21:45:26 TRACE IdentifierValue - ID unsaved-value strategy UNDEFINED
+2019-10-19 21:45:26 TRACE AbstractSaveEventListener - Transient instance of: com.github.lazyf1sh.sandbox.persistence.entities.BookEntity
+2019-10-19 21:45:26 TRACE DefaultPersistEventListener - Saving transient instance
+2019-10-19 21:45:26 DEBUG AbstractSaveEventListener - Generated identifier: 2, using strategy: org.hibernate.id.Assigned
+2019-10-19 21:45:26 TRACE AbstractSaveEventListener - Saving [com.github.lazyf1sh.sandbox.persistence.entities.BookEntity#2]
+2019-10-19 21:45:26 TRACE ActionQueue - Adding an EntityInsertAction for [com.github.lazyf1sh.sandbox.persistence.entities.BookEntity] object
+2019-10-19 21:45:26 TRACE ActionQueue - Adding insert with no non-nullable, transient entities: [EntityInsertAction[com.github.lazyf1sh.sandbox.persistence.entities.BookEntity#2]]
+2019-10-19 21:45:26 TRACE ActionQueue - Adding resolved non-early insert action.
+2019-10-19 21:45:26 DEBUG TransactionImpl - committing
+2019-10-19 21:45:26 TRACE JdbcResourceLocalTransactionCoordinatorImpl - ResourceLocalTransactionCoordinatorImpl#beforeCompletionCallback
+2019-10-19 21:45:26 TRACE SessionImpl - SessionImpl#beforeTransactionCompletion()
+2019-10-19 21:45:26 TRACE SessionImpl - Automatically flushing session
+2019-10-19 21:45:26 TRACE AbstractFlushingEventListener - Flushing session
+2019-10-19 21:45:26 DEBUG AbstractFlushingEventListener - Processing flush-time cascades
+2019-10-19 21:45:26 TRACE Cascade - Processing cascade ACTION_PERSIST_ON_FLUSH for: com.github.lazyf1sh.sandbox.persistence.entities.BookEntity
+2019-10-19 21:45:26 TRACE Cascade - Done processing cascade ACTION_PERSIST_ON_FLUSH for: com.github.lazyf1sh.sandbox.persistence.entities.BookEntity
+2019-10-19 21:45:26 DEBUG AbstractFlushingEventListener - Dirty checking collections
+2019-10-19 21:45:26 TRACE AbstractFlushingEventListener - Flushing entities and processing referenced collections
+2019-10-19 21:45:26 TRACE AbstractFlushingEventListener - Processing unreferenced collections
+2019-10-19 21:45:26 TRACE AbstractFlushingEventListener - Scheduling collection removes/(re)creates/updates
+2019-10-19 21:45:26 DEBUG AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
+2019-10-19 21:45:26 DEBUG AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2019-10-19 21:45:26 DEBUG EntityPrinter - Listing entities:
+2019-10-19 21:45:26 DEBUG EntityPrinter - com.github.lazyf1sh.sandbox.persistence.entities.BookEntity{name=Harry Potter, id=2}
+2019-10-19 21:45:26 TRACE AbstractFlushingEventListener - Executing flush
+2019-10-19 21:45:26 TRACE AbstractEntityPersister - Inserting entity: [com.github.lazyf1sh.sandbox.persistence.entities.BookEntity#2]
+2019-10-19 21:45:26 DEBUG SQL - 
+    insert 
+    into
+        BOOK
+        (BOOK_NAME, BOOK_KEY) 
+    values
+        (?, ?)
+2019-10-19 21:45:26 TRACE ResourceRegistryStandardImpl - Registering statement [com.mysql.cj.jdbc.ClientPreparedStatement: insert into BOOK (BOOK_NAME, BOOK_KEY) values (** NOT SPECIFIED **, ** NOT SPECIFIED **)]
+2019-10-19 21:45:26 TRACE AbstractEntityPersister - Dehydrating entity: [com.github.lazyf1sh.sandbox.persistence.entities.BookEntity#2]
+2019-10-19 21:45:26 TRACE BasicBinder - binding parameter [1] as [VARCHAR] - [Harry Potter]
+2019-10-19 21:45:26 TRACE BasicBinder - binding parameter [2] as [INTEGER] - [2]
+2019-10-19 21:45:26 DEBUG SqlExceptionHelper - could not execute statement [n/a]
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '2' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1340)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3185)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3699)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1457)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:514)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3321)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2492)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104)
+	at com.github.lazyf1sh.sandbox.jpa.BasicExampleJpa.run(BasicExampleJpa.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+2019-10-19 21:45:26 WARN  SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
+2019-10-19 21:45:26 ERROR SqlExceptionHelper - Duplicate entry '2' for key 'PRIMARY'
+2019-10-19 21:45:26 TRACE ResourceRegistryStandardImpl - Releasing statement [com.mysql.cj.jdbc.ClientPreparedStatement: insert into BOOK (BOOK_NAME, BOOK_KEY) values ('Harry Potter', 2)]
+2019-10-19 21:45:26 TRACE ResourceRegistryStandardImpl - Closing prepared statement [com.mysql.cj.jdbc.ClientPreparedStatement: insert into BOOK (BOOK_NAME, BOOK_KEY) values ('Harry Potter', 2)]
+2019-10-19 21:45:26 TRACE JdbcCoordinatorImpl - Starting after statement execution processing [AFTER_TRANSACTION]
+2019-10-19 21:45:26 TRACE JdbcCoordinatorImpl - Starting after statement execution processing [AFTER_TRANSACTION]
+2019-10-19 21:45:26 DEBUG JdbcResourceLocalTransactionCoordinatorImpl - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:314)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.markRollbackOnly(TransactionImpl.java:206)
+	at org.hibernate.internal.AbstractSharedSessionContract.markForRollbackOnly(AbstractSharedSessionContract.java:378)
+	at org.hibernate.internal.ExceptionConverterImpl.handlePersistenceException(ExceptionConverterImpl.java:297)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:155)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1463)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:514)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3321)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2492)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104)
+	at com.github.lazyf1sh.sandbox.jpa.BasicExampleJpa.run(BasicExampleJpa.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+2019-10-19 21:45:26 ERROR ExceptionMapperStandardImpl - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2019-10-19 21:45:26 DEBUG JdbcResourceLocalTransactionCoordinatorImpl - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:314)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:187)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104)
+	at com.github.lazyf1sh.sandbox.jpa.BasicExampleJpa.run(BasicExampleJpa.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+2019-10-19 21:45:26 TRACE AbstractLogicalConnectionImplementor - Preparing to rollback transaction via JDBC Connection.rollback()
+2019-10-19 21:45:26 TRACE AbstractLogicalConnectionImplementor - Transaction rolled-back via JDBC Connection.rollback()
+2019-10-19 21:45:26 TRACE AbstractLogicalConnectionImplementor - LogicalConnection#afterTransaction
+2019-10-19 21:45:26 TRACE ResourceRegistryStandardImpl - Releasing JDBC resources
+2019-10-19 21:45:26 DEBUG LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2019-10-19 21:45:26 TRACE ResourceRegistryStandardImpl - Releasing JDBC resources
+2019-10-19 21:45:26 TRACE JdbcResourceLocalTransactionCoordinatorImpl - ResourceLocalTransactionCoordinatorImpl#afterCompletionCallback(false)
+2019-10-19 21:45:26 TRACE SynchronizationRegistryStandardImpl - SynchronizationRegistryStandardImpl.notifySynchronizationsAfterTransactionCompletion(5)
+2019-10-19 21:45:26 TRACE AbstractLogicalConnectionImplementor - LogicalConnection#afterTransaction
+2019-10-19 21:45:26 TRACE ResourceRegistryStandardImpl - Releasing JDBC resources
+2019-10-19 21:45:26 DEBUG LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2019-10-19 21:45:26 TRACE SessionImpl - SessionImpl#afterTransactionCompletion(successful=false, delayed=false)
+2019-10-19 21:45:26 DEBUG TransactionImpl - rollback() called on an inactive transaction
+2019-10-19 21:46:16 DEBUG SQL - 
+    insert 
+    into
+        BOOK
+        (BOOK_NAME, BOOK_KEY) 
+    values
+        (?, ?)
