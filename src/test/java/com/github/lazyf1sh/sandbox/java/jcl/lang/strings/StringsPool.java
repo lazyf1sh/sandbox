@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Basic demonstation of strings pool in java
+ * Basic demonstration of strings pool in java. Strings are compared intentionally using reference equality.
  */
 public class StringsPool
 {
@@ -45,7 +45,7 @@ public class StringsPool
         String a = new String("012");
         String b = new String("012");
         Assert.assertFalse(a == b);
-        Assert.assertTrue(a == b.intern());
+        Assert.assertFalse(a == b.intern());
     }
 
     @Test
