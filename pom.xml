@@ -39,6 +39,7 @@
         <module>sandbox-jasper-embedded</module>
         <module>sandbox-hibernate5-standalone</module>
         <module>sandbox-hibernate5-spring5-integration</module>
+        <module>sandbox-camel</module>
     </modules>
 
     <dependencies>
