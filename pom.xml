@@ -35,6 +35,7 @@
         <module>sandbox-hibernate5-spring5-integration</module>
         <module>sandbox-camel</module>
         <module>sandbox-jdbc</module>
+        <module>sandbox-liquibase-maven</module>
     </modules>
     <dependencies>
         <dependency>
