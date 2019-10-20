@@ -24,6 +24,6 @@
 
 	</dependencies>
 	<build>
-		<finalName>servlets</finalName>
+		<finalName>sandbox-servlets</finalName>
 	</build>
 </project>
