@@ -32,11 +32,13 @@
         <module>sandbox-mockito</module>
         <module>sandbox-jxbrowser</module>
         <module>sandbox-pdfbox</module>
-        <module>sandbox-pdfbox</module>
         <module>sandbox-jackson</module>
         <module>sandbox-wicket</module>
         <module>sandbox-slf4j</module>
         <module>sandbox-selenium</module>
+        <module>sandbox-jasper-embedded</module>
+        <module>sandbox-hibernate5-standalone</module>
+        <module>sandbox-hibernate5-spring5-integration</module>
     </modules>
 
     <dependencies>

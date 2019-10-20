@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DischargeLetter" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="5" bottomMargin="5" uuid="9e09149c-a4f3-4eaf-b2b5-c8f900705193">
+	<property name="ireport.zoom" value="1.1000000000000025"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.jasperserver.reportUnit" value="/pva/hello_world"/>
+	<property name="ireport.jasperserver.url" value="http://tvision.srv.dsh.at:9008/jasperserver/services/repository"/>
+	<property name="ireport.jasperserver.report.resource" value="/pva/PVA_documents/printouts/PRINT_AEB_files/MainJrxml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="hanging-indentation-style">
+		<box leftPadding="23"/>
+		<paragraph firstLineIndent="-23"/>
+	</style>
+	<queryString language="json">
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="50">
+			<textField>
+				<reportElement x="229" y="13" width="100" height="20" uuid="e6214e17-3362-4f97-976c-6002b4f1208d"/>
+				<textFieldExpression><![CDATA["Hi"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="120" y="13" width="100" height="20" uuid="c322e40a-0473-4720-ae55-2012ba7fc1f5"/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

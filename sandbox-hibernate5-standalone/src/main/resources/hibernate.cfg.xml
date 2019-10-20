@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sandbox_hibernate</property>
+		<property name="hibernate.connection.username">SANDBOX_HIBERNATE</property>
+		<property name="hibernate.connection.password">SANDBOX_HIBERNATE</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>
+
+		<!-- <property name="hibernate.hbm2ddl.auto">create-drop</property> -->
+
+		<mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity" />
+		<mapping class="com.github.lazyf1sh.sandbox.persistence.entities.BookEntity" />
+		<mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity" />
+		<mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded" />
+
+	</session-factory>
+	
+	
+</hibernate-configuration>
