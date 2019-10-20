@@ -5,6 +5,19 @@ drop table BOOK2;
 drop table PAGE2;
 drop table BOOK2_SEQ;
 
+create TABLE TICKET
+(
+    TICKET_ID  integer,
+    TICKET_DESCRIPTION VARCHAR(255)
+);
+
+create TABLE PROPERTIES
+(
+    PROPERTIES_KEY integer,
+    PROPERTIES_VALUE VARCHAR(255)
+);
+
+
 create TABLE BOOK
 (
     BOOK_KEY  integer,

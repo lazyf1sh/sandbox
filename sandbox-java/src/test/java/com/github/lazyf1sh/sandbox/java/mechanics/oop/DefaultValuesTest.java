@@ -13,9 +13,9 @@ public class DefaultValuesTest
     {
         DefaultValues defaultValues = new DefaultValues();
 
-        assertEquals(defaultValues.str, null);
+        assertNull(defaultValues.str);
         assertEquals(defaultValues.myInt, 0);
-        assertEquals(defaultValues.myBool, false);
+        assertFalse(defaultValues.myBool);
     }
 
 
