@@ -1,0 +1,1 @@
+- Please use hbm2ddl or sql script from https://github.com/lazyf1sh/sandbox-sql to generate database schema.

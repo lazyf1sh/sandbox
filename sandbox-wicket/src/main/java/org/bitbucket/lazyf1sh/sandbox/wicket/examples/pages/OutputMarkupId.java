@@ -10,7 +10,7 @@ public class OutputMarkupId extends WebPage
 
     public OutputMarkupId()
     {
-        final TextField<String> username = new TextField<String>("username", Model.of("1"));
+        final TextField<String> username = new TextField<>("username", Model.of("1"));
         username.setOutputMarkupId(true);
 
         // when setOutputMarkupId is false:
