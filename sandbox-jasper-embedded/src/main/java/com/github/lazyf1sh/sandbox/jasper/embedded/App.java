@@ -16,7 +16,6 @@ import net.sf.jasperreports.engine.JasperReport;
 
 /**
  * Hello world!
- *
  */
 public class App
 {
