@@ -6,6 +6,7 @@
 //
 ///**
 // * No maven artifact available for this example. Jar should be downloaded manually and placed to the classpath.
+// * also this lib reuiqres licence, that can be aquired from jxbrowser website
 // *
 // */
 //public class App
