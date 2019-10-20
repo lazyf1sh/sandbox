@@ -17,7 +17,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	<name>sandbox-jasper-embedded</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>

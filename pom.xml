@@ -6,7 +6,6 @@
     <artifactId>sandbox-java-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>sandbox-parent</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
     <properties>
@@ -36,7 +35,7 @@
         <module>sandbox-camel</module>
         <module>sandbox-jdbc</module>
         <module>sandbox-liquibase-maven</module>
-        <module>sandbox-log4j2</module>
+        <module>sandbox-log4j</module>
     </modules>
     <dependencies>
         <dependency>
