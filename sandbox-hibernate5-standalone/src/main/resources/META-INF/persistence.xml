@@ -14,8 +14,8 @@
         <class>com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded</class>
         <class>com.github.lazyf1sh.sandbox.persistence.entities.PageEntity</class>
         <properties>
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
+<!--            <property name="hibernate.show_sql" value="true"/>-->
+<!--            <property name="hibernate.format_sql" value="true"/>-->
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
             <property name="hibernate.connection.url" value="jdbc:h2:mem:sandbox_hibernate;DB_CLOSE_DELAY=-1"/>
             <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>

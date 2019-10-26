@@ -18,7 +18,7 @@ public class HibernateDirtyChecking
 
     public void triggerDirtyCheck()
     {
-        Session session = HibernateSessionFactory.getSession();
+        Session session = HibernateSessionFactory.getCurrentSession();
         session.getTransaction().begin();
 
         BookEntity book = session.find(BookEntity.class, 0);
@@ -36,7 +36,7 @@ public class HibernateDirtyChecking
 
     public static void verifyDirtyCheckWorks()
     {
-        Session session = HibernateSessionFactory.getSession();
+        Session session = HibernateSessionFactory.getCurrentSession();
         session.getTransaction().begin();
 
         BookEntity book = session.find(BookEntity.class, 0);
@@ -53,7 +53,7 @@ public class HibernateDirtyChecking
     @BeforeClass
     public static void populate()
     {
-        Session session = HibernateSessionFactory.getSession();
+        Session session = HibernateSessionFactory.getCurrentSession();
         session.getTransaction().begin();
 
         BookEntity book = new BookEntity();

@@ -1,5 +1,8 @@
 package com.github.lazyf1sh.sandbox.persistence.entities;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,6 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "BOOK")
+@Cache(region = "personCache", usage = CacheConcurrencyStrategy.READ_ONLY)
 public class BookEntity
 {
     @Id

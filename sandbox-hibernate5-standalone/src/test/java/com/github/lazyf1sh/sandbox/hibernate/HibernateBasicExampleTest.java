@@ -20,13 +20,13 @@ public class HibernateBasicExampleTest
         bookEntity.setName("Harry Potter");
         bookEntity.setId(0);
 
-        Session session = HibernateSessionFactory.getSession();
+        Session session = HibernateSessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.persist(bookEntity);
         session.getTransaction().commit();
         session.close();
 
-        session = HibernateSessionFactory.getSession();
+        session = HibernateSessionFactory.getCurrentSession();
         session.getTransaction().begin();
         BookEntity entity = session.find(BookEntity.class, 0);
         Assert.assertEquals(entity.getName(), "Harry Potter");

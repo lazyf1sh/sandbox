@@ -16,12 +16,12 @@ public class ReadInTheSameTransaction
         parentEntity.setId(4);
         parentEntity.setName("test4");
 
-        Session session = HibernateSessionFactory.getSession();
+        Session session = HibernateSessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.saveOrUpdate(parentEntity);
         session.getTransaction().commit();
 
-        session = HibernateSessionFactory.getSession();
+        session = HibernateSessionFactory.getCurrentSession();
         session.getTransaction().begin();
         ParentEntity entity = session.get(ParentEntity.class, 4);
         entity.setName("test4-2");
@@ -38,12 +38,12 @@ public class ReadInTheSameTransaction
         parentEntity.setId(4);
         parentEntity.setName("test4");
 
-        Session session = HibernateSessionFactory.getSession();
+        Session session = HibernateSessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.saveOrUpdate(parentEntity);
         session.getTransaction().commit();
 
-        session = HibernateSessionFactory.getSession();
+        session = HibernateSessionFactory.getCurrentSession();
         session.getTransaction().begin();
         ParentEntity entity = session.get(ParentEntity.class, 4);
         entity.setName("test4-2");
@@ -60,12 +60,12 @@ public class ReadInTheSameTransaction
         parentEntity.setId(4);
         parentEntity.setName("test4");
 
-        Session session = HibernateSessionFactory.getSession();
+        Session session = HibernateSessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.saveOrUpdate(parentEntity);
         session.getTransaction().commit();
 
-        session = HibernateSessionFactory.getSession();
+        session = HibernateSessionFactory.getCurrentSession();
         session.getTransaction().begin();
         ParentEntity entity = session.get(ParentEntity.class, 4);
         entity.setName("test4-2");
