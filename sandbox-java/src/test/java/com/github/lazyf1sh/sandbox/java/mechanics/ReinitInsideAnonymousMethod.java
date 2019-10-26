@@ -8,8 +8,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * This example shows ...
- * Example level: medium
+ * This example shows vairable reinitialization inside abstact method
+ * @author Ivan Kopylov
  */
 public class ReinitInsideAnonymousMethod
 {

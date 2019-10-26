@@ -1,7 +1,9 @@
-package com.github.lazyf1sh.sandbox.java.mechanics.oop.javaIsAlwaysPassByValue;
+package com.github.lazyf1sh.sandbox.java.mechanics.core;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.github.lazyf1sh.sandbox.java.mechanics.oop.javaIsAlwaysPassByValue.Dog;
 
 /**
  * The Java Spec says that everything in Java is pass-by-value.
@@ -10,7 +12,7 @@ import org.junit.Test;
  *
  * @author Ivan Kopylov
  */
-public class JavaPassByValueTest
+public class JavaisAlwaysPassedByValueTest
 {
     @Test
     public void foo()

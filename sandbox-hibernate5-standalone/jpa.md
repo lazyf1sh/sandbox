@@ -7,11 +7,12 @@
 - What is entity.
 - entity fk, composite fk
 - org.hibernate.Criteria vs javax.persistence.criteria.CriteriaBuilder
+- lifecycle: entities transitions, flush, force flush
 - what if cascades defined in the db, but not in the entity 
 - hibernate transaction vs database transaction
+- layers of code
 - hbm2ddl resets data every time application starts
 - ddbl2hbm how to
-- entities transitions
 - potential problems: N+1, out of session, Composite-id class must implement Serializable
 - annotations: mapping, 
 - criteria builder: joins, conditions, grouping
