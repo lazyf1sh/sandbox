@@ -11,9 +11,8 @@ import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 /**
  * Difference vs merge and persist
  */
-public class JpaMerge
+public class JpaMergeExampleTest
 {
-
     @Test
     public void merge()
     {

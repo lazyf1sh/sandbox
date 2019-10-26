@@ -12,7 +12,7 @@ import com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity;
 import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
-public class PersistExample
+public class JpaBasicPersistChildExample
 {
     @Test
     public void run()

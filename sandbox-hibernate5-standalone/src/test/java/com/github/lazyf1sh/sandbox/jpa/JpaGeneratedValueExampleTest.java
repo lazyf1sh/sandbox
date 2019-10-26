@@ -11,7 +11,7 @@ import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 /**
  * JPA @GeneratedValue examples
  */
-public class BasicExampleJpaGeneratedValue
+public class JpaGeneratedValueExampleTest
 {
     @Test
     public void run()

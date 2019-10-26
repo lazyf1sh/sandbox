@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 /**
  * Difference between EntityManager#find and EntityManager#getReference
  */
-public class EntityManagerGetReferenceVsFindTest
+public class JpaFindvsGetReference
 {
     @BeforeClass
     public static void populate()

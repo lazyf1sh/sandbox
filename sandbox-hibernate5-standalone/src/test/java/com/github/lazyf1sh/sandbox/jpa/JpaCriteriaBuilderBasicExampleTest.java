@@ -13,7 +13,7 @@ import org.junit.Test;
 import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
-public class MinimalExampleTest
+public class JpaCriteriaBuilderBasicExampleTest
 {
     @Test
     public void run()

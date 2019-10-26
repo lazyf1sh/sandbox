@@ -14,7 +14,7 @@ import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 /**
  *
  */
-public class EntityOutOfTransaction
+public class JpaEntityOutOfTransactionExampleTest
 {
     private int pageId;
 

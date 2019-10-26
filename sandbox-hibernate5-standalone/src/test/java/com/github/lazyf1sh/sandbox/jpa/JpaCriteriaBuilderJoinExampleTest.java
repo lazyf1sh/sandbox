@@ -21,7 +21,7 @@ import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
  *
  * @author Ivan Kopylov
  */
-public class CriteriaBuilderJoinExampleTest
+public class JpaCriteriaBuilderJoinExampleTest
 {
     @Before
     public void prepareData()

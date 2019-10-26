@@ -11,7 +11,7 @@ import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 /**
  * Minimal JPA example - save and load saved entity
  */
-public class BasicExampleJpa
+public class JpaBasicExampleTest
 {
     @Test
     public void run()
