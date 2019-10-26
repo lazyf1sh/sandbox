@@ -10,10 +10,10 @@ public class Flask
     private String material;
 
     /**
-     * Constructor
-     * 1. Mandatory method - guarantess that object is initialized to work with.
-     * 2. Same as the class name.
-     * 3. Allocates memory.
+     * Constructor<br/>
+     * 1. Mandatory method - guarantess that object is initialized to work with.<br/>
+     * 2. Same as the class name.<br/>
+     * 3. Allocates memory.<br/>
      * 4. No return arg.
      */
     public Flask(final int milliliters, final String color, final String material)

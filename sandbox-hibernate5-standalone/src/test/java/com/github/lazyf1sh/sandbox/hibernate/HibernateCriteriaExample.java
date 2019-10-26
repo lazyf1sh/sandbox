@@ -12,7 +12,7 @@ import com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity;
 import com.github.lazyf1sh.sandbox.persistence.util.HibernateSessionFactory;
 
 /**
- * Purpose: to demonstrate org.hibernate.Criteria simpliest example.
+ * org.hibernate.Criteria simpliest example.
  *
  * @author Ivan Kopylov
  */
