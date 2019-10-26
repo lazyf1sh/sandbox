@@ -16,9 +16,13 @@ import org.junit.Test;
  */
 public class InmemoryExample
 {
-
     private static final String DB_FILE_NAME = "myFileName001";
 
+    /**
+     * By default, when a connection to the database is closed, the database is closed as well. If we want the database to last for as long as the JVM is running, we can specify the property DB_CLOSE_DELAY=-1
+     *
+     * @throws SQLException
+     */
     @Test
     public void inmemory() throws SQLException
     {

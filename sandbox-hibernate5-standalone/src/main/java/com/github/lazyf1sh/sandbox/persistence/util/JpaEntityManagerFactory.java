@@ -25,4 +25,12 @@ public class JpaEntityManagerFactory
         return emf.createEntityManager();
     }
 
+    /**
+     * drops the database when hbm2ddl = create-drop
+     */
+    public void closeFactory()
+    {
+        emf.close();
+    }
+
 }

@@ -2,10 +2,10 @@ package com.github.lazyf1sh.sandbox.jpa;
 
 import javax.persistence.EntityManager;
 
-import com.github.lazyf1sh.sandbox.persistence.entities.BookEntity;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.github.lazyf1sh.sandbox.persistence.entities.BookEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 /**
@@ -21,11 +21,10 @@ public class BasicExampleJpa
 
         BookEntity bookEntity = new BookEntity();
         bookEntity.setName("Harry Potter");
-        bookEntity.setId(2);
+        bookEntity.setId(0);
         entityManager.persist(bookEntity);
 
         entityManager.getTransaction().commit();
-
 
         BookEntity entity = entityManager.find(BookEntity.class, 0);
         Assert.assertEquals(entity.getName(), "Harry Potter");

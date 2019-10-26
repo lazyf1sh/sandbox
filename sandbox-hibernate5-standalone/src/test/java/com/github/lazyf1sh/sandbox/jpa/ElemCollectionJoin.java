@@ -34,8 +34,10 @@ public class ElemCollectionJoin
         TypedQuery<Ticket> query = entityManager.createQuery(cr);
         List<Ticket> parents = query.getResultList();
 
-        parents.get(0).getTicketDetails().getGenericProperties().getProperties();
-
+        if (parents.size() > 0)
+        {
+            parents.get(0).getTicketDetails().getGenericProperties().getProperties();
+        }
     }
 
 }

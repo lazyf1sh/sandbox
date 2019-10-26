@@ -11,18 +11,18 @@ import javax.persistence.Table;
  * @author Ivan Kopylov
  */
 @Entity
-@Table(name = "USER")
+@Table(name = "USERS")
 public class UserEntity implements Serializable
 {
     @Id
-    @Column(name = "USER_LOGIN")
+    @Column(name = "USERS_LOGIN")
     private String name;
 
     @Id
-    @Column(name = "USER_SSN")
+    @Column(name = "USERS_SSN")
     private int ssn;
 
-    @Column(name = "USER_CITY")
+    @Column(name = "USERS_CITY")
     private String city;
 
     public String getName()

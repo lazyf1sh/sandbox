@@ -1,0 +1,3 @@
+            ClassPool pool = ClassPool.getDefault();
+        CtMethod method = pool.get(Component.class.getCanonicalName()).getDeclaredMethod("getString", new CtClass[] { pool.get(String.class.getCanonicalName()) });
+        method.setModifiers(method.getModifiers() & ~Modifier.FINAL);

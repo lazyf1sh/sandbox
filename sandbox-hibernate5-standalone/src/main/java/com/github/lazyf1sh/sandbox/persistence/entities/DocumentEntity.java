@@ -25,8 +25,8 @@ public class DocumentEntity
     @ManyToOne
     @JoinColumns
     ({
-        @JoinColumn(name = "DOCUMENT_USER_LOGIN", referencedColumnName = "USER_LOGIN"),
-        @JoinColumn(name = "DOCUMENT_USER_SSN", referencedColumnName = "USER_SSN")
+        @JoinColumn(name = "DOCUMENT_USERS_LOGIN", referencedColumnName = "USERS_LOGIN"),
+        @JoinColumn(name = "DOCUMENT_USERS_SSN", referencedColumnName = "USERS_SSN")
     })
     private UserEntity user;
 

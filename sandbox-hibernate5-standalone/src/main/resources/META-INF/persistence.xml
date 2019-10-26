@@ -15,13 +15,12 @@
         <class>com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity</class>
         <class>com.github.lazyf1sh.sandbox.persistence.entities.Page2Entity</class>
         <properties>
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
-            <property name="hibernate.connection.username" value="hibernate" />
-            <property name="hibernate.connection.password" value="hibernate" />
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/sandbox_hibernate?serverTimezone=UTC" />
-            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+<!--            <property name="hibernate.show_sql" value="true"/>-->
+<!--            <property name="hibernate.format_sql" value="true"/>-->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.connection.url" value="jdbc:h2:file:~/sandbox_hibernate;MV_STORE=false"/>
+            <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
         </properties>
     </persistence-unit>
 </persistence>
