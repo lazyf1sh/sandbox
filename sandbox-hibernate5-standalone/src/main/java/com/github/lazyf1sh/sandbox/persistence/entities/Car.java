@@ -8,25 +8,29 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+/**
+ * @author Ivan Kopylov
+ */
 @Entity
-@Table(name = "BOOK2")
-public class Book2Entity
+@Table(name = "CAR")
+public class Car
 {
     @Id
-    @GeneratedValue(generator = "book2seqgen", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "book2seqgen", sequenceName = "BOOK2_SEQ", allocationSize = 1)
-    @Column(name = "BOOK2_KEY")
+    @GeneratedValue(generator = "carSeqGenerator", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "carSeqGenerator", sequenceName = "CAR_SEQ", allocationSize = 1)
+    @Column(name = "CAR_KEY")
     private int key;
+
+    @Column(name = "CAR_NAME")
+    private String name;
 
     public int getKey()
     {
         return key;
     }
 
-    @Column(name = "BOOK2_NAME")
-    private String name;
-
-    public void setKey(int key) {
+    public void setKey(final int key)
+    {
         this.key = key;
     }
 

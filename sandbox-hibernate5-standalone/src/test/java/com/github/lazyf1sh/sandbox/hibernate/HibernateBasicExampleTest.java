@@ -8,7 +8,8 @@ import com.github.lazyf1sh.sandbox.persistence.entities.BookEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.HibernateSessionFactory;
 
 /**
- * Minimal example with Hibernate session - save and load saved entity
+ * Minimal example with Hibernate session - save and load saved entity<br/>
+ * Example available at: https://github.com/lazyf1sh/sandbox-java
  */
 public class HibernateBasicExampleTest
 {

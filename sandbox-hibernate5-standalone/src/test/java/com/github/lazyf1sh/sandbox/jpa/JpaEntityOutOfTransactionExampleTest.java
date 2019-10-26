@@ -5,10 +5,11 @@ import javax.persistence.EntityManager;
 import org.hibernate.LazyInitializationException;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity;
-import com.github.lazyf1sh.sandbox.persistence.entities.Page2Entity;
+import com.github.lazyf1sh.sandbox.persistence.entities.BookEntity;
+import com.github.lazyf1sh.sandbox.persistence.entities.PageEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 /**
@@ -16,31 +17,7 @@ import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
  */
 public class JpaEntityOutOfTransactionExampleTest
 {
-    private int pageId;
-
-    @Before
-    public void populate()
-    {
-        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
-        entityManager.getTransaction().begin();
-
-        Book2Entity book2Entity = new Book2Entity();
-        book2Entity.setName("The Lord of the Rings");
-
-        Page2Entity page2Entity = new Page2Entity();
-        page2Entity.setAnnotations("1. Annotation; 2. Annotation");
-        page2Entity.setName("");
-        page2Entity.setBook2Entity(book2Entity);
-
-        entityManager.persist(book2Entity);
-        entityManager.persist(page2Entity);
-
-        pageId = page2Entity.getKey();
-
-        entityManager.getTransaction().commit();
-        entityManager.close();
-    }
-
+    private static int pageId;
 
     @Test
     public void normalBehaviour()
@@ -48,17 +25,12 @@ public class JpaEntityOutOfTransactionExampleTest
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
 
-        Page2Entity page2Entity = entityManager.find(Page2Entity.class, pageId);
-        if (page2Entity != null)
-        {
-            Assert.assertEquals("asserts pk equality", "1. Annotation; 2. Annotation", page2Entity.getAnnotations());
-            Assert.assertEquals("asserts book name equality", page2Entity.getName(), "");
-        } else
-        {
-            Assert.fail();
-        }
+        PageEntity page = entityManager.find(PageEntity.class, pageId);
+        Assert.assertEquals("asserts pk equality", "1. Annotation; 2. Annotation", page.getAnnotations());
+        Assert.assertEquals("asserts book name equality", page.getName(), "");
 
         entityManager.getTransaction().commit();
+        entityManager.close();
     }
 
     @Test(expected = LazyInitializationException.class)
@@ -67,21 +39,16 @@ public class JpaEntityOutOfTransactionExampleTest
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
 
-        Page2Entity page2Entity = entityManager.find(Page2Entity.class, pageId);
-        if (page2Entity != null)
-        {
-            Assert.assertEquals("asserts pk equality", "1. Annotation; 2. Annotation", page2Entity.getAnnotations());
-            Assert.assertEquals("asserts book name equality", page2Entity.getName(), "");
+        PageEntity page = entityManager.find(PageEntity.class, pageId);
 
+        Assert.assertEquals("asserts pk equality", "1. Annotation; 2. Annotation", page.getAnnotations());
+        Assert.assertEquals("asserts book name equality", page.getName(), "");
 
-            entityManager.getTransaction().commit();
-            entityManager.close();
+        entityManager.getTransaction().commit();
+        entityManager.close();
 
-            page2Entity.getBook2Entity();
-        } else
-        {
-            Assert.fail();
-        }
+        BookEntity book = page.getBook();
+        String name = book.getName();
     }
 
     @Test
@@ -90,22 +57,37 @@ public class JpaEntityOutOfTransactionExampleTest
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
 
-        Page2Entity page2Entity = entityManager.find(Page2Entity.class, pageId);
-        if (page2Entity != null)
-        {
-            entityManager.getTransaction().commit();
-            entityManager.close();
+        PageEntity page = entityManager.find(PageEntity.class, pageId);
 
-            Assert.assertEquals("asserts pk equality", "1. Annotation; 2. Annotation", page2Entity.getAnnotations());
-            Assert.assertEquals("asserts book name equality", page2Entity.getName(), "");
+        entityManager.getTransaction().commit();
+        entityManager.close();
 
-            Book2Entity book2Entity = page2Entity.getBook2Entity();
-            String name = book2Entity.getName();
-            System.out.println(name);
-        } else
-        {
-            Assert.fail();
-        }
+        Assert.assertEquals("asserts pk equality", "1. Annotation; 2. Annotation", page.getAnnotations());
+        Assert.assertEquals("asserts book name equality", page.getName(), "");
+
+        BookEntity book = page.getBook();
     }
 
+    @BeforeClass
+    public static void populate()
+    {
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
+        entityManager.getTransaction().begin();
+
+        BookEntity BookEntity = new BookEntity();
+        BookEntity.setName("The Lord of the Rings");
+
+        PageEntity page2Entity = new PageEntity();
+        page2Entity.setAnnotations("1. Annotation; 2. Annotation");
+        page2Entity.setName("");
+        page2Entity.setBook(BookEntity);
+
+        entityManager.persist(BookEntity);
+        entityManager.persist(page2Entity);
+
+        pageId = page2Entity.getKey();
+
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
 }

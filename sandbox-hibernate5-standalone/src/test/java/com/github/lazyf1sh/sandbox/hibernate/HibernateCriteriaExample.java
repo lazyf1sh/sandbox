@@ -6,13 +6,15 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity;
+import com.github.lazyf1sh.sandbox.persistence.entities.BookEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.HibernateSessionFactory;
 
 /**
- * org.hibernate.Criteria simpliest example.
+ * org.hibernate.Criteria simpliest example.<br/>
+ * Example available at: https://github.com/lazyf1sh/sandbox-java
  *
  * @author Ivan Kopylov
  */
@@ -24,14 +26,28 @@ public class HibernateCriteriaExample
         Session session = HibernateSessionFactory.getSession();
         session.getTransaction().begin();
 
-        Criteria criteria = session.createCriteria(Book2Entity.class);
+        Criteria criteria = session.createCriteria(BookEntity.class);
         criteria.add(Restrictions.eq("name", "The Lord of the Rings"));
-        List<Book2Entity> list = criteria.list();
-
-        session.getTransaction().commit();
+        List<BookEntity> list = criteria.list();
 
         Assert.assertTrue(list.size() > 0);
         Assert.assertEquals("The Lord of the Rings", list.get(0).getName());
 
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    @BeforeClass
+    public static void populate()
+    {
+        BookEntity book = new BookEntity();
+        book.setId(0);
+        book.setName("The Lord of the Rings");
+
+        Session session = HibernateSessionFactory.getSession();
+        session.getTransaction().begin();
+        session.save(book);
+        session.getTransaction().commit();
+        session.close();
     }
 }
