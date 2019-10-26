@@ -14,18 +14,23 @@ public final class HibernateSessionFactory
         try
         {
             return new Configuration().configure().buildSessionFactory(); //looks for hibernate.cfg.xml
-        }
-        catch (HibernateException e)
+        } catch (HibernateException e)
         {
             System.out.println("Hibernate session factory configuration failed " + e);
             throw new ExceptionInInitializerError();
         }
     }
 
-    public static Session getSession()
+    public static Session getCurrentSession()
     {
         return sessionFactory.getCurrentSession();
     }
+
+    public static Session openSession()
+    {
+        return sessionFactory.openSession();
+    }
+
 
     private HibernateSessionFactory()
     {

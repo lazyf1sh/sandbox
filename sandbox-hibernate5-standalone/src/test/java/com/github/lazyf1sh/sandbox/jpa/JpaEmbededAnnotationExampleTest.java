@@ -19,7 +19,7 @@ public class JpaEmbededAnnotationExampleTest
     @Test
     public void dsad()
     {
-        EntityManager entityManager = HibernateSessionFactory.getSession();
+        EntityManager entityManager = HibernateSessionFactory.getCurrentSession();
         entityManager.getTransaction().begin();
 
         OrganizationEntity organization = entityManager.find(OrganizationEntity.class, 0);
@@ -34,7 +34,7 @@ public class JpaEmbededAnnotationExampleTest
     @BeforeClass
     public static void populate()
     {
-        EntityManager entityManager = HibernateSessionFactory.getSession();
+        EntityManager entityManager = HibernateSessionFactory.getCurrentSession();
         entityManager.getTransaction().begin();
 
         OrganizationBuildingDetails organizationBuildingDetails = new OrganizationBuildingDetails();
