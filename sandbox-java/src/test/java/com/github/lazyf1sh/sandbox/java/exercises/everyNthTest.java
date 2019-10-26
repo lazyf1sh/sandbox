@@ -3,6 +3,8 @@ package com.github.lazyf1sh.sandbox.java.exercises;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.github.lazyf1sh.sandbox.java.exercises.solutions.everyNth;
+
 /**
  * Source: https://codingbat.com/prob/p196441
  */

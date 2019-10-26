@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.exercises;
+package com.github.lazyf1sh.sandbox.java.exercises.solutions;
 
 /**
  * Given a string, return a new string where the last 3 chars are now in upper case.

@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.exercises;
+package com.github.lazyf1sh.sandbox.java.exercises.solutions;
 
 import java.util.ArrayList;
 import java.util.List;

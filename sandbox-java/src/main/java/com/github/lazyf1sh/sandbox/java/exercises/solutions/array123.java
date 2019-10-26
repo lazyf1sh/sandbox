@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.exercises;
+package com.github.lazyf1sh.sandbox.java.exercises.solutions;
 
 /**
  * https://codingbat.com/prob/p136041

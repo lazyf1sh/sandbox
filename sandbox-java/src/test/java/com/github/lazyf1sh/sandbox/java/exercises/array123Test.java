@@ -2,6 +2,8 @@ package com.github.lazyf1sh.sandbox.java.exercises;
 
 import org.junit.Test;
 
+import com.github.lazyf1sh.sandbox.java.exercises.solutions.array123;
+
 /**
  * @author Ivan Kopylov
  */

@@ -2,6 +2,8 @@ package com.github.lazyf1sh.sandbox.java.exercises;
 
 import org.junit.Test;
 
+import com.github.lazyf1sh.sandbox.java.exercises.solutions.in1020;
+
 import static org.junit.Assert.*;
 
 public class in1020Test {
