@@ -2,7 +2,7 @@ package com.github.lazyf1sh.sandbox.jpa;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity;
 import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
-import com.github.lazyf1sh.sandbox.persistence.util.HibernatePersistenceUtil;
+import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 import org.junit.Test;
 
 import javax.persistence.EntityManager;
@@ -13,7 +13,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.Set;
 
-public class NPlusOneBehaviour
+public class OrmNPlusOneBehaviour
 {
     /**
      * No additional queries without proxy's getter call
@@ -21,7 +21,7 @@ public class NPlusOneBehaviour
     @Test
     public void run()
     {
-        EntityManager entityManager = HibernatePersistenceUtil.getEntityManger();
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
 
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<ParentEntity> cr = cb.createQuery(ParentEntity.class);
@@ -44,7 +44,7 @@ public class NPlusOneBehaviour
     @Test
     public void run2()
     {
-        EntityManager entityManager = HibernatePersistenceUtil.getEntityManger();
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
 
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<ParentEntity> cr = cb.createQuery(ParentEntity.class);

@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
-import com.github.lazyf1sh.sandbox.persistence.util.HibernatePersistenceUtil;
+import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 import static org.junit.Assert.*;
 
@@ -19,8 +19,8 @@ public class EntityManagerGetReferenceVsFindTest
     @Test
     public void test()
     {
-        EntityManager em1 = HibernatePersistenceUtil.getEntityManger();
-        EntityManager em2 = HibernatePersistenceUtil.getEntityManger();
+        EntityManager em1 = JpaEntityManagerFactory.getEntityManger();
+        EntityManager em2 = JpaEntityManagerFactory.getEntityManger();
 
         // not a proxy with no lazy access;
         // if the object is not found in the database null is returned

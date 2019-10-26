@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity;
 import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
-import com.github.lazyf1sh.sandbox.persistence.util.HibernatePersistenceUtil;
+import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 public class PersistExample
 {
@@ -30,7 +30,7 @@ public class PersistExample
         childEntity.setParent(parentEntity);
         childs.add(childEntity);
 
-        EntityManager em = HibernatePersistenceUtil.getEntityManger();
+        EntityManager em = JpaEntityManagerFactory.getEntityManger();
         em.getTransaction().begin();
         em.persist(parentEntity);
         em.getTransaction().commit();

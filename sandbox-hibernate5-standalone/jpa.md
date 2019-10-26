@@ -1,17 +1,18 @@
-# JPA
+# JPA report plan
 
 - What is JPA.
 - Why Hibernate.
+- Difference from SQL.
 - What problem solves.
 - What is entity.
-- Difference from SQL.
+- entity fk, composite fk
 - org.hibernate.Criteria vs javax.persistence.criteria.CriteriaBuilder
 - what if cascades defined in the db, but not in the entity 
 - hibernate transaction vs database transaction
 - hbm2ddl resets data every time application starts
 - ddbl2hbm how to
 - entities transitions
-- N+1
+- potential problems: N+1, out of session, Composite-id class must implement Serializable
 - annotations: mapping, 
 - criteria builder: joins, conditions, grouping
 - entity manager vs session

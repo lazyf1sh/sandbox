@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.Book2Entity;
 import com.github.lazyf1sh.sandbox.persistence.entities.Page2Entity;
-import com.github.lazyf1sh.sandbox.persistence.util.HibernatePersistenceUtil;
+import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 /**
  *
@@ -21,7 +21,7 @@ public class EntityOutOfTransaction
     @Before
     public void populate()
     {
-        EntityManager entityManager = HibernatePersistenceUtil.getEntityManger();
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
 
         Book2Entity book2Entity = new Book2Entity();
@@ -45,7 +45,7 @@ public class EntityOutOfTransaction
     @Test
     public void normalBehaviour()
     {
-        EntityManager entityManager = HibernatePersistenceUtil.getEntityManger();
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
 
         Page2Entity page2Entity = entityManager.find(Page2Entity.class, pageId);
@@ -64,7 +64,7 @@ public class EntityOutOfTransaction
     @Test(expected = LazyInitializationException.class)
     public void outOfTransactionNoFkNoGetter()
     {
-        EntityManager entityManager = HibernatePersistenceUtil.getEntityManger();
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
 
         Page2Entity page2Entity = entityManager.find(Page2Entity.class, pageId);
@@ -87,7 +87,7 @@ public class EntityOutOfTransaction
     @Test
     public void outOfTransactionNoFkGet()
     {
-        EntityManager entityManager = HibernatePersistenceUtil.getEntityManger();
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
 
         Page2Entity page2Entity = entityManager.find(Page2Entity.class, pageId);

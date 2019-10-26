@@ -6,7 +6,7 @@ import com.github.lazyf1sh.sandbox.persistence.entities.BookEntity;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.github.lazyf1sh.sandbox.persistence.util.HibernatePersistenceUtil;
+import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 /**
  * Minimal JPA example - save and load saved entity
@@ -16,7 +16,7 @@ public class BasicExampleJpa
     @Test
     public void run()
     {
-        EntityManager entityManager = HibernatePersistenceUtil.getEntityManger();
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
 
         BookEntity bookEntity = new BookEntity();

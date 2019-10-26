@@ -12,7 +12,7 @@ import javax.persistence.criteria.Root;
 import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket;
-import com.github.lazyf1sh.sandbox.persistence.util.HibernatePersistenceUtil;
+import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 /**
  * @author Ivan Kopylov
@@ -22,7 +22,7 @@ public class ElemCollectionJoin
     @Test
     public void dasd()
     {
-        EntityManager entityManager = HibernatePersistenceUtil.getEntityManger();
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
 
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Ticket> cr = cb.createQuery(Ticket.class);

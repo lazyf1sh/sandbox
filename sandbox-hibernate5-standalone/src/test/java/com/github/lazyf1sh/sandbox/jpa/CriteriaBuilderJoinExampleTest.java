@@ -11,7 +11,7 @@ import javax.persistence.criteria.Root;
 import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
-import com.github.lazyf1sh.sandbox.persistence.util.HibernatePersistenceUtil;
+import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 /**
  * This example demonstrates minimal join boilerplate
@@ -23,7 +23,7 @@ public class CriteriaBuilderJoinExampleTest
     @Test
     public void run()
     {
-        EntityManager entityManager = HibernatePersistenceUtil.getEntityManger();
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<ParentEntity> cq = cb.createQuery(ParentEntity.class);
         Root<ParentEntity> root = cq.from(ParentEntity.class);
