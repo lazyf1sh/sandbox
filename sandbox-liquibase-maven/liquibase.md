@@ -7,3 +7,6 @@
 - One operation - one changeset, because DDL operations are run in different transactions.
 - Do not change past changesets. Write new ones to correct previous ones.
 - Change set id and author name: Combination of change set id and author name uniquely identifies a change set. Change set id should be logical and explanatory name and author name should easily identify the developer who created the change set.
+
+problems: formatting, changet changeset
+conventions
