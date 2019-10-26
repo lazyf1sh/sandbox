@@ -7,7 +7,7 @@ drop table BOOK2_SEQ;
 
 create TABLE TICKET
 (
-    TICKET_ID  integer,
+    TICKET_ID integer,
     TICKET_DESCRIPTION VARCHAR(255)
 );
 

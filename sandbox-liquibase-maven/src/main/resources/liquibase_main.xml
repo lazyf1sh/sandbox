@@ -5,34 +5,332 @@
         xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-
-<!--    <changeSet id="1" author="bob">-->
-<!--        <createTable tableName="department">-->
-<!--            <column name="id" type="int">-->
-<!--                <constraints primaryKey="true" nullable="false"/>-->
-<!--            </column>-->
-<!--            <column name="name" type="varchar(50)">-->
-<!--                <constraints nullable="false"/>-->
-<!--            </column>-->
-<!--            <column name="active" type="boolean" defaultValueBoolean="true"/>-->
-<!--        </createTable>-->
-<!--    </changeSet>-->
-
-<!--    <changeSet author="native_sql_1" id="sql-example">-->
-<!--        <sql>-->
-<!--            INSERT INTO department (id, name) VALUES (0, 'Bob')-->
-<!--        </sql>-->
-<!--    </changeSet>-->
-
-<!--    <changeSet author="native_sql_2" id="sql-example">-->
-<!--        <preConditions onFail="WARN">-->
-<!--            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM department WHERE name = 'Bob'</sqlCheck>-->
-<!--        </preConditions>-->
-<!--        <sql>-->
-<!--            INSERT INTO department (id, name) VALUES (0, 'John')-->
-<!--        </sql>-->
-<!--        <comment>A stitch in time saves nine!</comment>-->
-<!--    </changeSet>-->
+    <changeSet id="create_table_department" author="lazyf1sh">
+        <createTable tableName="department">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="active" type="boolean" defaultValueBoolean="true"/>
+        </createTable>
+        <comment>Purpose: basic changeset demo.</comment>
+    </changeSet>
+    <!-- -->
+    <changeSet id="add_pk_department" author="lazyf1sh">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <primaryKeyExists tableName="department" primaryKeyName="PK_department"/>
+            </not>
+        </preConditions>
+        <addPrimaryKey tableName="department" columnNames="id" constraintName="PK_department"/>
+    </changeSet>
+    <!--
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    -->
+    <changeSet id="native_sql_1" author="lazyf1sh">
+        <sql>
+            INSERT INTO department (id, name) VALUES (0, 'Bob')
+        </sql>
+        <comment>Purpose: to show native SQL.</comment>
+    </changeSet>
+    <!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    -->
+    <changeSet id="native_sql_2" author="lazyf1sh">
+        <preConditions onFail="WARN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM department WHERE name = 'Bob'</sqlCheck>
+        </preConditions>
+        <sql>
+            INSERT INTO department (id, name) VALUES (0, 'John')
+        </sql>
+    </changeSet>
+    <!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    -->
+    <changeSet id="bad_practice_01" author="lazyf1sh">
+        <createTable tableName="HOUSES">
+            <column name="ID" type="int"/>
+        </createTable>
+        <addPrimaryKey tableName="HOUSES" columnNames="ID"/>
+        <comment>DDL are run in different transactions</comment>
+    </changeSet>
+    <!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     -->
+    <changeSet id="good_practice_01_0" author="lazyf1sh">
+        <createTable tableName="HOUSES">
+            <column name="ID" type="int"/>
+        </createTable>
+    </changeSet>
+    <!-- -->
+    <changeSet id="good_practice_02" author="lazyf1sh">
+        <addPrimaryKey tableName="HOUSES" columnNames="ID"/>
+    </changeSet>
+    <!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    -->
+    <changeSet id="delete_native_sql" author="lazyf1sh" dbms="oracle">
+        <sql>
+            DELETE FROM department WHERE id = '10';
+        </sql>
+        <comment>Way to shoot the leg</comment>
+    </changeSet>
 </databaseChangeLog>
