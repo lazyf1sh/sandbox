@@ -1,16 +1,18 @@
 package com.github.lazyf1sh.sandbox.jpa;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityNotFoundException;
 
 import org.hibernate.proxy.HibernateProxy;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Difference between EntityManager#find and EntityManager#getReference
@@ -44,21 +46,38 @@ public class JpaFindvsGetReference
         entityManger.close();
     }
 
+    /**
+     * proxy, that provides lazy access, throws an error on access
+     * getReference can be considered the lazy version of find
+     * The object content is retrieved from the database and the persistent fields are initialized, lazily, when the entity object is first accessed.
+     */
     @Test
     public void getReference()
     {
         EntityManager entityManger = JpaEntityManagerFactory.getEntityManger();
 
-        // proxy, that provides lazy access, throws an error on access
-        // getReference can be considered the lazy version of find
-        // The object content is retrieved from the database and the persistent fields are initialized, lazily, when the entity object is first accessed.
-        ParentEntity parentEntityProxy = entityManger.getReference(ParentEntity.class, 999999999);
+        ParentEntity parent = entityManger.getReference(ParentEntity.class, 999999999); //no db hit, parent is proxy
 
-        assertTrue(parentEntityProxy.getClass().toString().contains("$HibernateProxy$"));
-        assertTrue(parentEntityProxy instanceof HibernateProxy);
+        assertEquals(999999999, parent.getId());//no init
+        assertTrue(parent.getClass().toString().contains("$HibernateProxy$"));
+        assertTrue(parent instanceof HibernateProxy);
+
         entityManger.close();
     }
 
+    @Test(expected = EntityNotFoundException.class)
+    public void getReferenceException()
+    {
+        EntityManager entityManger = JpaEntityManagerFactory.getEntityManger();
 
+        ParentEntity parent = entityManger.getReference(ParentEntity.class, 999999999); //no db hit
+
+        assertEquals(999999999, parent.getId());//no init
+        assertTrue(parent.getClass().toString().contains("$HibernateProxy$"));
+        assertTrue(parent instanceof HibernateProxy);
+        parent.getName(); //produces exception
+
+        entityManger.close();
+    }
 
 }

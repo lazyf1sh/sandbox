@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 
 import org.hibernate.LazyInitializationException;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

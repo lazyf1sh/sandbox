@@ -22,7 +22,7 @@ public class ParentEntity
 	@Column(name = "PARENTTABLE_NAME")
 	private String name;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "parent", cascade = CascadeType.PERSIST)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "parent")
 	private Set<ChildEntity> childs;
 
 	public int getId()

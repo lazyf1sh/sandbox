@@ -10,6 +10,7 @@ import javax.persistence.criteria.Root;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity;
@@ -23,8 +24,8 @@ import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
  */
 public class JpaCriteriaBuilderJoinExampleTest
 {
-    @Before
-    public void prepareData()
+    @BeforeClass
+    public static void prepareData()
     {
 
         ParentEntity parentEntity = new ParentEntity();
