@@ -32,7 +32,7 @@ public class OrmNPlusOneBehaviour
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 7; i < 12; i++)
         {
             ParentEntity parent = new ParentEntity();
             parent.setId(i);

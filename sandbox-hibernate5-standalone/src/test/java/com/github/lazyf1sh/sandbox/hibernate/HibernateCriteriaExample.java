@@ -23,7 +23,7 @@ public class HibernateCriteriaExample
     @Test
     public void run()
     {
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
 
         Criteria criteria = session.createCriteria(BookEntity.class);
@@ -41,10 +41,10 @@ public class HibernateCriteriaExample
     public static void populate()
     {
         BookEntity book = new BookEntity();
-        book.setId(0);
+        book.setId(2);
         book.setName("The Lord of the Rings");
 
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
         session.save(book);
         session.getTransaction().commit();

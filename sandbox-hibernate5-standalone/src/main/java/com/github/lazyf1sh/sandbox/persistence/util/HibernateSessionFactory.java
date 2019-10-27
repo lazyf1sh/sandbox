@@ -31,6 +31,11 @@ public final class HibernateSessionFactory
         return sessionFactory.openSession();
     }
 
+    public static void close()
+    {
+        sessionFactory.close();
+    }
+
 
     private HibernateSessionFactory()
     {

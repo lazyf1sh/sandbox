@@ -17,9 +17,9 @@ import com.github.lazyf1sh.sandbox.persistence.util.HibernateSessionFactory;
 public class JpaEmbededAnnotationExampleTest
 {
     @Test
-    public void dsad()
+    public void run()
     {
-        EntityManager entityManager = HibernateSessionFactory.getCurrentSession();
+        EntityManager entityManager = HibernateSessionFactory.openSession();
         entityManager.getTransaction().begin();
 
         OrganizationEntity organization = entityManager.find(OrganizationEntity.class, 0);
@@ -34,7 +34,7 @@ public class JpaEmbededAnnotationExampleTest
     @BeforeClass
     public static void populate()
     {
-        EntityManager entityManager = HibernateSessionFactory.getCurrentSession();
+        EntityManager entityManager = HibernateSessionFactory.openSession();
         entityManager.getTransaction().begin();
 
         OrganizationBuildingDetails organizationBuildingDetails = new OrganizationBuildingDetails();

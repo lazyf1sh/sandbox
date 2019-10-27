@@ -16,19 +16,19 @@ public class ReadInTheSameTransaction
         parentEntity.setId(4);
         parentEntity.setName("test4");
 
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
         session.saveOrUpdate(parentEntity);
         session.getTransaction().commit();
 
-        session = HibernateSessionFactory.getCurrentSession();
+        session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
         ParentEntity entity = session.get(ParentEntity.class, 4);
         entity.setName("test4-2");
 
         ParentEntity entity2 = session.find(ParentEntity.class, 4);
         Assert.assertEquals("message", "test4-2", entity2.getName());
-
+        session.close();
     }
 
     @Test
@@ -38,12 +38,12 @@ public class ReadInTheSameTransaction
         parentEntity.setId(4);
         parentEntity.setName("test4");
 
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
         session.saveOrUpdate(parentEntity);
         session.getTransaction().commit();
 
-        session = HibernateSessionFactory.getCurrentSession();
+        session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
         ParentEntity entity = session.get(ParentEntity.class, 4);
         entity.setName("test4-2");
@@ -60,12 +60,12 @@ public class ReadInTheSameTransaction
         parentEntity.setId(4);
         parentEntity.setName("test4");
 
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
         session.saveOrUpdate(parentEntity);
         session.getTransaction().commit();
 
-        session = HibernateSessionFactory.getCurrentSession();
+        session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
         ParentEntity entity = session.get(ParentEntity.class, 4);
         entity.setName("test4-2");

@@ -18,10 +18,10 @@ public class HibernateDirtyChecking
 
     public void triggerDirtyCheck()
     {
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
 
-        BookEntity book = session.find(BookEntity.class, 0);
+        BookEntity book = session.find(BookEntity.class, 1);
         if (book != null)
         {
             book.setName("Fred Brooks - The Mythical Man-Month");
@@ -36,10 +36,10 @@ public class HibernateDirtyChecking
 
     public static void verifyDirtyCheckWorks()
     {
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
 
-        BookEntity book = session.find(BookEntity.class, 0);
+        BookEntity book = session.find(BookEntity.class, 1);
         if (book != null)
         {
             Assert.assertEquals("Fred Brooks - The Mythical Man-Month", book.getName());
@@ -53,12 +53,12 @@ public class HibernateDirtyChecking
     @BeforeClass
     public static void populate()
     {
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
 
         BookEntity book = new BookEntity();
         book.setName("Maxim Dorofeev - Inbox Zero");
-        book.setId(0);
+        book.setId(1);
 
         session.persist(book);
 

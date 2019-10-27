@@ -73,18 +73,19 @@ public class JpaEntityOutOfTransactionExampleTest
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
 
-        BookEntity BookEntity = new BookEntity();
-        BookEntity.setName("The Lord of the Rings");
+        BookEntity book = new BookEntity();
+        book.setId(7);
+        book.setName("The Lord of the Rings");
 
-        PageEntity page2Entity = new PageEntity();
-        page2Entity.setAnnotations("1. Annotation; 2. Annotation");
-        page2Entity.setName("");
-        page2Entity.setBook(BookEntity);
+        PageEntity page = new PageEntity();
+        page.setAnnotations("1. Annotation; 2. Annotation");
+        page.setName("");
+        page.setBook(book);
 
-        entityManager.persist(BookEntity);
-        entityManager.persist(page2Entity);
+        entityManager.persist(book);
+        entityManager.persist(page);
 
-        pageId = page2Entity.getKey();
+        pageId = page.getKey();
 
         entityManager.getTransaction().commit();
         entityManager.close();

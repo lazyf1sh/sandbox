@@ -16,7 +16,8 @@ public class SaveChildBeforeParentTest
     @Test(expected = TransientPropertyValueException.class)
     public void saveChildBeforeParent()
     {
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
+        session.getTransaction().begin();
 
         ParentEntity parentEntity = new ParentEntity();
         parentEntity.setId(10);
@@ -27,8 +28,12 @@ public class SaveChildBeforeParentTest
         childEntity.setName("123");
         childEntity.setParent(parentEntity);
 
+
         session.saveOrUpdate(childEntity);
         session.saveOrUpdate(parentEntity);
+        session.getTransaction().commit();
+
+        session.close();
     }
 
 }

@@ -18,10 +18,10 @@ public class HibernateFirstLevelCache
     public static void populate()
     {
         BookEntity book = new BookEntity();
-        book.setId(0);
-        book.setName("The Lord of the Rings");
+        book.setId(4);
+        book.setName("Stephen King - Shining");
 
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
 
         session.save(book);
@@ -32,16 +32,16 @@ public class HibernateFirstLevelCache
     @Test
     public void no_db_hit()
     {
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
 
-        BookEntity book = session.load(BookEntity.class, 0);
+        BookEntity book = session.load(BookEntity.class, 4);
 
-        assertEquals(book.getName(), "The Lord of the Rings");
+        assertEquals(book.getName(), "Stephen King - Shining");
 
-        book = session.load(BookEntity.class, 0);
+        book = session.load(BookEntity.class, 4);
 
-        assertEquals(book.getName(), "The Lord of the Rings");
+        assertEquals(book.getName(), "Stephen King - Shining");
 
         session.getTransaction().commit();
         session.close();
@@ -50,16 +50,16 @@ public class HibernateFirstLevelCache
     @Test
     public void evict()
     {
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
 
-        BookEntity book = session.load(BookEntity.class, 0);
+        BookEntity book = session.load(BookEntity.class, 4);
 
-        assertEquals(book.getName(), "The Lord of the Rings");
+        assertEquals(book.getName(), "Stephen King - Shining");
         session.evict(book);
 
-        book = session.load(BookEntity.class, 0);
-        assertEquals(book.getName(), "The Lord of the Rings");
+        book = session.load(BookEntity.class, 4);
+        assertEquals(book.getName(), "Stephen King - Shining");
 
         session.getTransaction().commit();
         session.close();
@@ -68,16 +68,16 @@ public class HibernateFirstLevelCache
     @Test
     public void clear()
     {
-        Session session = HibernateSessionFactory.getCurrentSession();
+        Session session = HibernateSessionFactory.openSession();
         session.getTransaction().begin();
 
-        BookEntity book = session.load(BookEntity.class, 0);
+        BookEntity book = session.load(BookEntity.class, 4);
 
-        assertEquals(book.getName(), "The Lord of the Rings");
+        assertEquals(book.getName(), "Stephen King - Shining");
         session.clear();
 
-        book = session.load(BookEntity.class, 0);
-        assertEquals(book.getName(), "The Lord of the Rings");
+        book = session.load(BookEntity.class, 4);
+        assertEquals(book.getName(), "Stephen King - Shining");
 
         session.getTransaction().commit();
         session.close();

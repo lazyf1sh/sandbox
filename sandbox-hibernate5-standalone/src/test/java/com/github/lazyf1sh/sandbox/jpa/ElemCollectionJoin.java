@@ -20,7 +20,7 @@ import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 public class ElemCollectionJoin
 {
     @Test
-    public void dasd()
+    public void run()
     {
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
 

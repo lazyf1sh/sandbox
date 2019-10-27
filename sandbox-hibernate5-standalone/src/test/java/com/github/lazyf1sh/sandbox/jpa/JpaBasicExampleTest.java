@@ -20,14 +20,14 @@ public class JpaBasicExampleTest
         entityManager.getTransaction().begin();
 
         BookEntity bookEntity = new BookEntity();
-        bookEntity.setName("Harry Potter");
-        bookEntity.setId(0);
+        bookEntity.setName("Terry Pratchett - The Colour of Magic");
+        bookEntity.setId(6);
         entityManager.persist(bookEntity);
 
         entityManager.getTransaction().commit();
 
-        BookEntity entity = entityManager.find(BookEntity.class, 0);
-        Assert.assertEquals(entity.getName(), "Harry Potter");
+        BookEntity entity = entityManager.find(BookEntity.class, 6);
+        Assert.assertEquals(entity.getName(), "Terry Pratchett - The Colour of Magic");
         entityManager.close();
     }
 }
