@@ -17,8 +17,8 @@ public class ThreadLocalExampleTest
     public void run()
     {
         threadLocalValue1.set(1);
-        assertEquals(new Integer(1), threadLocalValue1.get());
-        assertEquals(new Integer(2), threadLocalValue2.get());
+        assertEquals(Integer.valueOf(1), threadLocalValue1.get());
+        assertEquals(Integer.valueOf(2), threadLocalValue2.get());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class ThreadLocalExampleTest
             public void run()
             {
                 assertNull(threadLocalValue1.get());
-                assertEquals(new Integer(2), threadLocalValue2.get());
+                assertEquals(Integer.valueOf(2), threadLocalValue2.get());
                 System.out.println("finished");
             }
         };

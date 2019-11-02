@@ -11,8 +11,9 @@ import java.util.TreeMap;
 /**
  * TreeMap sorts all its entries according to their natural ordering.<br/>
  * Complexity: O(log(n))<br/>
- * @see <a href="https://i.imgur.com/Uf622Ip.png">https://i.imgur.com/Uf622Ip.png</a>
  *
+ * @see <a href="https://i.imgur.com/Uf622Ip.png">Big O typical growth rates</a>
+ * @see <a href="https://i.imgur.com/uyqWi6O.png">red-black tree</a>
  */
 public class TreeMapExampleTest
 {
@@ -27,11 +28,11 @@ public class TreeMapExampleTest
         treeMap.put(2, "some value");
 
         Iterator<Integer> iterator = treeMap.keySet().iterator();
-        Assert.assertEquals(new Integer(1), iterator.next());
-        Assert.assertEquals(new Integer(2), iterator.next());
-        Assert.assertEquals(new Integer(3), iterator.next());
-        Assert.assertEquals(new Integer(4), iterator.next());
-        Assert.assertEquals(new Integer(5), iterator.next());
+        Assert.assertEquals(Integer.valueOf(1), iterator.next());
+        Assert.assertEquals(Integer.valueOf(2), iterator.next());
+        Assert.assertEquals(Integer.valueOf(3), iterator.next());
+        Assert.assertEquals(Integer.valueOf(4), iterator.next());
+        Assert.assertEquals(Integer.valueOf(5), iterator.next());
     }
 
     @Test
@@ -45,11 +46,11 @@ public class TreeMapExampleTest
         treeMap.put(5, "some value");
 
         Iterator<Integer> iterator = treeMap.keySet().iterator();
-        Assert.assertEquals(new Integer(5), iterator.next());
-        Assert.assertEquals(new Integer(4), iterator.next());
-        Assert.assertEquals(new Integer(3), iterator.next());
-        Assert.assertEquals(new Integer(2), iterator.next());
-        Assert.assertEquals(new Integer(1), iterator.next());
+        Assert.assertEquals(Integer.valueOf(5), iterator.next());
+        Assert.assertEquals(Integer.valueOf(4), iterator.next());
+        Assert.assertEquals(Integer.valueOf(3), iterator.next());
+        Assert.assertEquals(Integer.valueOf(2), iterator.next());
+        Assert.assertEquals(Integer.valueOf(1), iterator.next());
     }
 
     @Test
@@ -71,16 +72,10 @@ public class TreeMapExampleTest
         treeMap.put(5, "some value");
 
         Iterator<Integer> iterator = treeMap.keySet().iterator();
-        Assert.assertEquals(new Integer(1), iterator.next());
-        Assert.assertEquals(new Integer(2), iterator.next());
-        Assert.assertEquals(new Integer(3), iterator.next());
-        Assert.assertEquals(new Integer(4), iterator.next());
-        Assert.assertEquals(new Integer(5), iterator.next());
+        Assert.assertEquals(Integer.valueOf(1), iterator.next());
+        Assert.assertEquals(Integer.valueOf(2), iterator.next());
+        Assert.assertEquals(Integer.valueOf(3), iterator.next());
+        Assert.assertEquals(Integer.valueOf(4), iterator.next());
+        Assert.assertEquals(Integer.valueOf(5), iterator.next());
     }
-
-
-
-
-
-
 }
