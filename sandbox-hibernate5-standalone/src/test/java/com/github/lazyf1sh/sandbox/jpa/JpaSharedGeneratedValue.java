@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import javax.persistence.EntityManager;
 
-public class SharedGeneratedValue
+public class JpaSharedGeneratedValue
 {
     @Test
     public void run()
