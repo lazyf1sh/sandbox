@@ -4,6 +4,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import com.github.lazyf1sh.sandbox.wicket.RandomStringGenerator;
 
@@ -19,7 +20,9 @@ public class StaticModelExample extends WebPage
     {
         super.onInitialize();
 
-        Label message = new Label("message", Model.of(RandomStringGenerator.getNext()));
+        IModel<String> labelModel = Model.of(RandomStringGenerator.getNext());
+
+        Label message = new Label("message", labelModel);
         message.setOutputMarkupId(true);
         add(message);
 

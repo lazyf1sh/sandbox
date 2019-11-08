@@ -26,6 +26,8 @@
         <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.OrganizationBuildingDetails"/>
         <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity"/>
         <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded"/>
+        <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.GeneratedValueUuid"/>
+        <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.GeneratedValueUuid2"/>
 
         <!--        <property name="hibernate.format_sql">false</property>-->
     </session-factory>
