@@ -12,11 +12,11 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>3.6.3</version>
                 <configuration>
-                    <changeLogFile>src/main/resources/liquibase_main.xml</changeLogFile>
-                    <driver>com.mysql.cj.jdbc.Driver</driver>
-                    <url>jdbc:mysql://localhost:3306/sandbox_hibernate?serverTimezone=UTC</url>
-                    <username>hibernate</username>
-                    <password>hibernate</password>
+                    <changeLogFile>src/main/resources/liquibase_main.yaml</changeLogFile>
+                    <driver>org.h2.Driver</driver>
+                    <url>jdbc:h2:mem:myDb;DB_CLOSE_DELAY=-1</url>
+<!--                    <username>hibernate</username>-->
+<!--                    <password>hibernate</password>-->
                     <promptOnNonLocalDatabase>true</promptOnNonLocalDatabase>
                 </configuration>
                 <executions>
@@ -41,6 +41,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.17</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.200</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

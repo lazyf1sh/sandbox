@@ -19,7 +19,7 @@ public class ChildEntity
 	private String name;
 
 	@ManyToOne
-	@JoinColumn(name = "CHILDTABLE_PARENT_KEY", unique = false, nullable = false)
+	@JoinColumn(name = "CHILDTABLE_PARENT_KEY", nullable = false)
 	private ParentEntity parent;
 
 	public Integer getKey()

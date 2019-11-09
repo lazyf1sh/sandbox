@@ -1,11 +1,11 @@
 package com.github.lazyf1sh.sandbox.hibernate;
 
-import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
-import com.github.lazyf1sh.sandbox.persistence.util.HibernateSessionFactory;
-
 import org.hibernate.Session;
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
+import com.github.lazyf1sh.sandbox.persistence.util.HibernateSessionFactory;
 
 public class ReadInTheSameTransaction
 {

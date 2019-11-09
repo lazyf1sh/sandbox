@@ -4,9 +4,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class JpaEntityManagerFactory
+public final class JpaEntityManagerFactory
 {
-    private static EntityManagerFactory emf = buildEntityManagerFactory();
+    private static final EntityManagerFactory emf = buildEntityManagerFactory();
+
+    private JpaEntityManagerFactory()
+    {
+    }
 
     private static EntityManagerFactory buildEntityManagerFactory()
     {
@@ -28,7 +32,7 @@ public class JpaEntityManagerFactory
     /**
      * drops the database when hbm2ddl = create-drop
      */
-    public void closeFactory()
+    public static void closeFactory()
     {
         emf.close();
     }

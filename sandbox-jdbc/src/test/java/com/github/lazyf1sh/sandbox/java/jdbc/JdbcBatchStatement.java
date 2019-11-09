@@ -2,8 +2,6 @@ package com.github.lazyf1sh.sandbox.java.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -12,7 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * Reproduces 1+1 attack
+ * Batch reduces the number of database roundtrip which again results in significant performance gain.
  */
 public class JdbcBatchStatement
 {
@@ -20,7 +18,7 @@ public class JdbcBatchStatement
     private static final String SQL_INSERT_TEMPLATE = "";
 
     @BeforeClass
-    public static void create_table_populate() throws SQLException
+    public static void create_table() throws SQLException
     {
         Connection conn = null;
         Statement statement = null;

@@ -42,11 +42,6 @@ public class JdbcInsertExample
         }
     }
 
-    /**
-     * PreparedStatement are:<br/>
-     * 1. Precompiled.<br/>
-     * 2. Injection-safe.<br/>
-     */
     @Test
     public void run() throws SQLException
     {

@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Random;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -25,7 +24,7 @@ public class JdbcPreparedStatementInjection
     {
         Connection conn = null;
         Statement statement = null;
-        PreparedStatement preparedStatement;
+        PreparedStatement preparedStatement = null;
         try
         {
             conn = DriverManager.getConnection("jdbc:p6spy:h2:mem:myDb;DB_CLOSE_DELAY=-1");
@@ -43,7 +42,6 @@ public class JdbcPreparedStatementInjection
             preparedStatement.setInt(1, 1);
             preparedStatement.setString(2, "Opal");
             preparedStatement.executeUpdate();
-
         }
         finally
         {
@@ -54,6 +52,10 @@ public class JdbcPreparedStatementInjection
             if (conn != null)
             {
                 conn.close();
+            }
+            if (preparedStatement != null)
+            {
+                preparedStatement.close();
             }
         }
     }
@@ -104,6 +106,11 @@ public class JdbcPreparedStatementInjection
         }
     }
 
+    /**
+     * PreparedStatement are:<br/>
+     * 1. Precompiled.<br/>
+     * 2. Injection-safe.<br/>
+     */
     @Test
     public void injection_prevented() throws SQLException
     {

@@ -4,21 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
+/**
+ * @author Ivan Kopylov
+ */
 @Service
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class DocumentService
+public class RestServiceEmulator
 {
     @Autowired
-    private DocumentLoader documentLoader;
+    private BusinessLogicService businessLogicService;
 
-    public String runLogic()
+    public String frontEndCallAcceptor(String name)
     {
-        documentLoader.load("");
-        return "succes";
+        return businessLogicService.runLogic(name);
     }
 }

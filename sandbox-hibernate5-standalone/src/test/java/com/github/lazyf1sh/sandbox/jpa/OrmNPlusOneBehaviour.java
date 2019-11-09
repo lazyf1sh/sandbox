@@ -1,13 +1,8 @@
 package com.github.lazyf1sh.sandbox.jpa;
 
-import com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity;
-import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
-import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
-
-import org.hibernate.LazyInitializationException;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -15,9 +10,13 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity;
+import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
+import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 /**
  * ORM N+1 problem demonstration

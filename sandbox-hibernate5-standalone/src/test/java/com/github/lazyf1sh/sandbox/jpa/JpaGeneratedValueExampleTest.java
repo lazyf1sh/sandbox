@@ -2,7 +2,6 @@ package com.github.lazyf1sh.sandbox.jpa;
 
 import javax.persistence.EntityManager;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 

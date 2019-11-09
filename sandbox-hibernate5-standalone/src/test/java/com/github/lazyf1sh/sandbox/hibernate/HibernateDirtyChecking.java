@@ -1,11 +1,12 @@
 package com.github.lazyf1sh.sandbox.hibernate;
 
-import com.github.lazyf1sh.sandbox.persistence.entities.BookEntity;
-import com.github.lazyf1sh.sandbox.persistence.util.HibernateSessionFactory;
 import org.hibernate.Session;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.github.lazyf1sh.sandbox.persistence.entities.BookEntity;
+import com.github.lazyf1sh.sandbox.persistence.util.HibernateSessionFactory;
 
 public class HibernateDirtyChecking
 {

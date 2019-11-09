@@ -17,7 +17,7 @@ public class ParentEntity
 {
 	@Id
 	@Column(name = "PARENTTABLE_KEY", unique = true, nullable = false)
-	private Integer id;
+	private int id;
 
 	@Column(name = "PARENTTABLE_NAME")
 	private String name;
@@ -25,12 +25,12 @@ public class ParentEntity
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "parent", cascade = CascadeType.PERSIST)
 	private Set<ChildEntity> childs;
 
-	public Integer getId()
+	public int getId()
 	{
 		return id;
 	}
 
-	public void setId(Integer id)
+	public void setId(int id)
 	{
 		this.id = id;
 	}
@@ -52,6 +52,6 @@ public class ParentEntity
 
 	public void setChilds(final Set<ChildEntity> childs)
 	{
-		this.childs = new HashSet(childs);
+		this.childs = childs;
 	}
 }
