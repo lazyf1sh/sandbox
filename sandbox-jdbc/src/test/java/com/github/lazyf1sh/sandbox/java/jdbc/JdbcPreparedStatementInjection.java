@@ -12,6 +12,9 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * Reproduces 1+1 attack
+ */
 public class JdbcPreparedStatementInjection
 {
     private static final String CREATE_PARENTTABLE  = "CREATE TABLE GEMS (GEM_KEY INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GEM_KEY))";
@@ -22,7 +25,7 @@ public class JdbcPreparedStatementInjection
     {
         Connection conn = null;
         Statement statement = null;
-        PreparedStatement preparedStatement = null;
+        PreparedStatement preparedStatement;
         try
         {
             conn = DriverManager.getConnection("jdbc:p6spy:h2:mem:myDb;DB_CLOSE_DELAY=-1");
@@ -60,18 +63,17 @@ public class JdbcPreparedStatementInjection
     {
         Connection conn = null;
         Statement statement = null;
-
+        ResultSet rs = null;
         try
         {
             conn = DriverManager.getConnection("jdbc:p6spy:h2:mem:myDb;DB_CLOSE_DELAY=-1");
             statement = conn.createStatement();
-            Random random = new Random();
 
             //            String name_to_find = "Diamond";
             String name_to_find = "Diamond' OR 1+1 OR '";
 
             int count = 0;
-            ResultSet rs = statement.executeQuery("SELECT * FROM GEMS WHERE NAME like '" + name_to_find + "';");
+            rs = statement.executeQuery("SELECT * FROM GEMS WHERE NAME like '" + name_to_find + "';");
             while (rs.next())
             {
                 count++;
@@ -79,6 +81,7 @@ public class JdbcPreparedStatementInjection
                 String name = rs.getString(2);
                 System.out.println(String.format("id: %s, name: %s", id, name));
             }
+
             Assert.assertEquals(2, count);
 
             statement.close();
@@ -94,6 +97,10 @@ public class JdbcPreparedStatementInjection
             {
                 conn.close();
             }
+            if (rs != null)
+            {
+                rs.close();
+            }
         }
     }
 
@@ -102,7 +109,7 @@ public class JdbcPreparedStatementInjection
     {
         Connection conn = null;
         PreparedStatement preparedStatement = null;
-
+        ResultSet rs = null;
         try
         {
             conn = DriverManager.getConnection("jdbc:p6spy:h2:mem:myDb;DB_CLOSE_DELAY=-1");
@@ -113,7 +120,7 @@ public class JdbcPreparedStatementInjection
             //            String name_to_find = "Diamond OR 1+1";
             preparedStatement.setString(1, name_to_find);
 
-            ResultSet rs = preparedStatement.executeQuery();
+            rs = preparedStatement.executeQuery();
             int count = 0;
             while (rs.next())
             {
@@ -136,6 +143,10 @@ public class JdbcPreparedStatementInjection
             if (conn != null)
             {
                 conn.close();
+            }
+            if (rs != null)
+            {
+                rs.close();
             }
         }
     }
