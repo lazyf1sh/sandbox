@@ -23,6 +23,7 @@
         <module>sandbox-spring-webmvc</module>
         <module>sandbox-spring-standalone</module>
         <module>sandbox-mockito</module>
+        <module>sandbox-powermockito</module>
         <module>sandbox-jxbrowser</module>
         <module>sandbox-pdfbox1</module>
         <module>sandbox-jackson</module>
