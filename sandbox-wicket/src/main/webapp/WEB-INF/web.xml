@@ -9,14 +9,11 @@
         <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
         <init-param>
             <param-name>applicationClassName</param-name>
-            <param-value>org.bitbucket.lazyf1sh.sandbox.wicket.config.WicketApplication</param-value>
+            <param-value>com.github.lazyf1sh.sandbox.wicket.config.WicketApplication</param-value>
         </init-param>
     </filter>
     <filter-mapping>
         <filter-name>HelloWorldApplication</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
-
-
 </web-app>
