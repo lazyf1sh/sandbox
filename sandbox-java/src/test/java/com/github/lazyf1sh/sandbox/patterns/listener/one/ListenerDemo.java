@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.patterns.listener.one;
+package com.github.lazyf1sh.sandbox.patterns.listener.one;
 
 import org.junit.Test;
 
