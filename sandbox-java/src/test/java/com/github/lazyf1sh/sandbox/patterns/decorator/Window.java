@@ -1,6 +1,6 @@
-package com.github.lazyf1sh.sandbox.java.patterns.decorator;
+package com.github.lazyf1sh.sandbox.patterns.decorator;
 
-public interface Window
+interface Window
 {
 	void draw(); // Draws the Window
 

@@ -1,9 +1,9 @@
-package com.github.lazyf1sh.sandbox.java.patterns.decorator;
+package com.github.lazyf1sh.sandbox.patterns.decorator;
 
 /**
  * @author Ivan Kopylov
  */
-public class WindowDecorator implements Window
+class WindowDecorator implements Window
 {
 	protected Window windowToBeDecorated;
 

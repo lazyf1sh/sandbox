@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.patterns.listener.two;
+package com.github.lazyf1sh.sandbox.patterns.listener.two;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java;
+package com.github.lazyf1sh.sandbox.patterns.visitor;
 
 import java.util.Arrays;
 import java.util.List;

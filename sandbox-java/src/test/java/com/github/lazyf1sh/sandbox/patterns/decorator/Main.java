@@ -1,9 +1,9 @@
-package com.github.lazyf1sh.sandbox.java.patterns.decorator;
+package com.github.lazyf1sh.sandbox.patterns.decorator;
 
 /**
  * @author Ivan Kopylov
  */
-public class Main
+class Main
 {
 	// example from
 	// https://en.wikipedia.org/wiki/Decorator_pattern
