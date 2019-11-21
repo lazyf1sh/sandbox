@@ -1,8 +1,9 @@
 package com.github.lazyf1sh.sandbox.algorithms.hashing;
 
-import com.github.lazyf1sh.sandbox.algorithms.MergeSortAttemptOne;
-import org.junit.Test;
 import org.junit.Assert;
+import org.junit.Test;
+
+import com.github.lazyf1sh.sandbox.algorithms.MergeSortAttemptOne;
 
 /**
  * @author Ivan Kopylov

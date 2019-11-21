@@ -4,7 +4,8 @@ import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.java.exercises.solutions.in1020;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class in1020Test {
 

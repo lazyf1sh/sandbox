@@ -1,9 +1,9 @@
 package com.github.lazyf1sh.sandbox.java.jcl.lang.strings;
 
-import org.junit.Test;
-
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import org.junit.Test;
 
 public class dsajkldasd
 {

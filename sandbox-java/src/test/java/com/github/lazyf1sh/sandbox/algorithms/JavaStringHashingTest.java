@@ -2,7 +2,7 @@ package com.github.lazyf1sh.sandbox.algorithms;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class JavaStringHashingTest
 {

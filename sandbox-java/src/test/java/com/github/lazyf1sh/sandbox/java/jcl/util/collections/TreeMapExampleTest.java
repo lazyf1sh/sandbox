@@ -1,12 +1,12 @@
 package com.github.lazyf1sh.sandbox.java.jcl.util.collections;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * TreeMap sorts all its entries according to their natural ordering.<br/>

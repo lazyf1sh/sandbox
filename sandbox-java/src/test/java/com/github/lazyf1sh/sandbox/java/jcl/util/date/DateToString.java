@@ -1,9 +1,9 @@
 package com.github.lazyf1sh.sandbox.java.jcl.util.date;
 
+import java.util.Date;
+
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Date;
 
 public class DateToString
 {

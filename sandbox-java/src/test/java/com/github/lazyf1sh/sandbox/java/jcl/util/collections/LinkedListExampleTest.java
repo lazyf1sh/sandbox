@@ -1,16 +1,19 @@
 package com.github.lazyf1sh.sandbox.java.jcl.util.collections;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * The insertion, addition and removal operations of an item are faster in a LinkedList. <br/>
  * Because there is no need to resize an array or update the index.<br/>
  * Only references in surrounding elements will change.<br/>
  * https://www.baeldung.com/java-linkedlist
+ * https://stackoverflow.com/questions/393556/when-to-use-a-linked-list-over-an-array-array-list
+ * https://imgur.com/a/0QEAN8O
+ * https://imgur.com/a/gmQVtBb
  */
 public class LinkedListExampleTest
 {
@@ -33,6 +36,7 @@ public class LinkedListExampleTest
     public void run2()
     {
         LinkedList<String> list = new LinkedList<>();
+        list.add(0, "a");
         list.add("a");
         list.add("b");
         list.add("b");
@@ -50,6 +54,11 @@ public class LinkedListExampleTest
     public void run3()
     {
         LinkedList<String> list = new LinkedList<>();
+        list.add("a");
+        list.add("b");
+        list.add("b");
+        list.add("c");
+        list.peek();
         list.pop();
     }
 
