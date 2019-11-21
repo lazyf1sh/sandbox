@@ -37,6 +37,7 @@
         <module>sandbox-liquibase-maven</module>
         <module>sandbox-log4j</module>
         <module>sandbox-h2</module>
+        <module>sandbox-jsf-primefaces-apache-tomcat</module>
     </modules>
     <dependencies>
         <dependency>
