@@ -18,5 +18,6 @@ public class MainTest
         {
             Assert.fail();
         }
+        Assert.assertTrue(true);
     }
 }

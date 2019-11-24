@@ -65,6 +65,35 @@ public class JpaCascadePersist
     }
 
     @Test
+    public void a()
+    {
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
+        entityManager.getTransaction().begin();
+
+        PersonEntity person = new PersonEntity();
+        person.setName("some");
+        AddressEntity address = new AddressEntity();
+        address.setPerson(person);
+
+        person.setAddresses(Collections.singletonList(address));
+
+        entityManager.persist(person);
+        int id = person.getId();
+        entityManager.getTransaction().commit();
+        entityManager.close();
+
+        entityManager = JpaEntityManagerFactory.getEntityManger();
+        entityManager.getTransaction().begin();
+
+        PersonEntity personEntity = entityManager.find(PersonEntity.class, id);
+
+        personEntity.getAddresses().remove(personEntity.getAddresses().get(0));
+
+        entityManager.getTransaction().commit(); //also deletes addresses
+        entityManager.close();
+    }
+
+    @Test
     public void whenParentSavedThenMerged()
     {
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();

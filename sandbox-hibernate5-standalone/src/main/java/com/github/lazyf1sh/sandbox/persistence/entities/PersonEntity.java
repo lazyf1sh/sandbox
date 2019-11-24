@@ -16,7 +16,7 @@ public class PersonEntity
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int                 id;
     private String              name;
-    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "person", orphanRemoval = true, cascade = CascadeType.ALL)
     private List<AddressEntity> addresses;
 
     public int getId()
