@@ -1,7 +1,6 @@
 package com.github.lazyf1sh.sandbox.java.java8;
 
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 /**
  * functional interface

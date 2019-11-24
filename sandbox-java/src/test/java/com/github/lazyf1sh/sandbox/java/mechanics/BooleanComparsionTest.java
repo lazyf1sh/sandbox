@@ -2,7 +2,7 @@ package com.github.lazyf1sh.sandbox.java.mechanics;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertSame;
 
 /**
  * @author Ivan Kopylov

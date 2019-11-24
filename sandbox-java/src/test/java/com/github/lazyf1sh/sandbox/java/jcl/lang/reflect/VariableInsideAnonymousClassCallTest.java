@@ -1,12 +1,12 @@
 package com.github.lazyf1sh.sandbox.java.jcl.lang.reflect;
 
 import java.lang.reflect.Field;
-import java.util.Arrays;
 import java.util.stream.Stream;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * How to call variable passed to an anonymous class

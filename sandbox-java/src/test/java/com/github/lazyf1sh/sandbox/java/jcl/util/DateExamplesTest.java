@@ -1,12 +1,9 @@
 package com.github.lazyf1sh.sandbox.java.jcl.util;
 
 import java.util.Date;
-import java.util.PriorityQueue;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * @author Ivan Kopylov

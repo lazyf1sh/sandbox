@@ -1,8 +1,9 @@
 package com.github.lazyf1sh.sandbox.java.exercises;
 
-import com.github.lazyf1sh.sandbox.java.exercises.solutions.countYZ;
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.github.lazyf1sh.sandbox.java.exercises.solutions.countYZ;
 
 /**
  * Given a string, count the number of words ending in 'y' or 'z' -- so the 'y' in "heavy"

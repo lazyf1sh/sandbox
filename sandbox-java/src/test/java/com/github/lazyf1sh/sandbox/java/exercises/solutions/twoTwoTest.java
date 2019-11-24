@@ -2,8 +2,6 @@ package com.github.lazyf1sh.sandbox.java.exercises.solutions;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * @author Ivan Kopylov
  */

@@ -1,17 +1,16 @@
 package com.github.lazyf1sh.sandbox.java.mechanics.oop;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.java.mechanics.oop.inheritance.methodoverriding.Child;
 import com.github.lazyf1sh.sandbox.java.mechanics.oop.inheritance.methodoverriding.Parent;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Compare this with instance methods, which are polymorphic and are thus overridden. The method called depends on the concrete, runtime type of the object:
  */
-public class MethodHidingOnInstanceMethods
+public class MethodOverloadingOnInstanceMethods
 {
     @Test
     public void test()
@@ -19,7 +18,7 @@ public class MethodHidingOnInstanceMethods
         Child child = new Child();
 
         assertEquals("child", child.getValue());
-        Assert.assertEquals("child", ((Parent) child).getValue());//may be strange, but it also returns child
+        assertEquals("child", ((Parent) child).getValue());// also returns child
     }
 
     @Test
@@ -28,7 +27,7 @@ public class MethodHidingOnInstanceMethods
         Parent child = new Child();
 
         assertEquals("child", child.getValue());
-        assertEquals("child", ((Parent) child).getValue());//may be strange, but it also returns child
+        assertEquals("child", ((Parent) child).getValue());// also returns child
     }
 
     @Test

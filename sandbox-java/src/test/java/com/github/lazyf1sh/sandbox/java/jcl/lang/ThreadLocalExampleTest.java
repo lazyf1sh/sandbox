@@ -2,7 +2,8 @@ package com.github.lazyf1sh.sandbox.java.jcl.lang;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Threadlocal value is accesible only from thread it is created in.

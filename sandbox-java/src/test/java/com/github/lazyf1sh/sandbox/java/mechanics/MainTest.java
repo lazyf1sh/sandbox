@@ -1,9 +1,11 @@
 package com.github.lazyf1sh.sandbox.java.mechanics;
 
-import com.github.lazyf1sh.sandbox.java.mechanics.oop.javaIsAlwaysPassByValue.Dog;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import com.github.lazyf1sh.sandbox.java.mechanics.oop.javaIsAlwaysPassByValue.Dog;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 @SuppressWarnings({ "UnusedAssignment", "ParameterCanBeLocal" })
 public class MainTest
