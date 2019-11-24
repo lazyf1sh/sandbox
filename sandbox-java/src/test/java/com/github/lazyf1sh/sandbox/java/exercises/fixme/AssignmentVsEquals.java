@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.gun.right.hand.assignmentVsEquals;
+package com.github.lazyf1sh.sandbox.java.exercises.fixme;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,7 +7,7 @@ import org.junit.Test;
  * Assignment vs equals
  * @author Ivan Kopylov
  */
-public class MainTest
+public class AssignmentVsEquals
 {
     @Test
     public void dsa()
