@@ -11,7 +11,9 @@ import com.github.lazyf1sh.sandbox.wicket.examples.components.standart.textfield
 
 public class MyPanel extends Panel
 {
-    private MyModelObject  myModelObject = new MyModelObject();
+    private static final long serialVersionUID = -5825190184127240781L;
+
+    private MyModelObject myModelObject = new MyModelObject();
     private AjaxSubmitLink searchButton;
 
     public MyPanel(final String id, AjaxSubmitLink searchButton)
@@ -25,8 +27,10 @@ public class MyPanel extends Panel
     {
         super.onInitialize();
 
-        final Form<?> form = new Form("nestedForm")
+        final Form<?> form = new Form<Void>("nestedForm")
         {
+            private static final long serialVersionUID = -2665226028753832979L;
+
             @Override
             protected void onSubmit()
             {
@@ -36,7 +40,7 @@ public class MyPanel extends Panel
         form.setOutputMarkupId(true);
         add(form);
 
-        final TextField textField = new TextField<>("textField", new PropertyModel<>(myModelObject, "prop"));
+        final TextField<Void> textField = new TextField<>("textField", new PropertyModel<>(myModelObject, "prop"));
         textField.setOutputMarkupId(true);
         form.add(textField);
 

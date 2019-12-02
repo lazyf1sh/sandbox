@@ -43,11 +43,15 @@ public class CheckedFolderTreePage extends WebPage
 
         defaultNestedTree = new DefaultNestedTree<CheckedFolderNode>("tree", nodeProvider)
         {
+            private static final long serialVersionUID = 8576320104417070206L;
+
             @Override
             protected Component newContentComponent(final String id, final IModel<CheckedFolderNode> model)
             {
                 return new CheckedFolder<CheckedFolderNode>(id, this, model)
                 {
+                    private static final long serialVersionUID = -5758392313825309170L;
+
                     @Override
                     protected void onUpdate(final AjaxRequestTarget target)
                     {

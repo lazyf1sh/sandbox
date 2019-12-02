@@ -7,4 +7,5 @@
       com.github.lazyf1sh.sandbox.java.tomcat.MyCustomServletListener
     </listener-class>
   </listener>
+
 </web-app>

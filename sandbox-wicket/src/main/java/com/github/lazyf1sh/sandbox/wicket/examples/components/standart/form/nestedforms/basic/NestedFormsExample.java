@@ -12,8 +12,10 @@ public class NestedFormsExample extends WebPage
 
         NestedPanelWithForm panel = new NestedPanelWithForm("myPanel");
 
-        Form<?> form = new Form("form")
+        Form<?> form = new Form<Void>("form")
         {
+            private static final long serialVersionUID = -1095582817776277394L;
+
             @Override
             protected void onSubmit()
             {
