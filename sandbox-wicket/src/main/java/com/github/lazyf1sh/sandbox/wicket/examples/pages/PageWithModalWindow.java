@@ -11,14 +11,14 @@ import com.github.lazyf1sh.sandbox.wicket.examples.components.standart.MyModalWi
 public class PageWithModalWindow extends WebPage
 {
     private static final long          serialVersionUID = -4348869317433578819L;
-    private              MyModalWindow modalWindow      = new MyModalWindow("addDrugDialog");
+    private              MyModalWindow modalWindow      = new MyModalWindow("someId");
 
     @Override
     protected void onInitialize()
     {
         super.onInitialize();
         add(modalWindow);
-        add(new AjaxLink("someButton", Model.of("213"))
+        add(new AjaxLink<String>("someButton", Model.of("213"))
         {
             private static final long serialVersionUID = 1L;
 
@@ -29,7 +29,7 @@ public class PageWithModalWindow extends WebPage
             }
         });
 
-        Form<Void> form = new Form("form");
+        Form<Void> form = new Form<Void>("form");
 
         AjaxButton trigger2 = new AjaxButton("trigger2")
         {
