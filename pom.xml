@@ -39,6 +39,12 @@
         <module>sandbox-log4j</module>
         <module>sandbox-h2</module>
         <module>sandbox-jsf-primefaces-apache-tomcat</module>
+        <module>sandbox-tomcat-listener</module>
+        <module>sandbox-tomcat-filter</module>
+        <module>sandbox-tomcat-context-param</module>
+        <module>sandbox-servlet-basic-example</module>
+        <module>sandbox-spring-annotations-configuration</module>
+        <module>sandbox-servlet-basic-example</module>
     </modules>
     <dependencies>
         <dependency>

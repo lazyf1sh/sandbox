@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.lazyf1sh</groupId>
-  <artifactId>sandbox-tomcat-listener</artifactId>
+  <artifactId>sandbox-servlet-basic-example</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>sandbox-tomcat-listener</name>
+  <name>sandbox-servlet-basic-example</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -18,6 +18,8 @@ public class ValidatorExample extends WebPage
 
         final Form<?> form = new Form("form")
         {
+            private static final long serialVersionUID = 4742924626390708189L;
+
             @Override
             protected void onSubmit()
             {
