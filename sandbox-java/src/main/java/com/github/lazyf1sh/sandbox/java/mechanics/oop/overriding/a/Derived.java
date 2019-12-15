@@ -2,18 +2,18 @@ package com.github.lazyf1sh.sandbox.java.mechanics.oop.overriding.a;
 
 class Derived extends Base
 {
-//    public <T, Z> TreeMap<T, Z> getMap(T t, Z z)
-//    {
-//        return new TreeMap<T, Z>();
-//    }
+    public void get(Integer i)
+    {
 
-//    public Map<Number, Number> getMap(Number t, Number z)
-//    {
-//        return new TreeMap<Number, Number>();
-//    }
+    }
 
-//    public Map<Integer, Integer> getMap(Number t, Number z)
-//    {
-//        return new HashMap<Integer, Integer>();
-//    }
+    public void get(Number i)
+    {
+
+    }
+
+    public void get(String s)
+    {
+        
+    }
 }
