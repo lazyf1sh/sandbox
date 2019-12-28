@@ -9,7 +9,7 @@ import com.github.lazyf1sh.sandbox.persistence.entities.BookEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 /**
- * Minimal JPA example - save and load saved entity
+ * Minimal JPA example - save and load saved entity.
  */
 public class JpaBasicExampleTest
 {

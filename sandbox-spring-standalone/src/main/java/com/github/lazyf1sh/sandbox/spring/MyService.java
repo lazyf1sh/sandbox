@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class MyService
 {
-	private Date myDate = new Date();
-	
-	public void myMethod()
-	{
-		System.out.println(myDate);
-	};
+    private Date myDate = new Date();
+
+    public void myMethod()
+    {
+        System.out.println(myDate);
+    }
 }

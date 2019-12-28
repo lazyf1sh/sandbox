@@ -5,8 +5,6 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.github.lazyf1sh.sandbox.spring.MyBean;
-
 public class SpringContextGetBeanExample
 {
     @Test

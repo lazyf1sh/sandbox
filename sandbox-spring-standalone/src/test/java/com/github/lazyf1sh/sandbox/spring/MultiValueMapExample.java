@@ -10,7 +10,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 /**
- * Purpose of this example: to practice MultiValueMap usage<br/>
+ * Purpose of this example: to practice MultiValueMap usage.<br/>
  * Multimap has a usual key and {@link List} as of values a value.
  */
 public class MultiValueMapExample

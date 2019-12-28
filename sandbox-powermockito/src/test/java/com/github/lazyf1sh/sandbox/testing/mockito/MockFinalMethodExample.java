@@ -1,5 +1,7 @@
 package com.github.lazyf1sh.sandbox.testing.mockito;
 
+import java.util.ArrayList;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +20,7 @@ public class MockFinalMethodExample
     {
         Bottle bottle = PowerMockito.mock(Bottle.class);
         PowerMockito.when(bottle.getBottle()).thenReturn("cup");
+
 
         Assert.assertEquals("cup", bottle.getBottle());
     }

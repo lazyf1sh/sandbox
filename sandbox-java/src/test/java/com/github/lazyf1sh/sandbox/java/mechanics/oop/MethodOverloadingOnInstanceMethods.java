@@ -9,7 +9,6 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Compare this with instance methods, which are polymorphic and are thus overridden. The method called depends on the concrete, runtime type of the object:
- * @see <a href=https://en.wikipedia.org/wiki/Semantic_overload>https://en.wikipedia.org/wiki/Semantic_overload</a>
  */
 public class MethodOverloadingOnInstanceMethods
 {

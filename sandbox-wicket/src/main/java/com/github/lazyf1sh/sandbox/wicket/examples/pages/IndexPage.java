@@ -4,6 +4,11 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.WebPage;
 
+import com.github.lazyf1sh.sandbox.wicket.examples.behaviors.ajax.AjaxSelfUpdatingTimerBehaviorExample;
+import com.github.lazyf1sh.sandbox.wicket.examples.behaviors.ajax2.AbstractAjaxTimerBehaviorExample;
+import com.github.lazyf1sh.sandbox.wicket.examples.behaviors.other.AbstractDefaultAjaxBehaviorExample;
+import com.github.lazyf1sh.sandbox.wicket.examples.behaviors.other.AbstractDefaultAjaxBehaviorExample2;
+import com.github.lazyf1sh.sandbox.wicket.examples.behaviors.other.AbstractDefaultAjaxBehaviorExample4;
 import com.github.lazyf1sh.sandbox.wicket.examples.models.dynamicmodel.DynamicModelExample;
 import com.github.lazyf1sh.sandbox.wicket.examples.models.loadabledetachable.LoadableDetachableModelExample;
 import com.github.lazyf1sh.sandbox.wicket.examples.models.staticmodel.StaticModelExample;
@@ -104,6 +109,66 @@ public class IndexPage extends WebPage
             }
         };
         add(myPageWithModalWindow);
+
+        AjaxLink<Void> abstractDefaultAjaxBehaviorExample = new AjaxLink<Void>("abstractDefaultAjaxBehaviorExample")
+        {
+            private static final long serialVersionUID = -3445086817091447502L;
+
+            @Override
+            public void onClick(AjaxRequestTarget target)
+            {
+                setResponsePage(AbstractDefaultAjaxBehaviorExample.class);
+            }
+        };
+        add(abstractDefaultAjaxBehaviorExample);
+
+        AjaxLink<Void> abstractDefaultAjaxBehaviorExample2 = new AjaxLink<Void>("abstractDefaultAjaxBehaviorExample2")
+        {
+            private static final long serialVersionUID = -3445086817091447502L;
+
+            @Override
+            public void onClick(AjaxRequestTarget target)
+            {
+                setResponsePage(AbstractDefaultAjaxBehaviorExample2.class);
+            }
+        };
+        add(abstractDefaultAjaxBehaviorExample2);
+
+        AjaxLink<Void> abstractDefaultAjaxBehaviorExample3 = new AjaxLink<Void>("abstractDefaultAjaxBehaviorExample3")
+        {
+            private static final long serialVersionUID = -3445086817091447502L;
+
+            @Override
+            public void onClick(AjaxRequestTarget target)
+            {
+                setResponsePage(AbstractDefaultAjaxBehaviorExample4.class);
+            }
+        };
+        add(abstractDefaultAjaxBehaviorExample3);
+
+        AjaxLink<Void> ajaxSelfUpdatingTimerBehaviorExample = new AjaxLink<Void>("ajaxSelfUpdatingTimerBehaviorExample")
+        {
+            private static final long serialVersionUID = -3445086817091447502L;
+
+            @Override
+            public void onClick(AjaxRequestTarget target)
+            {
+                setResponsePage(AjaxSelfUpdatingTimerBehaviorExample.class);
+            }
+        };
+        add(ajaxSelfUpdatingTimerBehaviorExample);
+
+        AjaxLink<Void> abstractAjaxTimerBehaviorExample = new AjaxLink<Void>("abstractAjaxTimerBehaviorExample")
+        {
+            private static final long serialVersionUID = -3445086817091447502L;
+
+            @Override
+            public void onClick(AjaxRequestTarget target)
+            {
+                setResponsePage(AbstractAjaxTimerBehaviorExample.class);
+            }
+        };
+        add(abstractAjaxTimerBehaviorExample);
 
     }
 }

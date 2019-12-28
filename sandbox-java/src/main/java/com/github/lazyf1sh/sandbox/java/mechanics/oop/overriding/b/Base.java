@@ -1,12 +1,9 @@
 package com.github.lazyf1sh.sandbox.java.mechanics.oop.overriding.b;
 
-import java.util.HashMap;
-import java.util.Map;
-
 class Base
 {
-    public <T extends Number, Z extends Number> Map<T, Z> getMap(T t, Z z)
+    public void get(Number n)
     {
-        return new HashMap<T, Z>();
+
     }
 }

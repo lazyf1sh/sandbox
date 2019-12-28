@@ -4,9 +4,6 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.github.lazyf1sh.sandbox.spring.MyClass;
-import com.github.lazyf1sh.sandbox.spring.MyClass2;
-
 public class A
 {
     @Test

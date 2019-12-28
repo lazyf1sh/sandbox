@@ -16,6 +16,7 @@
         <class>com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity</class>
         <class>com.github.lazyf1sh.sandbox.persistence.entities.ParentEntityWithEmbedded</class>
         <class>com.github.lazyf1sh.sandbox.persistence.entities.PageEntity</class>
+        <class>com.github.lazyf1sh.sandbox.persistence.entities.OrderEntity</class>
         <properties>
             <property name="hibernate.show_sql" value="true"/>
 <!--            <property name="hibernate.format_sql" value="true"/>-->

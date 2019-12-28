@@ -59,7 +59,7 @@ class Wheel implements CarElement
          * accept(CarElementVisitor) in CarElement, so the call
          * to accept is bound at run time. This can be considered
          * the *first* dispatch. However, the decision to call
-         * visit(Wheel) (as opposed to visit(Engine) etc.) can be
+         * visit(Wheel) (as opposed to visit(A) etc.) can be
          * made during compile time since 'this' is known at compile
          * time to be a Wheel. Moreover, each implementation of
          * CarElementVisitor implements the visit(Wheel), which is

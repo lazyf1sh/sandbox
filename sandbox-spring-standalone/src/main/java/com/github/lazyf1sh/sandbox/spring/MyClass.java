@@ -1,18 +1,21 @@
 package com.github.lazyf1sh.sandbox.spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @Scope("prototype")
 public class MyClass
 {
-	@Autowired
-	private MyService service;
-	
-	public void someMethod() throws InterruptedException
-	{
-		service.myMethod();
-	};
+    private final MyService service;
+
+    public MyClass(final MyService service)
+    {
+        this.service = service;
+    }
+
+    public void someMethod()
+    {
+        service.myMethod();
+    }
 }

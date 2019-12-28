@@ -23,6 +23,8 @@ public class AbstractDefaultAjaxBehaviorExample2 extends WebPage
         
         add(new AbstractDefaultAjaxBehavior()
         {
+            private static final long serialVersionUID = 4140058103308501910L;
+
             @Override
             protected void respond(AjaxRequestTarget target)
             {
