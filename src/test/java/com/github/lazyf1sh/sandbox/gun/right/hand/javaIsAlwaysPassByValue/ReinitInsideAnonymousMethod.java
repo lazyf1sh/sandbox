@@ -20,7 +20,6 @@ public class ReinitInsideAnonymousMethod
 
         AbstractContainer abstractContainer = new AbstractContainer(dog)
         {
-            private String sq;
             @Override
             void myMethod()
             {
