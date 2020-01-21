@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.lambdas;
+package com.github.lazyf1sh.sandbox.java.mechanics.lambdas;
 
 /**
  * @author Ivan Kopylov

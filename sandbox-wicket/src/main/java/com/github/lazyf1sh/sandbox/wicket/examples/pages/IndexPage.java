@@ -9,6 +9,7 @@ import com.github.lazyf1sh.sandbox.wicket.examples.behaviors.ajax2.AbstractAjaxT
 import com.github.lazyf1sh.sandbox.wicket.examples.behaviors.other.AbstractDefaultAjaxBehaviorExample;
 import com.github.lazyf1sh.sandbox.wicket.examples.behaviors.other.AbstractDefaultAjaxBehaviorExample2;
 import com.github.lazyf1sh.sandbox.wicket.examples.behaviors.other.AbstractDefaultAjaxBehaviorExample4;
+import com.github.lazyf1sh.sandbox.wicket.examples.converter.BigDecimalConverterExample;
 import com.github.lazyf1sh.sandbox.wicket.examples.models.dynamicmodel.DynamicModelExample;
 import com.github.lazyf1sh.sandbox.wicket.examples.models.loadabledetachable.LoadableDetachableModelExample;
 import com.github.lazyf1sh.sandbox.wicket.examples.models.staticmodel.StaticModelExample;
@@ -169,6 +170,18 @@ public class IndexPage extends WebPage
             }
         };
         add(abstractAjaxTimerBehaviorExample);
+
+        AjaxLink<Void> bigDecimalConverterExample = new AjaxLink<Void>("bigDecimalConverterExample")
+        {
+            private static final long serialVersionUID = -3445086817091447502L;
+
+            @Override
+            public void onClick(AjaxRequestTarget target)
+            {
+                setResponsePage(BigDecimalConverterExample.class);
+            }
+        };
+        add(bigDecimalConverterExample);
 
     }
 }
