@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.exercises;
+package com.github.lazyf1sh.sandbox.java.exercises.codingbat;
 
 import org.junit.Test;
 
