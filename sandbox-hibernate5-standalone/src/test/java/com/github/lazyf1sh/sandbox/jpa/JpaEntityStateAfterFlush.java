@@ -1,7 +1,6 @@
 package com.github.lazyf1sh.sandbox.jpa;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
-import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 import org.junit.Assert;
 import org.junit.BeforeClass;
