@@ -5,42 +5,32 @@ import org.junit.Test;
 /**
  * @author Ivan Kopylov
  */
-public class mirrorEnds
+public class dsad
 {
-
     @Test
-    public void mirrorEnds()
+    public void run()
     {
-
-        String[] data = { "abXYZba", "abca","aba" };
-        for (int i = 0; i < data.length; i++)
-        {
-            String result = get(data[i]);
-            System.out.println(result);
-        }
-
-
+        split53(new int[]{3, 5, 6, 10, 3, 3});
     }
 
-
-    public String get(String string)
+    public boolean split53(int[] nums)
     {
+        return helper(0, nums, 0, 0);
+    }
 
-        String result = "";
-
-        int length = string.length();
-        for (int i = 0; i < length; i++)
+    private boolean helper(int start, int[] nums, int sum1, int sum2)
+    {
+        if (start >= nums.length) return sum1 == sum2;
+        if (nums[start] % 5 == 0)
         {
-            if (string.charAt(i) == string.charAt(length - i - 1))
-            {
-                result += string.charAt(i);
-            }
-            else
-            {
-                return result;
-            }
+            return helper(start + 1, nums, sum1 + nums[start], sum2);
         }
-        return result;
+        if (nums[start] % 3 == 0)
+        {
+            return helper(start + 1, nums, sum1, sum2 + nums[start]);
+        }
 
+        return helper(start + 1, nums, sum1 + nums[start], sum2)
+                || helper(start + 1, nums, sum1, sum2 + nums[start]);
     }
 }

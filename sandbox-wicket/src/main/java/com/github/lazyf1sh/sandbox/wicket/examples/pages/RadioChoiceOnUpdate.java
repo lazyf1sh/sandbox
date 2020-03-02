@@ -2,20 +2,21 @@ package com.github.lazyf1sh.sandbox.wicket.examples.pages;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.form.AjaxFormChoiceComponentUpdatingBehavior;
 import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RadioChoice;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.validation.IValidatable;
-import org.apache.wicket.validation.IValidator;
-import org.apache.wicket.validation.validator.EmailAddressValidator;
 
 /**
+ * http://examples7x.wicket.apache.org/compref/wicket/bookmarkable/org.apache.wicket.examples.compref.RadioChoicePage?0
+ *
  * @author Ivan Kopylov
  */
-public class RadioChoicePageExample extends WebPage
+public class RadioChoiceOnUpdate extends WebPage
 {
     private static final List<String> TYPES = Arrays.asList("Shared Host", "VPS", "Dedicated Server");
 
@@ -28,22 +29,32 @@ public class RadioChoicePageExample extends WebPage
     {
         super.onInitialize();
 
-        add(new FeedbackPanel("feedback"));
+        FeedbackPanel feedback = new FeedbackPanel("feedback");
+        add(feedback);
 
-        RadioChoice<String> hostingType = new RadioChoice<String>("hosting", new PropertyModel<String>(this, "selected"), TYPES);
+        RadioChoice<String> radioGroup = new RadioChoice<String>("radioGroup", new PropertyModel<String>(this, "selected"), TYPES);
+        radioGroup.setOutputMarkupId(true);
+        add(radioGroup);
 
-        Form<?> form = new Form<Void>("form")
+        final AtomicInteger i = new AtomicInteger();
+        i.set(0);
+
+        radioGroup.add(new AjaxFormChoiceComponentUpdatingBehavior()
         {
-            private static final long serialVersionUID = -5672719273595835054L;
+            private static final long serialVersionUID = 1650327455031546028L;
 
             @Override
-            protected void onSubmit()
+            protected void onUpdate(AjaxRequestTarget target)
             {
-                info("Selected Type : " + selected);
-            }
-        };
+                if (i.incrementAndGet() % 2 == 0)
+                {
+                    getComponent().getDefaultModel().setObject(null);
+                }
 
-        add(form);
-        form.add(hostingType);
+                System.out.println("RadioChoiceOnUpdate");
+                info("RadioChoiceOnUpdate");
+                target.add(radioGroup, feedback);
+            }
+        });
     }
 }

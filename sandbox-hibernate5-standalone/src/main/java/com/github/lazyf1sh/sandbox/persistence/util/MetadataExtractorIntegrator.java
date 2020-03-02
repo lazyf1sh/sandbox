@@ -6,10 +6,10 @@ import org.hibernate.engine.spi.SessionFactoryImplementor;
 import org.hibernate.integrator.spi.Integrator;
 import org.hibernate.service.spi.SessionFactoryServiceRegistry;
 
-public class A implements Integrator
+public class MetadataExtractorIntegrator implements Integrator
 {
 
-    public static final A INSTANCE = new A();
+    public static final MetadataExtractorIntegrator INSTANCE = new MetadataExtractorIntegrator();
 
     private Database database;
 

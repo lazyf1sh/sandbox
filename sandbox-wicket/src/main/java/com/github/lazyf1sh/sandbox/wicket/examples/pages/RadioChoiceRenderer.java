@@ -8,14 +8,11 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RadioChoice;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.validation.IValidatable;
-import org.apache.wicket.validation.IValidator;
-import org.apache.wicket.validation.validator.EmailAddressValidator;
 
 /**
  * @author Ivan Kopylov
  */
-public class RadioChoicePageExample extends WebPage
+public class RadioChoiceRenderer extends WebPage
 {
     private static final List<String> TYPES = Arrays.asList("Shared Host", "VPS", "Dedicated Server");
 
@@ -30,7 +27,7 @@ public class RadioChoicePageExample extends WebPage
 
         add(new FeedbackPanel("feedback"));
 
-        RadioChoice<String> hostingType = new RadioChoice<String>("hosting", new PropertyModel<String>(this, "selected"), TYPES);
+        RadioChoice<String> hostingType = new RadioChoice<String>("hosting", new PropertyModel<String>(this, "selected"), TYPES, new MyChoiceRenderer());
 
         Form<?> form = new Form<Void>("form")
         {

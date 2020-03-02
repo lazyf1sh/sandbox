@@ -1,8 +1,12 @@
 package com.github.lazyf1sh.sandbox.jpa;
 
-import javax.persistence.EntityManager;
+import java.util.List;
 
-import org.junit.Assert;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.Tuple;
+
+import org.junit.Before;
 import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.BookEntity;
@@ -11,23 +15,38 @@ import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 /**
  * Minimal JPA example - save and load saved entity.
  */
-public class JpaBasicExampleTest
+public class JpaSimpleNativeQuery
 {
-    @Test
-    public void run()
+    @Before
+    public void populate()
     {
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
 
         BookEntity bookEntity = new BookEntity();
-        bookEntity.setName("Terry Pratchett - The Colour of Magic");
-        bookEntity.setId(6);
+        bookEntity.setId(5001);
+        bookEntity.setName("some name");
+
         entityManager.persist(bookEntity);
 
         entityManager.getTransaction().commit();
+        entityManager.close();
+    }
 
-        BookEntity entity = entityManager.find(BookEntity.class, 6);
-        Assert.assertEquals(entity.getName(), "Terry Pratchett - The Colour of Magic");
+    @Test
+    public void run()
+    {
+        EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
+
+
+        entityManager.getTransaction().begin();
+
+        Query query = entityManager.createNativeQuery("SELECT * FROM BOOK;");
+
+        List<Tuple> resultList = query.getResultList();
+
+        entityManager.getTransaction().commit();
+
         entityManager.close();
     }
 }

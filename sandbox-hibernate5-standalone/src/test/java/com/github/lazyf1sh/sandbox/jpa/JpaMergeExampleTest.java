@@ -16,38 +16,67 @@ public class JpaMergeExampleTest
     @Test
     public void merge()
     {
-        ParentEntity parentEntity = new ParentEntity();
-        parentEntity.setId(1);
-        parentEntity.setName("old parent name");
+        ParentEntity initialEntity = new ParentEntity();
+        initialEntity.setId(1);
+        initialEntity.setName("old parent name");
 
         EntityManager entityManger = JpaEntityManagerFactory.getEntityManger();
         entityManger.getTransaction().begin();
-        entityManger.merge(parentEntity);//copies the state from the supplied entity, and makes the new copy managed.
+        ParentEntity merged = entityManger.merge(initialEntity);//copies the state from the supplied entity, and makes the new copy managed.
 
-        parentEntity.setName("new parent name");
+        initialEntity.setName("new parent name");
 
         entityManger.getTransaction().commit();
 
         entityManger.close();
 
         entityManger = JpaEntityManagerFactory.getEntityManger();
-        ParentEntity parentEntity1 = entityManger.find(ParentEntity.class, 1);
-        Assert.assertEquals("old parent name", parentEntity1.getName());
+        ParentEntity reloadedEntity = entityManger.find(ParentEntity.class, 1);
+        Assert.assertEquals("old parent name", reloadedEntity.getName());
+        Assert.assertEquals("old parent name", merged.getName());
+        Assert.assertEquals("new parent name", initialEntity.getName());
         entityManger.close();
     }
 
     @Test
+    public void persist_then_merge()
+    {
+        ParentEntity entity1 = new ParentEntity();
+        entity1.setId(2);
+        entity1.setName("entity 1");
+
+        ParentEntity entity2 = new ParentEntity();
+        entity2.setId(2);
+        entity2.setName("entity 2");
+
+        //save to db and commit
+        EntityManager entityManger = JpaEntityManagerFactory.getEntityManger();
+        entityManger.getTransaction().begin();
+        entityManger.persist(entity1);
+        entityManger.getTransaction().commit();
+        entityManger.close();
+
+        //update detached entity with the same id
+        entityManger = JpaEntityManagerFactory.getEntityManger();
+        entityManger.getTransaction().begin();
+        entityManger.merge(entity2);
+        entityManger.getTransaction().commit();
+        entityManger.close();
+    }
+
+
+    @Test
     public void persist()
     {
-        ParentEntity parentEntity = new ParentEntity();
-        parentEntity.setId(1);
-        parentEntity.setName("old parent name");
+        ParentEntity originalEntity = new ParentEntity();
+        originalEntity.setId(1);
+        originalEntity.setName("old parent name");
 
         EntityManager entityManger = JpaEntityManagerFactory.getEntityManger();
         entityManger.getTransaction().begin();
-        entityManger.persist(parentEntity);//makes supplied entity managed
+        entityManger.persist(originalEntity);//makes supplied entity managed
 
-        parentEntity.setName("new parent name");
+        originalEntity.setName("new parent name");
 
         entityManger.getTransaction().commit();
 
