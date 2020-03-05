@@ -3,6 +3,7 @@ package com.github.lazyf1sh.sandbox.java.jcl.java.lang.reflect;
 import java.lang.reflect.Proxy;
 import java.util.Map;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class ProxyExamples
@@ -15,6 +16,7 @@ public class ProxyExamples
                 new Class[]{Map.class},
                 new DynamicInvocationHandler());
 
-        proxyInstance.put("hello", "world");
+        String put = proxyInstance.put("hello", "world");
+        Assert.assertEquals("hello world", put);
     }
 }
