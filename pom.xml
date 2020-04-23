@@ -45,6 +45,7 @@
         <module>sandbox-servlet-basic-example</module>
         <module>sandbox-spring-annotations-configuration</module>
         <module>sandbox-servlet-basic-example</module>
+        <module>sandbox-dozermapper</module>
     </modules>
     <dependencies>
         <dependency>
