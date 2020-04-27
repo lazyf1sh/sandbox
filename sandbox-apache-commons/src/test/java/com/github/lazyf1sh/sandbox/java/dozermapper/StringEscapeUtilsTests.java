@@ -44,7 +44,7 @@ public class StringEscapeUtilsTests
 
 
     @Test
-    public void ltTt()
+    public void ltGt()
     {
         String input = "<a>";
         String result = StringEscapeUtils.escapeHtml4(input);
