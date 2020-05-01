@@ -12,7 +12,7 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>3.6.3</version>
                 <configuration>
-                    <changeLogFile>src/main/resources/liquibase_main.yaml</changeLogFile>
+                    <changeLogFile>src/main/resources/liquibase_main.xml</changeLogFile>
                     <driver>org.h2.Driver</driver>
                     <url>jdbc:h2:mem:myDb;DB_CLOSE_DELAY=-1</url>
 <!--                    <username>hibernate</username>-->

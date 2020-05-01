@@ -5,13 +5,13 @@ package com.github.lazyf1sh.sandbox.java.java8.streams;
  */
 public class Foo
 {
-    private String s;
+    private String myString;
 
-    public String getS() {
-        return s;
+    public String getMyString() {
+        return myString;
     }
 
-    public void setS(String s) {
-        this.s = s;
+    public void setMyString(String myString) {
+        this.myString = myString;
     }
 }

@@ -65,8 +65,7 @@ public class OrmNPlusOneBehaviour
         Root<ParentEntity> root = cr.from(ParentEntity.class);
         cr.select(root);
 
-        TypedQuery<ParentEntity> query = entityManager.createQuery(cr);
-        List<ParentEntity> parents = query.getResultList();
+        List<ParentEntity> parents = entityManager.createQuery(cr).getResultList();
 
         for (ParentEntity parent : parents)
         {
@@ -83,6 +82,7 @@ public class OrmNPlusOneBehaviour
     public void n_plus_one()
     {
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
+        entityManager.getTransaction().begin();
 
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<ParentEntity> cr = cb.createQuery(ParentEntity.class);
@@ -94,13 +94,14 @@ public class OrmNPlusOneBehaviour
 
         for (ParentEntity parent : parents)
         {
-            Set<ChildEntity> childs = parent.getChilds();
-            for (ChildEntity childEntity : childs)
+            Set<ChildEntity> childs = parent.getChilds(); //each call is a db hit
+            for (int i = 0; i < childs.size(); i++)
             {
-                childEntity.getName();//each call is db hit
+                childs.iterator();
             }
         }
 
+        entityManager.getTransaction().commit();
         entityManager.close();
     }
 
@@ -108,6 +109,7 @@ public class OrmNPlusOneBehaviour
     public void solution_fetch()
     {
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
+        entityManager.getTransaction().begin();
 
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<ParentEntity> cq = builder.createQuery(ParentEntity.class);
@@ -116,8 +118,7 @@ public class OrmNPlusOneBehaviour
         root.fetch("childs");
         cq.select(root);
 
-        TypedQuery<ParentEntity> query = entityManager.createQuery(cq);
-        List<ParentEntity> parents = query.getResultList();
+        List<ParentEntity> parents = entityManager.createQuery(cq).getResultList();
 
         entityManager.close();
 
@@ -129,10 +130,12 @@ public class OrmNPlusOneBehaviour
                 Assert.assertNotNull(childEntity.getName());
             }
         }
+
+        entityManager.getTransaction().commit();
     }
 
     @Test
-    public void no_solution_join()
+    public void join_isnt_a_solution()
     {
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
 
@@ -143,8 +146,7 @@ public class OrmNPlusOneBehaviour
         root.join("childs");
         cq.select(root);
 
-        TypedQuery<ParentEntity> query = entityManager.createQuery(cq);
-        List<ParentEntity> parents = query.getResultList();
+        List<ParentEntity> parents = entityManager.createQuery(cq).getResultList();
 
         entityManager.close();
 

@@ -17,7 +17,101 @@
         </createTable>
         <comment>Purpose: basic changeset demo.</comment>
     </changeSet>
-    <!-- -->
+
+
+
+
+
+
+    <changeSet id="preconditions_index" context="index" author="ikopylov">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists tableName="department" columnNames="name"/>
+                <indexExists indexName="IDX_department_name"/>
+            </not>
+            <tableExists tableName="department"/>
+            <columnExists tableName="department" columnName="name"/>
+        </preConditions>
+        <createIndex tableName="department" indexName="IDX_department_name">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+
+
+
+
+
+
+    <changeSet id="preconditions_index0" context="index" author="ikopylov">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists tableName="department" columnNames="name"/>
+            </not>
+        </preConditions>
+        <createIndex tableName="department" indexName="IDX_department_name">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="preconditions_index1" context="index" author="ikopylov">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists tableName="department" columnNames="name"/>
+            </not>
+        </preConditions>
+        <createIndex tableName="department" indexName="IDX_department_name">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="preconditions_index2" context="index" author="ikopylov">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists indexName="IDX_department_name"/>
+            </not>
+        </preConditions>
+        <createIndex tableName="department" indexName="IDX_department_name">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+
+   <changeSet id="preconditions_index3" context="index" author="ikopylov">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists tableName="department" columnNames="name"/>
+                <indexExists indexName="IDX_department_name"/>
+            </not>
+        </preConditions>
+        <createIndex tableName="department" indexName="IDX_department_name">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <changeSet id="add_pk_department" author="lazyf1sh">
         <preConditions onFail="MARK_RAN">
             <not>
@@ -26,7 +120,6 @@
         </preConditions>
         <addPrimaryKey tableName="department" columnNames="id" constraintName="PK_department"/>
     </changeSet>
-    <!--
 
 
 
@@ -79,14 +172,14 @@
 
 
 
-    -->
+
+
     <changeSet id="native_sql_1" author="lazyf1sh">
         <sql>
             INSERT INTO department (id, name) VALUES (0, 'Bob')
         </sql>
         <comment>Purpose: to show native SQL.</comment>
     </changeSet>
-    <!--
 
 
 
@@ -146,16 +239,16 @@
 
 
 
-    -->
+
+
     <changeSet id="native_sql_2" author="lazyf1sh">
         <preConditions onFail="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM department WHERE name = 'Bob'</sqlCheck>
+            <sqlCheck expectedResult="1">SELECT COUNT(*) FROM department WHERE name = 'Bob'</sqlCheck>
         </preConditions>
         <sql>
-            INSERT INTO department (id, name) VALUES (0, 'John')
+            INSERT INTO department (id, name) VALUES (1, 'John')
         </sql>
     </changeSet>
-    <!--
 
 
 
@@ -213,15 +306,17 @@
 
 
 
-    -->
+
+
     <changeSet id="bad_practice_01" author="lazyf1sh">
         <createTable tableName="HOUSES">
-            <column name="ID" type="int"/>
+            <column name="ID" type="int">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
         <addPrimaryKey tableName="HOUSES" columnNames="ID"/>
         <comment>DDL are run in different transactions</comment>
     </changeSet>
-    <!--
 
 
 
@@ -244,40 +339,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     -->
     <changeSet id="good_practice_01_0" author="lazyf1sh">
-        <createTable tableName="HOUSES">
+        <createTable tableName="HOUSES2">
             <column name="ID" type="int"/>
         </createTable>
     </changeSet>
-    <!-- -->
-    <changeSet id="good_practice_02" author="lazyf1sh">
-        <addPrimaryKey tableName="HOUSES" columnNames="ID"/>
+    <changeSet id="good_practice_01_1" author="lazyf1sh">
+        <addNotNullConstraint tableName="HOUSES2" columnName="ID" columnDataType="int" />
     </changeSet>
-    <!--
+    <changeSet id="good_practice_01_2" author="lazyf1sh">
+        <addPrimaryKey tableName="HOUSES2" columnNames="ID"/>
+    </changeSet>
 
 
 
@@ -298,39 +370,14 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    -->
     <changeSet id="delete_native_sql" author="lazyf1sh">
         <sql>
             DELETE FROM department WHERE id = '10';
         </sql>
         <comment>Way to shoot the leg</comment>
     </changeSet>
+
+
+
+
 </databaseChangeLog>

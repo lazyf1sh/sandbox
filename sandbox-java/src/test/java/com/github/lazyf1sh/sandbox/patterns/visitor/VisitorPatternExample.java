@@ -3,6 +3,8 @@ package com.github.lazyf1sh.sandbox.patterns.visitor;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.Test;
+
 /**
  * https://en.wikipedia.org/wiki/Visitor_pattern
  *
@@ -10,8 +12,8 @@ import java.util.List;
  */
 public class VisitorPatternExample
 {
-
-    public static void main(final String[] args)
+    @Test
+    public void main()
     {
         Car car = new Car();
 

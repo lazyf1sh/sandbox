@@ -183,5 +183,30 @@ public class IndexPage extends WebPage
         };
         add(bigDecimalConverterExample);
 
+        AjaxLink<Void> radioChoiceOnUpdate = new AjaxLink<Void>("radioChoiceOnUpdate")
+        {
+            private static final long serialVersionUID = -3445086817091447502L;
+
+            @Override
+            public void onClick(AjaxRequestTarget target)
+            {
+                setResponsePage(RadioChoiceOnUpdate.class);
+            }
+        };
+        add(radioChoiceOnUpdate);
+
+        AjaxLink<Void> myChoiceRenderer = new AjaxLink<Void>("myChoiceRenderer")
+        {
+            private static final long serialVersionUID = -3445086817091447502L;
+
+            @Override
+            public void onClick(AjaxRequestTarget target)
+            {
+                setResponsePage(RadioChoiceRenderer.class);
+            }
+        };
+        add(myChoiceRenderer);
+
+
     }
 }

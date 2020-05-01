@@ -9,9 +9,14 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
 
+import org.hibernate.boot.registry.BootstrapServiceRegistry;
+import org.hibernate.boot.registry.BootstrapServiceRegistryBuilder;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket;
+import com.github.lazyf1sh.sandbox.persistence.util.MetadataExtractorIntegrator;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 /**

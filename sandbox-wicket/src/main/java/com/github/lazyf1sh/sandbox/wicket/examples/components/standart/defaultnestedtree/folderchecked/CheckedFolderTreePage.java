@@ -13,7 +13,7 @@ import org.apache.wicket.model.Model;
 public class CheckedFolderTreePage extends WebPage
 {
     private DefaultNestedTree<CheckedFolderNode> defaultNestedTree;
-    private OrbeonFormTransferTreeNodeProvider   nodeProvider = new OrbeonFormTransferTreeNodeProvider();
+    private SomeTreeNodeProvider                 nodeProvider = new SomeTreeNodeProvider();
     private ProviderSubset<CheckedFolderNode>    checked;
 
     protected boolean isChecked(CheckedFolderNode CheckedFolderNode)
