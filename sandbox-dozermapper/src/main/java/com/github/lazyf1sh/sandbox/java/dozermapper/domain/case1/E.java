@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.dozermapper.objects;
+package com.github.lazyf1sh.sandbox.java.dozermapper.domain.case1;
 
 /**
  * @author Ivan Kopylov
