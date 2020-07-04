@@ -1,8 +1,6 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.lang.ref.thinking.in.java;
 
 /**
- * Purpose: TODO .
- *
  * @author Ivan Kopylov
  */
 public class VeryBig

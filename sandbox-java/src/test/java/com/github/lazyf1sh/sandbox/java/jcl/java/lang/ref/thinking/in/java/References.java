@@ -4,8 +4,6 @@ import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 
 /**
- * Purpose: TODO .
- *
  * @author Ivan Kopylov
  */
 public class References

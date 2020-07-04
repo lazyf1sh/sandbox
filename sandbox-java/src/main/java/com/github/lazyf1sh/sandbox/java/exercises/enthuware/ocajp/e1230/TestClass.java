@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.exercises.enthuware.ocajp.a1230;
+package com.github.lazyf1sh.sandbox.java.exercises.enthuware.ocajp.e1230;
 
 /**
  * google for enthuware.ocajp.i.v8.2.1409
