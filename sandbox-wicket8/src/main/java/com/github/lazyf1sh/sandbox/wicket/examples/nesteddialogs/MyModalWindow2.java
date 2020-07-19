@@ -21,15 +21,15 @@ public abstract class MyModalWindow2 extends Panel
 
         add(new AjaxLink<Void>("closeDialogs")
         {
-            private static final long serialVersionUID = 1L;
+            private static final long serialVersionUID = 1312312312321L;
 
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                onClose(target);
+                onCloseNested2(target);
             }
         });
     }
 
-    public abstract void onClose(AjaxRequestTarget target);
+    public abstract void onCloseNested2(AjaxRequestTarget target);
 }

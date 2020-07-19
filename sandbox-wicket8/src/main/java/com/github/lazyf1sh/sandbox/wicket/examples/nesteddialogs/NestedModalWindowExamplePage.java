@@ -20,9 +20,9 @@ public class NestedModalWindowExamplePage extends WebPage
         modalWindow.setContent(new MyModalWindow1(modalWindow.getContentId())
         {
             @Override
-            public void onShowNested(AjaxRequestTarget target)
+            public void onCloseNested2(AjaxRequestTarget target)
             {
-//                modalWindow.close(target);
+                modalWindow.close(target);
             }
         });
         add(modalWindow);

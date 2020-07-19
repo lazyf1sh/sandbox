@@ -24,8 +24,9 @@ public abstract class MyModalWindow1 extends Panel
         nestedModalWindow.setContent(new MyModalWindow2(nestedModalWindow.getContentId())
         {
             @Override
-            public void onClose(AjaxRequestTarget target)
+            public void onCloseNested2(AjaxRequestTarget target)
             {
+                MyModalWindow1.this.onCloseNested2(target);
                 nestedModalWindow.close(target);
             }
         });
@@ -33,16 +34,15 @@ public abstract class MyModalWindow1 extends Panel
 
         add(new AjaxLink<Void>("showNestedModalWindow")
         {
-            private static final long serialVersionUID = 1L;
+            private static final long serialVersionUID = 1312321L;
 
             @Override
             public void onClick(AjaxRequestTarget target)
             {
                 nestedModalWindow.show(target);
-                onShowNested(target);
             }
         });
     }
 
-    public abstract void onShowNested(AjaxRequestTarget target);
+    public abstract void onCloseNested2(AjaxRequestTarget target);
 }
