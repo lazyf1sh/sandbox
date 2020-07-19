@@ -20,16 +20,16 @@ public abstract class MyModalWindow1 extends Panel
     {
         super.onInitialize();
 
-        ModalWindow modalWindow = new ModalWindow("nestedModalWindow");
-        modalWindow.setContent(new MyModalWindow2(modalWindow.getContentId())
+        ModalWindow nestedModalWindow = new ModalWindow("nestedModalWindow");
+        nestedModalWindow.setContent(new MyModalWindow2(nestedModalWindow.getContentId())
         {
             @Override
             public void onClose(AjaxRequestTarget target)
             {
-//                modalWindow.close(target);
+                nestedModalWindow.close(target);
             }
         });
-        add(modalWindow);
+        add(nestedModalWindow);
 
         add(new AjaxLink<Void>("showNestedModalWindow")
         {
@@ -38,7 +38,7 @@ public abstract class MyModalWindow1 extends Panel
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                modalWindow.show(target);
+                nestedModalWindow.show(target);
                 onShowNested(target);
             }
         });

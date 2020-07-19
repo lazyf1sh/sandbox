@@ -22,7 +22,7 @@ public class NestedModalWindowExamplePage extends WebPage
             @Override
             public void onShowNested(AjaxRequestTarget target)
             {
-                modalWindow.close(target);
+//                modalWindow.close(target);
             }
         });
         add(modalWindow);
