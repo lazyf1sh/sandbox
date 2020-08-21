@@ -1,16 +1,13 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.components.standard.radiochoice;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RadioChoice;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.validation.IValidatable;
-import org.apache.wicket.validation.IValidator;
-import org.apache.wicket.validation.validator.EmailAddressValidator;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Ivan Kopylov

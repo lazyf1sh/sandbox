@@ -1,7 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.ajax;
 
 import com.github.lazyf1sh.sandbox.wicket.util.RandomUuidModel;
-import org.apache.wicket.ajax.AjaxSelfUpdatingTimerBehavior;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.util.time.Duration;

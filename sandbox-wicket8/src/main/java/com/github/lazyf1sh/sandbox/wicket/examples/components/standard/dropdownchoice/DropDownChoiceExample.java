@@ -1,8 +1,5 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.components.standard.dropdownchoice;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
@@ -10,6 +7,9 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Dropdown choice submits on form submit, not only selecting dropdown element

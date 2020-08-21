@@ -1,13 +1,13 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.components.standard.defaultnestedtree.folderchecked;
 
+import org.apache.wicket.extensions.markup.html.repeater.tree.ITreeProvider;
+import org.apache.wicket.model.IModel;
+import org.apache.wicket.model.Model;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-
-import org.apache.wicket.extensions.markup.html.repeater.tree.ITreeProvider;
-import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.Model;
 
 public class SomeTreeNodeProvider implements ITreeProvider<CheckedFolderNode>
 {

@@ -1,9 +1,9 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.problem_solution.navigateBackProblem;
 
+import org.apache.wicket.model.Model;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.wicket.model.Model;
 
 public class SomeHugeModel extends Model<Integer>
 {

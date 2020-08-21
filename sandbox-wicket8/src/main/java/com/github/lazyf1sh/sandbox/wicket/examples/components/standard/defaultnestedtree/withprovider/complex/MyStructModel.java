@@ -1,10 +1,10 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.components.standard.defaultnestedtree.withprovider.complex;
 
+import org.apache.wicket.model.LoadableDetachableModel;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-
-import org.apache.wicket.model.LoadableDetachableModel;
 
 public class MyStructModel extends LoadableDetachableModel<MyNode>
 {

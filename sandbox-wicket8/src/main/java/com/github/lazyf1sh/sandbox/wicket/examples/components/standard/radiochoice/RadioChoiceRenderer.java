@@ -1,15 +1,14 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.components.standard.radiochoice;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.github.lazyf1sh.sandbox.wicket.util.MyChoiceRenderer;
-import com.github.lazyf1sh.sandbox.wicket.util.RandomUuidModel;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RadioChoice;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.PropertyModel;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Ivan Kopylov

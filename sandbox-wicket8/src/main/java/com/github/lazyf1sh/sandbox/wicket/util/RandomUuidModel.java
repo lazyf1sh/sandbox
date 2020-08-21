@@ -1,10 +1,8 @@
 package com.github.lazyf1sh.sandbox.wicket.util;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.model.IModel;
 
 import java.util.UUID;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * @author Ivan Kopylov
