@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.util;
 
+import org.apache.wicket.markup.html.form.IChoiceRenderer;
 import org.apache.wicket.model.IModel;
 
 import java.util.UUID;
@@ -27,4 +28,5 @@ public class RandomUuidModel implements IModel<String>
     {
         System.out.println("RandomUuidModel - detach");
     }
+
 }

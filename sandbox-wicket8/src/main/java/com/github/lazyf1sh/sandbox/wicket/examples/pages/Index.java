@@ -58,7 +58,7 @@ public class Index extends WebPage
                 };
                 item.add(myModalWindowPage);
 
-                myModalWindowPage.add(new Label("pageLinkLabel", Model.of(clazz.getSimpleName())));
+                myModalWindowPage.add(new Label("pageLinkLabel", Model.of(clazz.getName())));
             }
         };
         add(refreshingView);
@@ -73,6 +73,7 @@ public class Index extends WebPage
         URL root = Thread.currentThread().getContextClassLoader().getResource(packageName.replace(".", "/"));
 
         File[] files = new File(root.getFile()).listFiles((dir, name) -> name.endsWith(".class"));
+
 
         List<Class<?>> classes = new ArrayList<>();
         for (File file : files)
