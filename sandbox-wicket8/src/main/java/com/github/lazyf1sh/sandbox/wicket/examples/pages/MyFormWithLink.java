@@ -40,7 +40,7 @@ public class MyFormWithLink extends WebPage
         //                super.onSubmit(target, form);
         //            }
         //
-        //            private static final long serialVersionUID = 1L;
+        //
         //        };
 
         form.add(link);

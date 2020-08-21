@@ -74,7 +74,7 @@ public class ParentPanel extends Panel
 
         parentForm.add(new AjaxLink<Void>("showNestedWindow")
         {
-            private static final long serialVersionUID = 1L;
+
 
             @Override
             public void onClick(AjaxRequestTarget target)
@@ -85,7 +85,7 @@ public class ParentPanel extends Panel
 
         parentForm.add(new AjaxButton("parentSaveButton", parentForm)
         {
-            private static final long serialVersionUID = 1L;
+
 
             @Override
             protected void onSubmit(AjaxRequestTarget target)

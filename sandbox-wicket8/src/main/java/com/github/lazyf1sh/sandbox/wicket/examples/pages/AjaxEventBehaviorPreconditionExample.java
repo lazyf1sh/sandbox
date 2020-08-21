@@ -46,7 +46,7 @@ public class AjaxEventBehaviorPreconditionExample extends WebPage
                 listener.onPrecondition("if (Wicket.Event.keyCode(attrs.event) !== 13) { console.log('anykey press has been prevented'); return false; } console.log('keycode 13 is passed precondition'); return true;");
                 //        attributes.getDynamicExtraParameters().add("var eventKeycode = Wicket.Event.keyCode(attrs.event);" + "return {keycode: eventKeycode};");
                 attributes.getAjaxCallListeners().add(listener);
-                attributes.setAllowDefault(true);
+//                attributes.setAllowDefault(true);
             }
 
 

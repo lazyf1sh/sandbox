@@ -23,7 +23,7 @@ public class ModalWindowExamplePage extends WebPage
 
         add(new AjaxLink<Void>("showModalWindow")
         {
-            private static final long serialVersionUID = 1L;
+
 
             @Override
             public void onClick(AjaxRequestTarget target)

@@ -19,15 +19,11 @@ public class MyFormWithButton extends WebPage
 
         AjaxButton trigger2 = new AjaxButton("trigger", Model.of("button text"))
         {
-
             @Override
-            protected void onSubmit(AjaxRequestTarget target, Form<?> form)
+            protected void onSubmit(AjaxRequestTarget target)
             {
-                super.onSubmit(target, form);
+                super.onSubmit(target);
             }
-
-            private static final long serialVersionUID = 1L;
-
         };
         form.add(trigger2);
 

@@ -21,7 +21,7 @@ public class AnotherPage extends WebPage
         super.onInitialize();
         add(new AjaxLink<Void>("navigateback")
         {
-            private static final long serialVersionUID = 1L;
+
 
             @Override
             public void onClick(AjaxRequestTarget target)

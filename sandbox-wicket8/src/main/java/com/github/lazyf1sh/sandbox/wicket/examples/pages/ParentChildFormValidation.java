@@ -22,7 +22,7 @@ public class ParentChildFormValidation extends WebPage
 
         add(new AjaxLink<Void>("showParentWindow")
         {
-            private static final long serialVersionUID = 1L;
+
 
             @Override
             public void onClick(AjaxRequestTarget target)

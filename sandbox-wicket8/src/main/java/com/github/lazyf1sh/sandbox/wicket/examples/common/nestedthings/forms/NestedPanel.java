@@ -60,7 +60,7 @@ public class NestedPanel extends Panel
 
         nestedForm.add(new AjaxButton("nestedSaveButton", nestedForm)
         {
-            private static final long serialVersionUID = 1L;
+
 
             @Override
             protected void onSubmit(AjaxRequestTarget target)

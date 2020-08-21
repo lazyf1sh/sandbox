@@ -21,7 +21,7 @@ public class PageWithModalWindow extends WebPage
 
         add(new AjaxLink<String>("trigger1")
         {
-            private static final long serialVersionUID = 1L;
+
 
             @Override
             public void onClick(AjaxRequestTarget target)
@@ -41,7 +41,7 @@ public class PageWithModalWindow extends WebPage
                 super.onSubmit(target);
             }
 
-            private static final long serialVersionUID = 1L;
+
         };
         form.add(trigger2);
 
