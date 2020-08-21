@@ -3,6 +3,8 @@ package com.github.lazyf1sh.sandbox.wicket.examples.pages;
 import java.util.Arrays;
 import java.util.List;
 
+import com.github.lazyf1sh.sandbox.wicket.util.MyChoiceRenderer;
+import com.github.lazyf1sh.sandbox.wicket.util.RandomUuidModel;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RadioChoice;
