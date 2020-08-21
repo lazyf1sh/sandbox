@@ -65,7 +65,7 @@ public class ParentPanel extends Panel
 
         ModalWindow nestedWindow = new ModalWindow("nestedWindow");
         nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId()));
-        add(nestedWindow);
+        parentForm.add(nestedWindow);
 
         parentForm.add(new AjaxLink<Void>("showNestedWindow")
         {
