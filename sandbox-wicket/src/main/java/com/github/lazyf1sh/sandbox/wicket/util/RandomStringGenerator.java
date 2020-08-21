@@ -1,13 +1,13 @@
 package com.github.lazyf1sh.sandbox.wicket.util;
 
-import java.util.Random;
-
 import org.apache.wicket.markup.html.WebPage;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomStringGenerator extends WebPage
 {
     public static String getNext()
     {
-        return String.valueOf(new Random().nextInt(5000));
+        return String.valueOf(ThreadLocalRandom.current().nextInt(5000));
     }
 }
