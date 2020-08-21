@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.nesteddialogs;
+package com.github.lazyf1sh.sandbox.wicket.examples.nested.dialogs;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;

@@ -1,7 +1,8 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.pages;
 
 import com.github.lazyf1sh.sandbox.wicket.examples.modaldialog.ModalWindowExamplePage;
-import com.github.lazyf1sh.sandbox.wicket.examples.nesteddialogs.NestedModalWindowExamplePage;
+import com.github.lazyf1sh.sandbox.wicket.examples.nested.dialogs.NestedModalWindowExamplePage;
+import com.github.lazyf1sh.sandbox.wicket.examples.nested.forms.ParentChildFormValidationExample;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.WebPage;
@@ -29,7 +30,7 @@ public class IndexPage extends WebPage
             @Override
             protected Iterator<IModel<Class<?>>> getItemModels()
             {
-                Class<?>[] pages = {ModalWindowExamplePage.class, NestedModalWindowExamplePage.class};
+                Class<?>[] pages = {ModalWindowExamplePage.class, NestedModalWindowExamplePage.class, ParentChildFormValidationExample.class};
 
                 return new ModelIteratorAdapter<Class<?>>(Arrays.stream(pages).iterator())
                 {
@@ -46,7 +47,7 @@ public class IndexPage extends WebPage
             {
                 Class clazz = (Class) item.getModelObject();
 
-                AjaxLink<String> myModalWindowPage = new AjaxLink<String>("pageLink", Model.of(clazz.getName()))
+                AjaxLink<String> myModalWindowPage = new AjaxLink<String>("pageLink", Model.of(clazz.getSimpleName()))
                 {
                     @Override
                     public void onClick(AjaxRequestTarget target)

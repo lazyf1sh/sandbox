@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
+<wicket:panel>
+    <form wicket:id="parentForm">
+        <input wicket:id="textField1" type="text"/>
+        <p>
+            <label>Parent panel</label>
+        <p>
+            <a wicket:id="showNestedWindow">Show nested</a>
+        <div wicket:id="nestedWindow"></div>
+        <input type="button" wicket:id="saveButton">save parent</input>
+    </form>
+</wicket:panel>
+</html>
