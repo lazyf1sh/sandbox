@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.pages;
+package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.ajax;
 
 import com.github.lazyf1sh.sandbox.wicket.util.RandomUuidModel;
 import org.apache.wicket.ajax.AbstractAjaxTimerBehavior;

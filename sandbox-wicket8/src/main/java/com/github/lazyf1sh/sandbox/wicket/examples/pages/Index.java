@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.pages;
 
+import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.WebPage;
@@ -15,6 +16,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Ivan Kopylov
@@ -68,32 +70,45 @@ public class Index extends WebPage
 
     private List<Class<?>> getPagesClasses()
     {
-        String packageName = "com.github.lazyf1sh.sandbox.wicket.examples.pages";
-
-        URL root = Thread.currentThread().getContextClassLoader().getResource(packageName.replace(".", "/"));
-
-        File[] files = new File(root.getFile()).listFiles((dir, name) -> name.endsWith(".class"));
-
-
-        List<Class<?>> classes = new ArrayList<>();
-        for (File file : files)
+        String searchFrom = "com.github.lazyf1sh";
+        List<Class<?>> result = new ArrayList<>();
+        URL root = Thread.currentThread().getContextClassLoader().getResource("");
+        if (root != null)
         {
-            try
+            String file1 = root.getFile();
+
+            List<File> listf = Util.listf(file1, new ArrayList<>());
+            List<File> files = listf.stream().filter(file -> file.getName().endsWith(".class")).collect(Collectors.toList());
+
+            for (File file : files)
             {
-                String className = file.getName().replaceAll(".class$", "");
-                Class<?> cls = Class.forName(packageName + "." + className);
-                if (WebPage.class.isAssignableFrom(cls))
+                try
                 {
-                    classes.add(cls);
+
+                    String dottedPath = file.getAbsolutePath().replaceAll("\\\\", ".");
+                    int index = dottedPath.indexOf(searchFrom);
+                    String fqClassName = dottedPath
+                            .substring(index)
+                            .replace(".class", "");
+
+                    Class<?> cls = Class.forName(fqClassName);
+                    if (WebPage.class.isAssignableFrom(cls))
+                    {
+                        result.add(cls);
+                    }
+                }
+                catch (ClassNotFoundException e)
+                {
+                    e.printStackTrace();
+                    throw new RuntimeException("");
                 }
             }
-            catch (ClassNotFoundException e)
-            {
-                e.printStackTrace();
-                throw new RuntimeException("");
-
-            }
         }
-        return classes;
+        else
+        {
+            throw new RuntimeException("");
+        }
+
+        return result;
     }
 }

@@ -1,10 +1,11 @@
 package com.github.lazyf1sh.sandbox.wicket.util;
 
-import org.apache.wicket.markup.html.WebPage;
-
 import java.util.concurrent.ThreadLocalRandom;
 
-public class RandomStringGenerator extends WebPage
+/**
+ * @author Ivan Kopylov
+ */
+public class RandomStringGenerator
 {
     public static String getNext()
     {

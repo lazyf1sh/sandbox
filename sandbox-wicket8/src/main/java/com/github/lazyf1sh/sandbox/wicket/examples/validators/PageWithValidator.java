@@ -17,18 +17,14 @@ public class PageWithValidator extends WebPage
 
         AjaxButton button = new AjaxButton("myButton", Model.of("button text"))
         {
-
             @Override
-            protected void onSubmit(AjaxRequestTarget target, Form<?> form)
+            protected void onSubmit(AjaxRequestTarget target)
             {
-                super.onSubmit(target, form);
+                super.onSubmit(target);
             }
-
-            private static final long serialVersionUID = 1L;
-
         };
 
-        Form<Void> form = new Form("form");
+        Form<Void> form = new Form<>("form");
         form.add(panelThatNeedToBeValidated);
         form.add(button);
 
