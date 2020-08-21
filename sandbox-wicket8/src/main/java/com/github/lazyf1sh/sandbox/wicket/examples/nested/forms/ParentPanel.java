@@ -4,7 +4,9 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
+import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.IFormSubmitter;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
@@ -30,6 +32,27 @@ public class ParentPanel extends Panel
             protected boolean wantSubmitOnNestedFormSubmit()
             {
                 return true;//wicket will iterate over parent components also and validate them
+            }
+
+            @Override
+            public void process(IFormSubmitter submittingComponent)
+            {
+                super.process(submittingComponent);
+                System.out.println("process");
+            }
+
+            @Override
+            protected void delegateSubmit(IFormSubmitter submittingComponent)
+            {
+                super.delegateSubmit(submittingComponent);
+                System.out.println("delegateSubmit");
+            }
+
+            @Override
+            protected void onComponentTag(ComponentTag tag)
+            {
+                super.onComponentTag(tag);
+                System.out.println("onComponentTag");
             }
         };
         add(parentForm);
