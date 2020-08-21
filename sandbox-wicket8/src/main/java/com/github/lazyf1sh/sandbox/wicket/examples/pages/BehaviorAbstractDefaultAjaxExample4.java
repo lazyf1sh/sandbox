@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.other;
+package com.github.lazyf1sh.sandbox.wicket.examples.pages;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AbstractDefaultAjaxBehavior;
@@ -10,7 +10,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.util.string.StringValue;
 
-public class AbstractDefaultAjaxBehaviorExample4 extends WebPage
+public class BehaviorAbstractDefaultAjaxExample4 extends WebPage
 {
 
     private static final long serialVersionUID = 7352203927463159738L;
