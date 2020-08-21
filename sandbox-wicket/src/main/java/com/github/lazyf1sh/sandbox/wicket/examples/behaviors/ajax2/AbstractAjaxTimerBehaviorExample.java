@@ -1,8 +1,10 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.ajax2;
 
+import com.github.lazyf1sh.sandbox.wicket.util.RandomUuidModel;
 import org.apache.wicket.ajax.AbstractAjaxTimerBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.util.time.Duration;
 
 /**
@@ -17,13 +19,18 @@ public class AbstractAjaxTimerBehaviorExample extends WebPage
     {
         super.onInitialize();
 
-        add(new AbstractAjaxTimerBehavior(Duration.seconds(2))
+        Label label = new Label("label", new RandomUuidModel());
+        label.setOutputMarkupId(true);
+        add(label);
+
+        add(new AbstractAjaxTimerBehavior(Duration.milliseconds(100))
         {
             private static final long serialVersionUID = 4953810211188590750L;
 
             @Override
             protected void onTimer(final AjaxRequestTarget target)
             {
+                target.add(label);
                 System.out.println("onTimer");
             }
         });
