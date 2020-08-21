@@ -2,14 +2,18 @@
 <html xmlns:wicket="http://www.w3.org/1999/xhtml">
 <wicket:panel>
     <form wicket:id="parentForm">
-        <input wicket:id="textFieldParent" type="text"/>
+        <input wicket:id="parentTextField" type="text"/>
         <p/>
-            <label>Parent panel</label>
+        <label>Parent panel</label>
         <p/>
-            <a wicket:id="showNestedWindow">Show nested</a>
-        <div wicket:id="nestedWindow"></div>
+        <a wicket:id="showNestedWindow">Show nested</a>
+
         <p/>
-        <input type="button" wicket:id="saveButtonParent">Submit parent</input>
+        <input type="button" wicket:id="parentSaveButton">Submit parent</input>
+        <p/>
+        <div wicket:id="nestedWindow"></div> <!-- try to move nestedWindow out of form. parent form will not work even wantSubmitOnNestedFormSubmit is set to true-->
+
     </form>
+
 </wicket:panel>
 </html>

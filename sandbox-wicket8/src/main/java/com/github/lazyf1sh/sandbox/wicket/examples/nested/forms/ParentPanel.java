@@ -32,13 +32,13 @@ public class ParentPanel extends Panel
             protected boolean wantSubmitOnNestedFormSubmit()
             {
                 //try to switch flag
-                return false;//wicket will iterate over parent components also and validate them
+                return true;//wicket will iterate over parent components also and validate them
                 //also, place a breakpoint to FormComponent.validate and check what components are validated
             }
         };
         add(parentForm);
 
-        TextField<String> textFieldParent = new TextField<String>("textFieldParent", Model.of("textField1"))
+        TextField<String> parentTextField = new TextField<String>("parentTextField", Model.of("textField1"))
         {
             @Override
             protected void onBeforeRender()
@@ -61,13 +61,11 @@ public class ParentPanel extends Panel
                 super.onModelChanged();
             }
         };
-        parentForm.add(textFieldParent);
+        parentForm.add(parentTextField);
 
-        ModalWindow parentWindow = new ModalWindow("nestedWindow");
-        parentWindow.setContent(new NestedPanel(parentWindow.getContentId())
-        {
-        });
-        parentForm.add(parentWindow);
+        ModalWindow nestedWindow = new ModalWindow("nestedWindow");
+        nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId()));
+        add(nestedWindow);
 
         parentForm.add(new AjaxLink<Void>("showNestedWindow")
         {
@@ -76,11 +74,11 @@ public class ParentPanel extends Panel
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                parentWindow.show(target);
+                nestedWindow.show(target);
             }
         });
 
-        parentForm.add(new AjaxButton("saveButtonParent", parentForm)
+        parentForm.add(new AjaxButton("parentSaveButton", parentForm)
         {
             private static final long serialVersionUID = 1L;
 
@@ -88,6 +86,27 @@ public class ParentPanel extends Panel
             protected void onSubmit(AjaxRequestTarget target)
             {
                 super.onSubmit(target);
+            }
+
+            @Override
+            protected void onBeforeRender()
+            {
+                System.out.println("parentSaveButton - onBeforeRender");
+                super.onBeforeRender();
+            }
+
+            @Override
+            protected void onModelChanging()
+            {
+                System.out.println("parentSaveButton - onModelChanging");
+                super.onModelChanging();
+            }
+
+            @Override
+            protected void onModelChanged()
+            {
+                System.out.println("parentSaveButton - onModelChanged");
+                super.onModelChanged();
             }
         });
     }

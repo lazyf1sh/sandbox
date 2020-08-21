@@ -25,10 +25,32 @@ public class NestedPanel extends Panel
         Form<?> childForm = new Form<Void>("parentForm");
         add(childForm);
 
-        TextField<String> textFieldNested = new TextField<>("textFieldNested", Model.of("textFieldNested"));
+        TextField<String> textFieldNested = new TextField<String>("nestedTextField", Model.of("textFieldNested"))
+        {
+            @Override
+            protected void onBeforeRender()
+            {
+                System.out.println("nestedTextField - onBeforeRender");
+                super.onBeforeRender();
+            }
+
+            @Override
+            protected void onModelChanging()
+            {
+                System.out.println("nestedTextField - onModelChanging");
+                super.onModelChanging();
+            }
+
+            @Override
+            protected void onModelChanged()
+            {
+                System.out.println("nestedTextField - onModelChanged");
+                super.onModelChanged();
+            }
+        };
         childForm.add(textFieldNested);
 
-        childForm.add(new AjaxButton("saveButtonChild", childForm)
+        childForm.add(new AjaxButton("nestedSaveButton", childForm)
         {
             private static final long serialVersionUID = 1L;
 
@@ -36,6 +58,27 @@ public class NestedPanel extends Panel
             protected void onSubmit(AjaxRequestTarget target)
             {
                 super.onSubmit(target);
+            }
+
+            @Override
+            protected void onBeforeRender()
+            {
+                System.out.println("nestedSaveButton - onBeforeRender");
+                super.onBeforeRender();
+            }
+
+            @Override
+            protected void onModelChanging()
+            {
+                System.out.println("nestedSaveButton - onModelChanging");
+                super.onModelChanging();
+            }
+
+            @Override
+            protected void onModelChanged()
+            {
+                System.out.println("nestedSaveButton - onModelChanged");
+                super.onModelChanged();
             }
         });
     }
