@@ -28,7 +28,7 @@ public class NestedPanel extends Panel
         TextField<String> textFieldNested = new TextField<>("textFieldNested", Model.of("textFieldNested"));
         childForm.add(textFieldNested);
 
-        childForm.add(new AjaxButton("saveButton", childForm)
+        childForm.add(new AjaxButton("saveButtonChild", childForm)
         {
             private static final long serialVersionUID = 1L;
 

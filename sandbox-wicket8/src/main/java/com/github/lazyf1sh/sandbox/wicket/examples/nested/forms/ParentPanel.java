@@ -31,12 +31,36 @@ public class ParentPanel extends Panel
             @Override
             protected boolean wantSubmitOnNestedFormSubmit()
             {
-                return true;//wicket will iterate over parent components also and validate them
+                //try to switch flag
+                return false;//wicket will iterate over parent components also and validate them
+                //also, place a breakpoint to FormComponent.validate and check what components are validated
             }
         };
         add(parentForm);
 
-        TextField<String> textFieldParent = new TextField<>("textFieldParent", Model.of("textField1"));
+        TextField<String> textFieldParent = new TextField<String>("textFieldParent", Model.of("textField1"))
+        {
+            @Override
+            protected void onBeforeRender()
+            {
+                System.out.println("textFieldParent - onBeforeRender");
+                super.onBeforeRender();
+            }
+
+            @Override
+            protected void onModelChanging()
+            {
+                System.out.println("textFieldParent - onModelChanging");
+                super.onModelChanging();
+            }
+
+            @Override
+            protected void onModelChanged()
+            {
+                System.out.println("textFieldParent - onModelChanged");
+                super.onModelChanged();
+            }
+        };
         parentForm.add(textFieldParent);
 
         ModalWindow parentWindow = new ModalWindow("nestedWindow");
@@ -56,7 +80,7 @@ public class ParentPanel extends Panel
             }
         });
 
-        parentForm.add(new AjaxButton("saveButton", parentForm)
+        parentForm.add(new AjaxButton("saveButtonParent", parentForm)
         {
             private static final long serialVersionUID = 1L;
 
