@@ -10,7 +10,7 @@ import org.apache.wicket.util.time.Duration;
 /**
  * @author Ivan Kopylov
  */
-public class AjaxAbstractTimerBehavior extends WebPage
+public class BehaviorAjaxAbstractTimer extends WebPage
 {
     private static final long serialVersionUID = 1090726579020985087L;
 

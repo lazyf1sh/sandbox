@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.basic.textfield;
+package com.github.lazyf1sh.sandbox.wicket.examples.pages;
 
 import org.apache.wicket.ajax.AjaxEventBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -11,7 +11,7 @@ import org.apache.wicket.model.Model;
  * Level of understanding: beginner
  * Complexity: low
  */
-public class BasicBehaviorTextfieldExample extends WebPage
+public class BehaviorBasicTextfieldExample extends WebPage
 {
     @Override
     protected void onInitialize()
