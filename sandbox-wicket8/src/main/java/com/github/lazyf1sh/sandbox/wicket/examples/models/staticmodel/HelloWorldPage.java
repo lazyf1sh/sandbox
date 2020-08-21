@@ -1,6 +1,5 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.pages;
+package com.github.lazyf1sh.sandbox.wicket.examples.models.staticmodel;
 
-import com.github.lazyf1sh.sandbox.wicket.examples.models.staticmodel.StaticModelExample;
 import org.apache.wicket.ajax.AjaxEventBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
@@ -58,6 +57,7 @@ public class HelloWorldPage extends WebPage
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add("username", usernameValue);
                 pageParameters.add("SOMEPARAMETER", "SOMEVALUE");
+
                 setResponsePage(StaticModelExample.class, pageParameters);
             }
         };

@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.pages;
+package com.github.lazyf1sh.sandbox.wicket.examples.validators;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;

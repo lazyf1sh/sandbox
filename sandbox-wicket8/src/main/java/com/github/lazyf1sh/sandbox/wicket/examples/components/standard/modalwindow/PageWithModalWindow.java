@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.pages;
+package com.github.lazyf1sh.sandbox.wicket.examples.components.standard.modalwindow;
 
 import com.github.lazyf1sh.sandbox.wicket.examples.components.standard.MyModalWindow;
 import org.apache.wicket.ajax.AjaxRequestTarget;

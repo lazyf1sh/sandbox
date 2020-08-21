@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.pages;
+package com.github.lazyf1sh.sandbox.wicket.examples.components.standard.radiochoice;
 
 import java.util.Arrays;
 import java.util.List;

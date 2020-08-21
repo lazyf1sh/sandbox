@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.pages;
+package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings;
 
 import com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.dialogs.MyModalWindow1;
 import org.apache.wicket.ajax.AjaxRequestTarget;

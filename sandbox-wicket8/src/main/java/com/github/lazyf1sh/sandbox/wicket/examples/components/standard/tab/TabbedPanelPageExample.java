@@ -1,10 +1,8 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.pages;
+package com.github.lazyf1sh.sandbox.wicket.examples.components.standard.tab;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.lazyf1sh.sandbox.wicket.examples.components.standard.tab.MyTabOne;
-import com.github.lazyf1sh.sandbox.wicket.examples.components.standard.tab.MyTabTwo;
 import org.apache.wicket.extensions.ajax.markup.html.tabs.AjaxTabbedPanel;
 import org.apache.wicket.extensions.markup.html.tabs.AbstractTab;
 import org.apache.wicket.extensions.markup.html.tabs.ITab;
