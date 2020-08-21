@@ -27,8 +27,8 @@ public class NestedPanel extends Panel
         add(childForm);
 
 
-        TextField<String> textFieldChild = new TextField<>("textFieldChild", Model.of("textFieldChild"));
-        childForm.add(textFieldChild);
+        TextField<String> textFieldNested = new TextField<>("textFieldNested", Model.of("textFieldNested"));
+        childForm.add(textFieldNested);
 
         childForm.add(new AjaxButton("saveButton", childForm)
         {
