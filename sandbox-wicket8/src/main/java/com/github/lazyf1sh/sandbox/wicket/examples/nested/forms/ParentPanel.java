@@ -33,27 +33,6 @@ public class ParentPanel extends Panel
             {
                 return true;//wicket will iterate over parent components also and validate them
             }
-
-            @Override
-            public void process(IFormSubmitter submittingComponent)
-            {
-                super.process(submittingComponent);
-                System.out.println("process");
-            }
-
-            @Override
-            protected void delegateSubmit(IFormSubmitter submittingComponent)
-            {
-                super.delegateSubmit(submittingComponent);
-                System.out.println("delegateSubmit");
-            }
-
-            @Override
-            protected void onComponentTag(ComponentTag tag)
-            {
-                super.onComponentTag(tag);
-                System.out.println("onComponentTag");
-            }
         };
         add(parentForm);
 

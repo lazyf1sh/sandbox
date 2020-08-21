@@ -22,10 +22,8 @@ public class NestedPanel extends Panel
     {
         super.onInitialize();
 
-
         Form<?> childForm = new Form<Void>("parentForm");
         add(childForm);
-
 
         TextField<String> textFieldNested = new TextField<>("textFieldNested", Model.of("textFieldNested"));
         childForm.add(textFieldNested);
