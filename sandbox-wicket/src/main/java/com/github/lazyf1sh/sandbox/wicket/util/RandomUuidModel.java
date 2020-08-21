@@ -19,12 +19,12 @@ public class RandomUuidModel implements IModel<String>
     @Override
     public void setObject(String object)
     {
-
+        throw new RuntimeException("is not supposed to be implemented for demo scenario.");
     }
 
     @Override
     public void detach()
     {
-
+        System.out.println("RandomUuidModel - detach");
     }
 }

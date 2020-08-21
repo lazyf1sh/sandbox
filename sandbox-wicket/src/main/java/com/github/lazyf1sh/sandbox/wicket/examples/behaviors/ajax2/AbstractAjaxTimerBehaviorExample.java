@@ -23,15 +23,15 @@ public class AbstractAjaxTimerBehaviorExample extends WebPage
         label.setOutputMarkupId(true);
         add(label);
 
-        add(new AbstractAjaxTimerBehavior(Duration.milliseconds(100))
+        add(new AbstractAjaxTimerBehavior(Duration.seconds(1))
         {
             private static final long serialVersionUID = 4953810211188590750L;
 
             @Override
             protected void onTimer(final AjaxRequestTarget target)
             {
+                System.out.println("AbstractAjaxTimerBehavior - onTimer");
                 target.add(label);
-                System.out.println("onTimer");
             }
         });
     }
