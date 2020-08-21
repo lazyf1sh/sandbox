@@ -24,11 +24,18 @@ public class ParentPanel extends Panel
     {
         super.onInitialize();
 
-        Form<?> parentForm = new Form<>("parentForm");
+        Form<?> parentForm = new Form<Void>("parentForm")
+        {
+            @Override
+            protected boolean wantSubmitOnNestedFormSubmit()
+            {
+                return true;//wicket will iterate over parent components also and validate them
+            }
+        };
         add(parentForm);
 
-        TextField<String> textField1 = new TextField<>("textField1", Model.of("textField1"));
-        parentForm.add(textField1);
+        TextField<String> textFieldParent = new TextField<>("textFieldParent", Model.of("textField1"));
+        parentForm.add(textFieldParent);
 
         ModalWindow parentWindow = new ModalWindow("nestedWindow");
         parentWindow.setContent(new NestedPanel(parentWindow.getContentId())
