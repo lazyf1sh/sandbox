@@ -2,7 +2,7 @@ package com.github.lazyf1sh.sandbox.wicket.config;
 
 import org.apache.wicket.Page;
 import org.apache.wicket.protocol.http.WebApplication;
-import com.github.lazyf1sh.sandbox.wicket.examples.pages.IndexPage;
+import com.github.lazyf1sh.sandbox.wicket.examples.common.IndexPage;
 
 public class WicketApplication extends WebApplication
 {

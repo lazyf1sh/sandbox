@@ -1,8 +1,8 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.pages;
+package com.github.lazyf1sh.sandbox.wicket.examples.common;
 
-import com.github.lazyf1sh.sandbox.wicket.examples.modaldialog.ModalWindowExamplePage;
-import com.github.lazyf1sh.sandbox.wicket.examples.nested.dialogs.NestedModalWindowExamplePage;
-import com.github.lazyf1sh.sandbox.wicket.examples.nested.forms.ParentChildFormValidationExample;
+import com.github.lazyf1sh.sandbox.wicket.examples.eightspecific.modaldialog.ModalWindowExamplePage;
+import com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.dialogs.NestedModalWindowExamplePage;
+import com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.ParentChildFormValidationExample;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.WebPage;

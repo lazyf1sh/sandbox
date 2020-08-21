@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.nested.forms;
+package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;

@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.nested.forms;
+package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
@@ -22,8 +22,16 @@ public class NestedPanel extends Panel
     {
         super.onInitialize();
 
-        Form<?> childForm = new Form<Void>("parentForm");
-        add(childForm);
+        Form<?> nestedForm = new Form<Void>("nestedForm")
+        {
+            @Override
+            protected void onSubmit()
+            {
+                System.out.println("nestedForm - onSubmit");
+                super.onSubmit();
+            }
+        };
+        add(nestedForm);
 
         TextField<String> textFieldNested = new TextField<String>("nestedTextField", Model.of("textFieldNested"))
         {
@@ -48,9 +56,9 @@ public class NestedPanel extends Panel
                 super.onModelChanged();
             }
         };
-        childForm.add(textFieldNested);
+        nestedForm.add(textFieldNested);
 
-        childForm.add(new AjaxButton("nestedSaveButton", childForm)
+        nestedForm.add(new AjaxButton("nestedSaveButton", nestedForm)
         {
             private static final long serialVersionUID = 1L;
 

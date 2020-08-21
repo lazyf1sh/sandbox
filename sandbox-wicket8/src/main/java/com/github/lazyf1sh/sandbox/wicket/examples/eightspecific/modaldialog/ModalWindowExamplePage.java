@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.modaldialog;
+package com.github.lazyf1sh.sandbox.wicket.examples.eightspecific.modaldialog;
 
 import com.github.lazyf1sh.sandbox.wicket.examples.common.MyEmptyPage;
 import org.apache.wicket.ajax.AjaxRequestTarget;
