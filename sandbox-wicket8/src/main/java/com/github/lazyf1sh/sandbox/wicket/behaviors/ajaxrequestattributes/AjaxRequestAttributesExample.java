@@ -14,7 +14,7 @@ public class AjaxRequestAttributesExample extends WebPage
     {
         super.onInitialize();
 
-        final TextField<String> myTextField = new TextField<String>("myTextField", Model.of("1"));
+        final TextField<String> myTextField = new TextField<>("myTextField", Model.of("1"));
         myTextField.setOutputMarkupId(true);
         myTextField.add(BehaviorFactory.get());
         add(myTextField);
