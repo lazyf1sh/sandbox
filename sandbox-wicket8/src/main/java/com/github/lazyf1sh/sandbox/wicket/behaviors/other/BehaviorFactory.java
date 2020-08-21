@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.behaviors.other2;
+package com.github.lazyf1sh.sandbox.wicket.behaviors.other;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxEventBehavior;

@@ -1,6 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.behaviors.ajaxrequestattributes;
 
-import com.github.lazyf1sh.sandbox.wicket.behaviors.other2.BehaviorFactory;
+import com.github.lazyf1sh.sandbox.wicket.behaviors.other.BehaviorFactory;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.Model;
