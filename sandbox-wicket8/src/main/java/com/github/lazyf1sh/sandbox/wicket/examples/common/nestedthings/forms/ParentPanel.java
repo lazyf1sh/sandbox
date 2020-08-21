@@ -90,6 +90,7 @@ public class ParentPanel extends Panel
             @Override
             protected void onSubmit(AjaxRequestTarget target)
             {
+                parentForm.findSubmittingButton().onSubmit();
                 System.out.println("parentSaveButton - onSubmit");
                 super.onSubmit(target);
             }
