@@ -15,7 +15,7 @@ public class MyFormWithButton extends WebPage
     {
         super.onInitialize();
 
-        Form<Void> form = new Form("form");
+        Form<Void> form = new Form<>("form");
 
         AjaxButton trigger2 = new AjaxButton("trigger", Model.of("button text"))
         {

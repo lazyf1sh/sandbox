@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.pages;
+package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.ajax;
 
 public class AjaxEventBehaviorPreconditionModel
 {

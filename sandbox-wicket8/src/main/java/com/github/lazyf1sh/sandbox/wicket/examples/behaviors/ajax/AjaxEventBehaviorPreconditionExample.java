@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.pages;
+package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.ajax;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
