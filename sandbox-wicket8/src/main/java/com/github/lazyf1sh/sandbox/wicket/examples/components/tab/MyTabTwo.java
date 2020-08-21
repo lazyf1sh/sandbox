@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.components.standart.tabs;
+package com.github.lazyf1sh.sandbox.wicket.examples.components.tab;
 
 import org.apache.wicket.markup.html.panel.Panel;
 
