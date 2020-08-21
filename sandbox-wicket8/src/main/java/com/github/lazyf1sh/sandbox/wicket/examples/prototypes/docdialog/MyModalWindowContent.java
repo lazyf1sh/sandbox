@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.prototypes.docdialog;
+package com.github.lazyf1sh.sandbox.wicket.examples.prototypes.docdialog;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
