@@ -1,9 +1,9 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.ajaxrequestattributes;
+package com.github.lazyf1sh.sandbox.wicket.behaviors.ajaxrequestattributes;
 
+import com.github.lazyf1sh.sandbox.wicket.behaviors.other2.BehaviorFactory;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.Model;
-import com.github.lazyf1sh.sandbox.wicket.examples.behaviors.other2.BehaviorFactory;
 
 public class AjaxRequestAttributesExample extends WebPage
 {

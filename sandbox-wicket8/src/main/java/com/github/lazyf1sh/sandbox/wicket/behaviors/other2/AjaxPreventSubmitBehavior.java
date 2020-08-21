@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.other2;
+package com.github.lazyf1sh.sandbox.wicket.behaviors.other2;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxEventBehavior;
@@ -27,7 +27,7 @@ public class AjaxPreventSubmitBehavior extends AjaxEventBehavior
         listener.onPrecondition("if (Wicket.Event.keyCode(attrs.event) !== 13) { console.log('anykey press has been prevented'); return false; } console.log('keycode 13 is passed precondition'); return true;");
 //        attributes.getDynamicExtraParameters().add("var eventKeycode = Wicket.Event.keyCode(attrs.event);" + "return {keycode: eventKeycode};");
         attributes.getAjaxCallListeners().add(listener);
-        attributes.setAllowDefault(true);
+//        attributes.setAllowDefault(true);
     }
 
     @Override

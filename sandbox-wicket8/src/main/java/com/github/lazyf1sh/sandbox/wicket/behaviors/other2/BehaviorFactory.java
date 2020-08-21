@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.other2;
+package com.github.lazyf1sh.sandbox.wicket.behaviors.other2;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxEventBehavior;
@@ -41,7 +41,7 @@ public class BehaviorFactory
                 };
                 attributes.getAjaxCallListeners().add(listener);
                 attributes.getDynamicExtraParameters().add("var eventKeycode = Wicket.Event.keyCode(attrs.event);" + "return {keycode: eventKeycode};");
-                attributes.setAllowDefault(true);
+//                attributes.setAllowDefault(true);
             }
         };
         return ajaxEventBehavior;
