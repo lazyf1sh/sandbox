@@ -9,7 +9,7 @@ import org.apache.wicket.markup.html.WebPage;
 /**
  * @author Ivan Kopylov
  */
-public class ParentChildFormValidationExample extends WebPage
+public class ParentChildFormValidation extends WebPage
 {
     @Override
     protected void onInitialize()

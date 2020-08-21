@@ -20,7 +20,7 @@ public class AjaxSelfUpdatingTimerBehaviorExample extends WebPage
         super.onInitialize();
 
         final TextField<String> myTextField = new TextField<>("myTextField", new RandomUuidModel());
-        myTextField.add(new AjaxSelfUpdatingTimerBehavior(Duration.seconds(2)));
+        myTextField.add(new org.apache.wicket.ajax.AjaxSelfUpdatingTimerBehavior(Duration.seconds(2)));
         myTextField.setOutputMarkupId(true);
 
         add(myTextField);

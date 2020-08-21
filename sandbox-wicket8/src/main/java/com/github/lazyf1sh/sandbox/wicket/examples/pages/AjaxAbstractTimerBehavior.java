@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.ajax2;
+package com.github.lazyf1sh.sandbox.wicket.examples.pages;
 
 import com.github.lazyf1sh.sandbox.wicket.util.RandomUuidModel;
 import org.apache.wicket.ajax.AbstractAjaxTimerBehavior;
@@ -10,7 +10,7 @@ import org.apache.wicket.util.time.Duration;
 /**
  * @author Ivan Kopylov
  */
-public class AbstractAjaxTimerBehaviorExample extends WebPage
+public class AjaxAbstractTimerBehavior extends WebPage
 {
     private static final long serialVersionUID = 1090726579020985087L;
 

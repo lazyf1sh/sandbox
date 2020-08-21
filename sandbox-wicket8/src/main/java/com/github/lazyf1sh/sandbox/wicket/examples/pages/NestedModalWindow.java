@@ -9,7 +9,7 @@ import org.apache.wicket.markup.html.WebPage;
 /**
  * @author Ivan Kopylov
  */
-public class NestedModalWindowExamplePage extends WebPage
+public class NestedModalWindow extends WebPage
 {
 
     @Override
