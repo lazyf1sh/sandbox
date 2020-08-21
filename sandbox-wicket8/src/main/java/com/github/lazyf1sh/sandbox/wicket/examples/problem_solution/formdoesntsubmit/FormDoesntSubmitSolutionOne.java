@@ -19,7 +19,7 @@ public class FormDoesntSubmitSolutionOne extends WebPage
     {
         super.onInitialize();
 
-        Form<?> form = new Form("myForm")
+        Form<?> form = new Form<Void>("myForm")
         {
             @Override
             protected void onSubmit()
@@ -37,10 +37,10 @@ public class FormDoesntSubmitSolutionOne extends WebPage
         AjaxSubmitLink link = new AjaxSubmitLink("myButton", form)
         {
             @Override
-            protected void onSubmit(final AjaxRequestTarget target, final Form<?> form)
+            protected void onSubmit(AjaxRequestTarget target)
             {
-                super.onSubmit(target, form);
-                System.out.println("triggered");
+                super.onSubmit(target);
+                System.out.println("myButton - onSubmit");
             }
         };
 

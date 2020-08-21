@@ -1,21 +1,21 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.problem_solution.formdoesntsubmit;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
+import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 
 /**
- * Demonstrates that ajaxsubmit link not in the hierarchy
+ * Demonstrates solution (see package for the problem)
  */
-public class FormDoesntSubmitSolutionThree extends WebPage
+public class FormDoesntSubmitSolutionTwo extends WebPage
 {
     @Override
     protected void onInitialize()
     {
         super.onInitialize();
 
-        Form<?> form = new Form("myForm")
+        Form<?> form = new Form<Void>("myForm")
         {
             @Override
             protected void onSubmit()
@@ -31,18 +31,16 @@ public class FormDoesntSubmitSolutionThree extends WebPage
             }
         };
 
-        AjaxSubmitLink link = new AjaxSubmitLink("myButton", form)
+        AjaxButton link = new AjaxButton("myButton", form)
         {
             @Override
-            protected void onSubmit(final AjaxRequestTarget target, final Form<?> form)
+            protected void onSubmit(AjaxRequestTarget target)
             {
-                super.onSubmit(target, form);
+                super.onSubmit(target);
             }
         };
 
-        //from javadoc:
-        //A link that submits a form via ajax. Since this link takes the form as a constructor argument it does not need to be inside form's component hierarchy.r
-        add(link);
+        form.add(link);
         add(form);
     }
 }
