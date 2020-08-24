@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.ajaxsubmitlink;
 
+import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
@@ -48,7 +49,7 @@ public class ParentPanel extends Panel
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                System.out.println("showNestedWindow - onClick.");
+                Util.showComponentMessage(this);
                 nestedWindow.show(target);
             }
         };
@@ -61,28 +62,28 @@ public class ParentPanel extends Panel
             @Override
             protected void onSubmit(AjaxRequestTarget target)
             {
-                System.out.println("parentSaveButton - onSubmit.");
+                Util.showComponentMessage(this);
                 super.onSubmit(target);
             }
 
             @Override
             protected void onBeforeRender()
             {
-                System.out.println("parentSaveButton - onBeforeRender.");
+                Util.showComponentMessage(this);
                 super.onBeforeRender();
             }
 
             @Override
             protected void onModelChanging()
             {
-                System.out.println("parentSaveButton - onModelChanging.");
+                Util.showComponentMessage(this);
                 super.onModelChanging();
             }
 
             @Override
             protected void onModelChanged()
             {
-                System.out.println("parentSaveButton - onModelChanged.");
+                Util.showComponentMessage(this);
                 super.onModelChanged();
             }
         };
@@ -95,21 +96,21 @@ public class ParentPanel extends Panel
             @Override
             protected void onBeforeRender()
             {
-                System.out.println("parentTextField - onBeforeRender.");
+                Util.showComponentMessage(this);
                 super.onBeforeRender();
             }
 
             @Override
             protected void onModelChanging()
             {
-                System.out.println("parentTextField - onModelChanging.");
+                Util.showComponentMessage(this);
                 super.onModelChanging();
             }
 
             @Override
             protected void onModelChanged()
             {
-                System.out.println("parentTextField - onModelChanged.");
+                Util.showComponentMessage(this);
                 super.onModelChanged();
             }
         };
@@ -130,8 +131,9 @@ public class ParentPanel extends Panel
             @Override
             protected void onSubmit()
             {
-                String msg = String.format("parentForm - onSubmit. parentTextField model object: %s | convertedInput: %s", parentTextField.getModelObject(), parentTextField.getConvertedInput());
-                System.out.println(msg);
+                String msg = String.format("parentTextField model object: %s, convertedInput: %s", parentTextField.getModelObject(), parentTextField.getConvertedInput());
+                Util.showComponentMessage(this,  msg);
+
                 super.onSubmit();
             }
         };

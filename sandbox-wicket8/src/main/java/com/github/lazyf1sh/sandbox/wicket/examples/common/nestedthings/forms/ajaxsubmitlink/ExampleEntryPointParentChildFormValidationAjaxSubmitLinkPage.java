@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.ajaxsubmitlink;
 
+import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
@@ -31,7 +32,7 @@ public class ExampleEntryPointParentChildFormValidationAjaxSubmitLinkPage extend
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                System.out.println("showParentWindow - onClick.");
+                Util.showComponentMessage(this);
                 window.setContent(new ParentPanel(window.getContentId()));
                 window.show(target);
             }
@@ -45,7 +46,7 @@ public class ExampleEntryPointParentChildFormValidationAjaxSubmitLinkPage extend
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                System.out.println("showParentWindow - onClick.");
+                Util.showComponentMessage(this);
                 window.setContent(new NestedPanel(window.getContentId(), null));
                 window.show(target);
             }

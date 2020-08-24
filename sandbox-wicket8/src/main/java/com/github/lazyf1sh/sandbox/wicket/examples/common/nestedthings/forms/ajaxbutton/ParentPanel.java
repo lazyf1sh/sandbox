@@ -70,7 +70,7 @@ public class ParentPanel extends Panel
         };
         parentForm.add(parentTextField);
 
-        ModalWindow nestedWindow = new ModalWindow("nestedWindow.");
+        ModalWindow nestedWindow = new ModalWindow("nestedWindow");
         nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId()));
         parentForm.add(nestedWindow);
 
@@ -79,7 +79,7 @@ public class ParentPanel extends Panel
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                System.out.println("showNestedWindow - onClick..");
+                System.out.println("showNestedWindow - onClick.");
                 nestedWindow.show(target);
             }
         });

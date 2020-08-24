@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.ajaxsubmitlink;
 
+import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
@@ -47,29 +48,29 @@ public class NestedPanel extends Panel
             @Override
             protected void onSubmit(AjaxRequestTarget target)
             {
-                String msg = String.format("parentForm - onSubmit. parentTextField model object: %s | convertedInput: %s", nestedTextField.getModelObject(), nestedTextField.getConvertedInput());
-                System.out.println(msg);
+                String msg = String.format("nestedTextField model object: %s, convertedInput: %s", nestedTextField.getModelObject(), nestedTextField.getConvertedInput());
+                Util.showComponentMessage(this, msg);
                 super.onSubmit(target);
             }
 
             @Override
             protected void onBeforeRender()
             {
-                System.out.println("nestedSaveButton - onBeforeRender.");
+                Util.showComponentMessage(this);
                 super.onBeforeRender();
             }
 
             @Override
             protected void onModelChanging()
             {
-                System.out.println("nestedSaveButton - onModelChanging.");
+                Util.showComponentMessage(this);
                 super.onModelChanging();
             }
 
             @Override
             protected void onModelChanged()
             {
-                System.out.println("nestedSaveButton - onModelChanged.");
+                Util.showComponentMessage(this);
                 super.onModelChanged();
             }
         };
@@ -82,28 +83,28 @@ public class NestedPanel extends Panel
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                String msg = String.format("parentForm - onSubmit. parentTextField model object: %s | convertedInput: %s", nestedTextField.getModelObject(), nestedTextField.getConvertedInput());
-                System.out.println(msg);
+                String msg = String.format("parentForm - onSubmit. parentTextField model object: %s, convertedInput: %s", nestedTextField.getModelObject(), nestedTextField.getConvertedInput());
+                Util.showComponentMessage(this, msg);
             }
 
             @Override
             protected void onBeforeRender()
             {
-                System.out.println("nestedSaveButton - onBeforeRender.");
+                Util.showComponentMessage(this);
                 super.onBeforeRender();
             }
 
             @Override
             protected void onModelChanging()
             {
-                System.out.println("nestedSaveButton - onModelChanging.");
+                Util.showComponentMessage(this);
                 super.onModelChanging();
             }
 
             @Override
             protected void onModelChanged()
             {
-                System.out.println("nestedSaveButton - onModelChanged.");
+                Util.showComponentMessage(this);
                 super.onModelChanged();
             }
         };
@@ -116,21 +117,21 @@ public class NestedPanel extends Panel
             @Override
             protected void onBeforeRender()
             {
-                System.out.println("nestedTextField - onBeforeRender.");
+                Util.showComponentMessage(this);
                 super.onBeforeRender();
             }
 
             @Override
             protected void onModelChanging()
             {
-                System.out.println("nestedTextField - onModelChanging.");
+                Util.showComponentMessage(this);
                 super.onModelChanging();
             }
 
             @Override
             protected void onModelChanged()
             {
-                System.out.println("nestedTextField - onModelChanged.");
+                Util.showComponentMessage(this);
                 super.onModelChanged();
             }
         };
@@ -143,7 +144,7 @@ public class NestedPanel extends Panel
             @Override
             protected void onSubmit()
             {
-                System.out.println("nestedForm - onSubmit.");
+                Util.showComponentMessage(this);
                 super.onSubmit();
             }
         };
