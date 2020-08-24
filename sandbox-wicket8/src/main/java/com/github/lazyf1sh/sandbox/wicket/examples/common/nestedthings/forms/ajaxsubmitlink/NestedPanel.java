@@ -13,8 +13,8 @@ import org.apache.wicket.model.Model;
  */
 public class NestedPanel extends Panel
 {
-    private final Form<?> formToSubmit;
-
+    private final Form<?>     formToSubmit;
+    private TextField<String> nestedTextField;
     public NestedPanel(String id, Form<?> form)
     {
         super(id);
@@ -26,8 +26,9 @@ public class NestedPanel extends Panel
     {
         super.onInitialize();
 
-        add(buildNestedTextField());
-        if (formToSubmit == null)
+        nestedTextField = buildNestedTextField();
+        add(nestedTextField);
+        if (formToSubmit != null)
         {
             add(buildNestedSaveButtonAjaxSubmitLink());
         }
@@ -45,7 +46,8 @@ public class NestedPanel extends Panel
             @Override
             protected void onSubmit(AjaxRequestTarget target)
             {
-                System.out.println("[AjaxSubmitLink] nestedSaveButton - onSubmit.");
+
+                System.out.println("[AjaxSubmitLink] nestedSaveButton - onSubmit. Text field model object: " + nestedTextField.getModelObject());
                 super.onSubmit(target);
             }
 
@@ -79,7 +81,7 @@ public class NestedPanel extends Panel
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                System.out.println("[AjaxLink] nestedSaveButton - onClick.");
+                System.out.println("[AjaxLink] nestedSaveButton - onClick. Text field model object:" + nestedTextField.getModelObject());
             }
 
             @Override
