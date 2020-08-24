@@ -8,7 +8,7 @@ import org.apache.wicket.markup.html.WebPage;
 /**
  * @author Ivan Kopylov
  */
-public class ParentChildFormValidationAjaxSubmitLink extends WebPage
+public class ExampleEntryPointParentChildFormValidationAjaxSubmitLinkPage extends WebPage
 {
     @Override
     protected void onInitialize()
