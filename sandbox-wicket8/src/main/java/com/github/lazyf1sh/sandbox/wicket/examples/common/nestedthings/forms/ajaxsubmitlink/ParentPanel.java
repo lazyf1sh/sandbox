@@ -123,14 +123,15 @@ public class ParentPanel extends Panel
             protected boolean wantSubmitOnNestedFormSubmit()
             {
                 //try to switch flag
-                return true;//wicket will iterate over parent components also and validate them
+                return false;//wicket will iterate over parent components also and validate them
                 //also, place a breakpoint to FormComponent.validate and check what components are validated
             }
 
             @Override
             protected void onSubmit()
             {
-                System.out.println("parentForm - onSubmit. parentTextField model object: " + parentTextField.getModelObject());
+                String msg = String.format("parentForm - onSubmit. parentTextField model object: %s | convertedInput: %s", parentTextField.getModelObject(), parentTextField.getConvertedInput());
+                System.out.println(msg);
                 super.onSubmit();
             }
         };
