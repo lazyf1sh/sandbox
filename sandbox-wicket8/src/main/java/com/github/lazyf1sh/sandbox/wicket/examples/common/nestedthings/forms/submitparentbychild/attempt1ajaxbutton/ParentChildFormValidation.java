@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.submitparentbychild.attempt1ajaxbutton;
 
+import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
@@ -24,7 +25,7 @@ public class ParentChildFormValidation extends WebPage
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                System.out.println("showParentWindow - onClick.");
+                Util.showComponentMessage(this);
                 parentWindow.show(target);
             }
         });

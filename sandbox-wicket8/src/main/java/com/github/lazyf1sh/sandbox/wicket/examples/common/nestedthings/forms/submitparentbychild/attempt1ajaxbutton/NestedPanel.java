@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.submitparentbychild.attempt1ajaxbutton;
 
+import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.markup.html.form.Form;
@@ -27,7 +28,7 @@ public class NestedPanel extends Panel
             @Override
             protected void onSubmit()
             {
-                System.out.println("nestedForm - onSubmit.");
+                Util.showComponentMessage(this);
                 super.onSubmit();
             }
         };
@@ -38,21 +39,21 @@ public class NestedPanel extends Panel
             @Override
             protected void onBeforeRender()
             {
-                System.out.println("nestedTextField - onBeforeRender.");
+                Util.showComponentMessage(this);
                 super.onBeforeRender();
             }
 
             @Override
             protected void onModelChanging()
             {
-                System.out.println("nestedTextField - onModelChanging.");
+                Util.showComponentMessage(this);
                 super.onModelChanging();
             }
 
             @Override
             protected void onModelChanged()
             {
-                System.out.println("nestedTextField - onModelChanged.");
+                Util.showComponentMessage(this);
                 super.onModelChanged();
             }
         };
@@ -64,28 +65,28 @@ public class NestedPanel extends Panel
             @Override
             protected void onSubmit(AjaxRequestTarget target)
             {
-                System.out.println("nestedSaveButton - onSubmit.");
+                Util.showComponentMessage(this);
                 super.onSubmit(target);
             }
 
             @Override
             protected void onBeforeRender()
             {
-                System.out.println("nestedSaveButton - onBeforeRender.");
+                Util.showComponentMessage(this);
                 super.onBeforeRender();
             }
 
             @Override
             protected void onModelChanging()
             {
-                System.out.println("nestedSaveButton - onModelChanging.");
+                Util.showComponentMessage(this);
                 super.onModelChanging();
             }
 
             @Override
             protected void onModelChanged()
             {
-                System.out.println("nestedSaveButton - onModelChanged.");
+                Util.showComponentMessage(this);
                 super.onModelChanged();
             }
         });

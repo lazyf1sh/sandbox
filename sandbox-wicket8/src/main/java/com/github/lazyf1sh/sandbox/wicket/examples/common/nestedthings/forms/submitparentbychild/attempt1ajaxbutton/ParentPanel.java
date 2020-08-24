@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.submitparentbychild.attempt1ajaxbutton;
 
+import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
@@ -71,7 +72,7 @@ public class ParentPanel extends Panel
         parentForm.add(parentTextField);
 
         ModalWindow nestedWindow = new ModalWindow("nestedWindow");
-        nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId()));
+
         parentForm.add(nestedWindow);
 
         parentForm.add(new AjaxLink<Void>("showNestedWindow")
@@ -79,7 +80,9 @@ public class ParentPanel extends Panel
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                System.out.println("showNestedWindow - onClick.");
+                Util.showComponentMessage(this);
+                nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId()));
+                nestedWindow.setTitle("Nested window");
                 nestedWindow.show(target);
             }
         });
@@ -89,28 +92,28 @@ public class ParentPanel extends Panel
             @Override
             protected void onSubmit(AjaxRequestTarget target)
             {
-                System.out.println("parentSaveButton - onSubmit.");
+                Util.showComponentMessage(this);
                 super.onSubmit(target);
             }
 
             @Override
             protected void onBeforeRender()
             {
-                System.out.println("parentSaveButton - onBeforeRender.");
+                Util.showComponentMessage(this);
                 super.onBeforeRender();
             }
 
             @Override
             protected void onModelChanging()
             {
-                System.out.println("parentSaveButton - onModelChanging.");
+                Util.showComponentMessage(this);
                 super.onModelChanging();
             }
 
             @Override
             protected void onModelChanged()
             {
-                System.out.println("parentSaveButton - onModelChanged.");
+                Util.showComponentMessage(this);
                 super.onModelChanged();
             }
         });
