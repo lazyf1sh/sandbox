@@ -17,10 +17,12 @@ public class ExampleEntryPointParentChildFormValidationAjaxSubmitLinkPage extend
         super.onInitialize();
 
         ModalWindow parentWindow = new ModalWindow("parentWindow");
+        parentWindow.setTitle("Parent window");
         add(parentWindow);
         add(buildShowParentWin(parentWindow));
 
         ModalWindow nestedWindow = new ModalWindow("nestedWindow");
+        nestedWindow.setTitle("Nested window");
         add(nestedWindow);
         add(buildShowNestedWindow(nestedWindow));
     }
