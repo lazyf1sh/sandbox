@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms;
+package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.ajaxbutton;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
@@ -21,11 +21,10 @@ public class ParentChildFormValidation extends WebPage
 
         add(new AjaxLink<Void>("showParentWindow")
         {
-
-
             @Override
             public void onClick(AjaxRequestTarget target)
             {
+                System.out.println("showParentWindow - onClick.");
                 parentWindow.show(target);
             }
         });
