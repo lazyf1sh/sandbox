@@ -16,17 +16,15 @@ public class ParentChildFormValidationAjaxSubmitLink extends WebPage
         super.onInitialize();
 
         ModalWindow parentWindow = new ModalWindow("parentWindow");
-        parentWindow.setContent(new ParentPanel(parentWindow.getContentId()));
         add(parentWindow);
         add(buildShowParentWin(parentWindow));
 
         ModalWindow nestedWindow = new ModalWindow("nestedWindow");
-        nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId(), null));
         add(nestedWindow);
         add(buildShowNestedWindow(nestedWindow));
     }
 
-    private AjaxLink<Void> buildShowParentWin(ModalWindow parentWindow)
+    private AjaxLink<Void> buildShowParentWin(ModalWindow window)
     {
         return new AjaxLink<Void>("showParentWindow")
         {
@@ -34,12 +32,13 @@ public class ParentChildFormValidationAjaxSubmitLink extends WebPage
             public void onClick(AjaxRequestTarget target)
             {
                 System.out.println("showParentWindow - onClick.");
-                parentWindow.show(target);
+                window.setContent(new ParentPanel(window.getContentId()));
+                window.show(target);
             }
         };
     }
 
-    private AjaxLink<Void> buildShowNestedWindow(ModalWindow parentWindow)
+    private AjaxLink<Void> buildShowNestedWindow(ModalWindow window)
     {
         return new AjaxLink<Void>("showNestedWindow")
         {
@@ -47,7 +46,8 @@ public class ParentChildFormValidationAjaxSubmitLink extends WebPage
             public void onClick(AjaxRequestTarget target)
             {
                 System.out.println("showParentWindow - onClick.");
-                parentWindow.show(target);
+                window.setContent(new NestedPanel(window.getContentId(), null));
+                window.show(target);
             }
         };
     }

@@ -1,7 +1,7 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.ajaxsubmitlink;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.form.AjaxButton;
+import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
@@ -27,41 +27,82 @@ public class NestedPanel extends Panel
         super.onInitialize();
 
         add(buildNestedTextField());
-        add(buildNestedSaveButton());
+        if (formToSubmit == null)
+        {
+            add(buildNestedSaveButtonAjaxSubmitLink());
+        }
+        else
+        {
+            add(buildNestedSaveButtonAjaxLink());
+        }
+
     }
 
-    private AjaxSubmitLink buildNestedSaveButton()
+    private AjaxSubmitLink buildNestedSaveButtonAjaxSubmitLink()
     {
         return new AjaxSubmitLink("nestedSaveButton", formToSubmit)
+        {
+            @Override
+            protected void onSubmit(AjaxRequestTarget target)
             {
-                @Override
-                protected void onSubmit(AjaxRequestTarget target)
-                {
-                    System.out.println("nestedSaveButton - onSubmit.");
-                    super.onSubmit(target);
-                }
+                System.out.println("[AjaxSubmitLink] nestedSaveButton - onSubmit.");
+                super.onSubmit(target);
+            }
 
-                @Override
-                protected void onBeforeRender()
-                {
-                    System.out.println("nestedSaveButton - onBeforeRender.");
-                    super.onBeforeRender();
-                }
+            @Override
+            protected void onBeforeRender()
+            {
+                System.out.println("nestedSaveButton - onBeforeRender.");
+                super.onBeforeRender();
+            }
 
-                @Override
-                protected void onModelChanging()
-                {
-                    System.out.println("nestedSaveButton - onModelChanging.");
-                    super.onModelChanging();
-                }
+            @Override
+            protected void onModelChanging()
+            {
+                System.out.println("nestedSaveButton - onModelChanging.");
+                super.onModelChanging();
+            }
 
-                @Override
-                protected void onModelChanged()
-                {
-                    System.out.println("nestedSaveButton - onModelChanged.");
-                    super.onModelChanged();
-                }
-            };
+            @Override
+            protected void onModelChanged()
+            {
+                System.out.println("nestedSaveButton - onModelChanged.");
+                super.onModelChanged();
+            }
+        };
+    }
+
+    private AjaxLink<Void> buildNestedSaveButtonAjaxLink()
+    {
+        return new AjaxLink<Void>("nestedSaveButton")
+        {
+            @Override
+            public void onClick(AjaxRequestTarget target)
+            {
+                System.out.println("[AjaxLink] nestedSaveButton - onClick.");
+            }
+
+            @Override
+            protected void onBeforeRender()
+            {
+                System.out.println("nestedSaveButton - onBeforeRender.");
+                super.onBeforeRender();
+            }
+
+            @Override
+            protected void onModelChanging()
+            {
+                System.out.println("nestedSaveButton - onModelChanging.");
+                super.onModelChanging();
+            }
+
+            @Override
+            protected void onModelChanged()
+            {
+                System.out.println("nestedSaveButton - onModelChanged.");
+                super.onModelChanged();
+            }
+        };
     }
 
     private TextField<String> buildNestedTextField()
