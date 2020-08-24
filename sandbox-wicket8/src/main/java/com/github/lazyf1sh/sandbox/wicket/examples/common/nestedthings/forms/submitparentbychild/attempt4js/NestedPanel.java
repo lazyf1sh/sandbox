@@ -3,10 +3,14 @@ package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.su
 import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
+import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.apache.wicket.request.resource.ResourceReference;
 
 /**
  * @author Ivan Kopylov
@@ -46,11 +50,14 @@ public class NestedPanel extends Panel
             @Override
             protected void onSubmit(AjaxRequestTarget target)
             {
-                String msg = String.format("parentTextField model object: %s, convertedInput: %s", textFieldNested.getModelObject(), textFieldNested.getConvertedInput());
+                String msg = String.format("textFieldNested model object: %s, convertedInput: %s", textFieldNested.getModelObject(), textFieldNested.getConvertedInput());
                 Util.showComponentMessage(this, msg);
 
                 String markupId = parentForm.getMarkupId();
-                String js = "$(\"#" + markupId + "\")[0].submit(function(e) { e.preventDefault(); return false; });";
+//                String s = "$('#" + markupId + "').on('submit', function(e) { console.log('submitted'); e.preventDefault(); });";
+                String js = "$('#" + markupId + "').trigger('submit');";
+
+//                target.appendJavaScript(s);
                 target.appendJavaScript(js);
 
                 super.onSubmit(target);
