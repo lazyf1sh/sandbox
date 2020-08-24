@@ -130,7 +130,7 @@ public class ParentPanel extends Panel
             @Override
             protected void onSubmit()
             {
-                System.out.println("parentForm - onSubmit. textField model object: " + parentTextField.getModelObject());
+                System.out.println("parentForm - onSubmit. parentTextField model object: " + parentTextField.getModelObject());
                 super.onSubmit();
             }
         };
