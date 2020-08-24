@@ -23,72 +23,87 @@ public class NestedPanel extends Panel
     {
         super.onInitialize();
 
-        Form<?> nestedForm = new Form<Void>("nestedForm")
-        {
-            @Override
-            protected void onSubmit()
-            {
-                Util.showComponentMessage(this);
-                super.onSubmit();
-            }
-        };
+        Form<?> nestedForm = buildForm();
         add(nestedForm);
 
-        TextField<String> textFieldNested = new TextField<String>("nestedTextField", Model.of("nested text field value"))
-        {
-            @Override
-            protected void onBeforeRender()
-            {
-                Util.showComponentMessage(this);
-                super.onBeforeRender();
-            }
-
-            @Override
-            protected void onModelChanging()
-            {
-                Util.showComponentMessage(this);
-                super.onModelChanging();
-            }
-
-            @Override
-            protected void onModelChanged()
-            {
-                Util.showComponentMessage(this);
-                super.onModelChanged();
-            }
-        };
+        TextField<String> textFieldNested = buildTextField();
         nestedForm.add(textFieldNested);
 
+        AjaxButton nestedSaveButton = buildNestedSaveButton(nestedForm);
+        nestedForm.add(nestedSaveButton);
+    }
 
-        nestedForm.add(new AjaxButton("nestedSaveButton", nestedForm)
-        {
-            @Override
-            protected void onSubmit(AjaxRequestTarget target)
+    private AjaxButton buildNestedSaveButton(Form<?> nestedForm)
+    {
+        return new AjaxButton("nestedSaveButton", nestedForm)
             {
-                Util.showComponentMessage(this);
-                super.onSubmit(target);
-            }
+                @Override
+                protected void onSubmit(AjaxRequestTarget target)
+                {
+                    Util.showComponentMessage(this);
+                    super.onSubmit(target);
+                }
 
-            @Override
-            protected void onBeforeRender()
-            {
-                Util.showComponentMessage(this);
-                super.onBeforeRender();
-            }
+                @Override
+                protected void onBeforeRender()
+                {
+                    Util.showComponentMessage(this);
+                    super.onBeforeRender();
+                }
 
-            @Override
-            protected void onModelChanging()
-            {
-                Util.showComponentMessage(this);
-                super.onModelChanging();
-            }
+                @Override
+                protected void onModelChanging()
+                {
+                    Util.showComponentMessage(this);
+                    super.onModelChanging();
+                }
 
-            @Override
-            protected void onModelChanged()
+                @Override
+                protected void onModelChanged()
+                {
+                    Util.showComponentMessage(this);
+                    super.onModelChanged();
+                }
+            };
+    }
+
+    private TextField<String> buildTextField()
+    {
+        return new TextField<String>("nestedTextField", Model.of("nested text field value"))
             {
-                Util.showComponentMessage(this);
-                super.onModelChanged();
-            }
-        });
+                @Override
+                protected void onBeforeRender()
+                {
+                    Util.showComponentMessage(this);
+                    super.onBeforeRender();
+                }
+
+                @Override
+                protected void onModelChanging()
+                {
+                    Util.showComponentMessage(this);
+                    super.onModelChanging();
+                }
+
+                @Override
+                protected void onModelChanged()
+                {
+                    Util.showComponentMessage(this);
+                    super.onModelChanged();
+                }
+            };
+    }
+
+    private Form<?> buildForm()
+    {
+        return new Form<Void>("nestedForm")
+            {
+                @Override
+                protected void onSubmit()
+                {
+                    Util.showComponentMessage(this);
+                    super.onSubmit();
+                }
+            };
     }
 }

@@ -27,75 +27,76 @@ public class ParentPanel extends Panel
     {
         super.onInitialize();
 
-        Form<?> parentForm = new Form<Void>("parentForm")
-        {
-            @Override
-            protected boolean wantSubmitOnNestedFormSubmit()
-            {
-                //try to switch flag
-                return true;//wicket will iterate over parent components also and validate them
-                //also, place a breakpoint to FormComponent.validate and check what components are validated
-            }
-
-            @Override
-            protected void onSubmit()
-            {
-                System.out.println("parentForm - onSubmit. parentTextField model object: " + parentTextField.getModelObject());
-                super.onSubmit();
-            }
-        };
+        Form<?> parentForm = buildForm();
         add(parentForm);
 
-        parentTextField = new TextField<String>("parentTextField", Model.of("parent text field value"))
-        {
-            @Override
-            protected void onBeforeRender()
-            {
-                System.out.println("parentTextField - onBeforeRender.");
-                super.onBeforeRender();
-            }
-
-            @Override
-            protected void onModelChanging()
-            {
-                System.out.println("parentTextField - onModelChanging.");
-                super.onModelChanging();
-            }
-
-            @Override
-            protected void onModelChanged()
-            {
-                System.out.println("parentTextField - onModelChanged.");
-                super.onModelChanged();
-            }
-        };
+        parentTextField = buildTextField();
         parentForm.add(parentTextField);
 
         ModalWindow nestedWindow = new ModalWindow("nestedWindow");
 
         parentForm.add(nestedWindow);
 
-        parentForm.add(new AjaxLink<Void>("showNestedWindow")
-        {
-            @Override
-            public void onClick(AjaxRequestTarget target)
-            {
-                Util.showComponentMessage(this);
-                nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId()));
-                nestedWindow.setTitle("Nested window");
-                nestedWindow.show(target);
-            }
-        });
+        AjaxLink<Void> showNestedWindowButton = buildShowNestedWindowButton(nestedWindow);
+        parentForm.add(showNestedWindowButton);
 
-        parentForm.add(new AjaxButton("parentSaveButton", parentForm)
-        {
-            @Override
-            protected void onSubmit(AjaxRequestTarget target)
-            {
-                Util.showComponentMessage(this);
-                super.onSubmit(target);
-            }
+        AjaxButton parentSaveButton = buildParentSaveButton(parentForm);
+        parentForm.add(parentSaveButton);
+    }
 
+    private AjaxButton buildParentSaveButton(Form<?> parentForm)
+    {
+        return new AjaxButton("parentSaveButton", parentForm)
+            {
+                @Override
+                protected void onSubmit(AjaxRequestTarget target)
+                {
+                    Util.showComponentMessage(this);
+                    super.onSubmit(target);
+                }
+
+                @Override
+                protected void onBeforeRender()
+                {
+                    Util.showComponentMessage(this);
+                    super.onBeforeRender();
+                }
+
+                @Override
+                protected void onModelChanging()
+                {
+                    Util.showComponentMessage(this);
+                    super.onModelChanging();
+                }
+
+                @Override
+                protected void onModelChanged()
+                {
+                    Util.showComponentMessage(this);
+                    super.onModelChanged();
+                }
+            };
+    }
+
+    private AjaxLink<Void> buildShowNestedWindowButton(ModalWindow nestedWindow)
+    {
+        return new AjaxLink<Void>("showNestedWindow")
+            {
+                @Override
+                public void onClick(AjaxRequestTarget target)
+                {
+                    Util.showComponentMessage(this);
+                    nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId()));
+                    nestedWindow.setTitle("Nested window");
+                    nestedWindow.show(target);
+                }
+            };
+    }
+
+    private TextField<String> buildTextField()
+    {
+        return new TextField<String>("parentTextField", Model.of("parent text field value"))
+        {
             @Override
             protected void onBeforeRender()
             {
@@ -116,6 +117,28 @@ public class ParentPanel extends Panel
                 Util.showComponentMessage(this);
                 super.onModelChanged();
             }
-        });
+        };
+    }
+
+    private Form<?> buildForm()
+    {
+        return new Form<Void>("parentForm")
+            {
+                @Override
+                protected boolean wantSubmitOnNestedFormSubmit()
+                {
+                    //try to switch flag
+                    return true;//wicket will iterate over parent components also and validate them
+                    //also, place a breakpoint to FormComponent.validate and check what components are validated
+                }
+
+                @Override
+                protected void onSubmit()
+                {
+                    String msg = String.format("parentTextField model object: %s, convertedInput: %s", parentTextField.getModelObject(), parentTextField.getConvertedInput());
+                    Util.showComponentMessage(this, msg);
+                    super.onSubmit();
+                }
+            };
     }
 }

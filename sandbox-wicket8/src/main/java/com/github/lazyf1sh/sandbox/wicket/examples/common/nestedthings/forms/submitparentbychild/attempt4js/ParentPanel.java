@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.submitparentbychild.attempt5;
+package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.submitparentbychild.attempt4js;
 
 import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -17,6 +17,8 @@ public class ParentPanel extends Panel
 {
     private TextField<String> parentTextField;
 
+    private Form<?> parentForm;
+
     public ParentPanel(String id)
     {
         super(id);
@@ -27,52 +29,28 @@ public class ParentPanel extends Panel
     {
         super.onInitialize();
 
-        Form<?> parentForm = buildParentForm();
+        parentForm = buildForm();
+        parentForm.setOutputMarkupId(true);
+        parentForm.setOutputMarkupPlaceholderTag(true);
         add(parentForm);
 
-        parentTextField = new TextField<String>("parentTextField", Model.of("parent text field value"))
-        {
-            @Override
-            protected void onBeforeRender()
-            {
-                Util.showComponentMessage(this);
-                super.onBeforeRender();
-            }
-
-            @Override
-            protected void onModelChanging()
-            {
-                Util.showComponentMessage(this);
-                super.onModelChanging();
-            }
-
-            @Override
-            protected void onModelChanged()
-            {
-                Util.showComponentMessage(this);
-                super.onModelChanged();
-            }
-        };
+        parentTextField = buildTextField();
         parentForm.add(parentTextField);
 
         ModalWindow nestedWindow = new ModalWindow("nestedWindow");
 
-        add(nestedWindow);
+        parentForm.add(nestedWindow);
 
-        parentForm.add(new AjaxLink<Void>("showNestedWindow")
-        {
-            @Override
-            public void onClick(AjaxRequestTarget target)
-            {
-                String msg = String.format("parentTextField model object: %s, convertedInput: %s", parentTextField.getModelObject(), parentTextField.getConvertedInput());
-                Util.showComponentMessage(this, msg);
-                nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId()));
-                nestedWindow.setTitle("Nested window");
-                nestedWindow.show(target);
-            }
-        });
+        AjaxLink<Void> showNestedWindowButton = buildShowNestedWindowButton(nestedWindow);
+        parentForm.add(showNestedWindowButton);
 
-        parentForm.add(new AjaxButton("parentSaveButton", parentForm)
+        AjaxButton parentSaveButton = buildParentSaveButton(parentForm);
+        parentForm.add(parentSaveButton);
+    }
+
+    private AjaxButton buildParentSaveButton(Form<?> parentForm)
+    {
+        return new AjaxButton("parentSaveButton", parentForm)
         {
             @Override
             protected void onSubmit(AjaxRequestTarget target)
@@ -101,27 +79,62 @@ public class ParentPanel extends Panel
                 Util.showComponentMessage(this);
                 super.onModelChanged();
             }
-        });
+        };
     }
 
-    private Form<?> buildParentForm()
+    private AjaxLink<Void> buildShowNestedWindowButton(ModalWindow nestedWindow)
+    {
+        return new AjaxLink<Void>("showNestedWindow")
+        {
+            @Override
+            public void onClick(AjaxRequestTarget target)
+            {
+                Util.showComponentMessage(this);
+                nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId(), parentForm));
+                nestedWindow.setTitle("Nested window");
+                nestedWindow.show(target);
+            }
+        };
+    }
+
+    private TextField<String> buildTextField()
+    {
+        return new TextField<String>("parentTextField", Model.of("parent value"))
+        {
+            @Override
+            protected void onBeforeRender()
+            {
+                Util.showComponentMessage(this);
+                super.onBeforeRender();
+            }
+
+            @Override
+            protected void onModelChanging()
+            {
+                Util.showComponentMessage(this);
+                super.onModelChanging();
+            }
+
+            @Override
+            protected void onModelChanged()
+            {
+                Util.showComponentMessage(this);
+                super.onModelChanged();
+            }
+        };
+    }
+
+    private Form<?> buildForm()
     {
         return new Form<Void>("parentForm")
+        {
+            @Override
+            protected void onSubmit()
             {
-                @Override
-                protected boolean wantSubmitOnNestedFormSubmit()
-                {
-                    //try to switch flag
-                    return true;//wicket will iterate over parent components also and validate them
-                    //also, place a breakpoint to FormComponent.validate and check what components are validated
-                }
-
-                @Override
-                protected void onSubmit()
-                {
-                    System.out.println("parentForm - onSubmit. parentTextField model object: " + parentTextField.getModelObject());
-                    super.onSubmit();
-                }
-            };
+                String msg = String.format("parentTextField model object: %s, convertedInput: %s", parentTextField.getModelObject(), parentTextField.getConvertedInput());
+                Util.showComponentMessage(this, msg);
+                super.onSubmit();
+            }
+        };
     }
 }

@@ -24,7 +24,7 @@ public class Util
 
     public static void showComponentMessageInner(Component component, String methodName, String other)
     {
-        String format = String.format("%-20s | %-15s | %s", component.getId(), methodName, other);
+        String format = String.format("%-17s | %-12s | %s", component.getId(), methodName, other);
         System.out.println(format);
     }
 
