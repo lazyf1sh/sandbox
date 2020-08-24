@@ -35,7 +35,7 @@ public class ParentPanel extends Panel
 
         nestedWindow = new ModalWindow("nestedWindow");
         nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId(), parentForm));
-        parentForm.add(nestedWindow);
+        add(nestedWindow);
 
         parentForm.add(buildShowNestedWindow());
         parentForm.add(buildSaveButton(parentForm));
