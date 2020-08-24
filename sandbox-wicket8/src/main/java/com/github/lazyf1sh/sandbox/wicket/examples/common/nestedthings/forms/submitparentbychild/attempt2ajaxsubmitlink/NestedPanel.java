@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.ajaxsubmitlink;
+package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.submitparentbychild.attempt2ajaxsubmitlink;
 
 import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;
