@@ -18,13 +18,12 @@ public class ParentChildFormValidationAjaxSubmitLink extends WebPage
         ModalWindow parentWindow = new ModalWindow("parentWindow");
         parentWindow.setContent(new ParentPanel(parentWindow.getContentId()));
         add(parentWindow);
+        add(buildShowParentWin(parentWindow));
 
         ModalWindow nestedWindow = new ModalWindow("nestedWindow");
-        parentWindow.setContent(new NestedPanel(nestedWindow.getContentId(), null));
+        nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId(), null));
         add(nestedWindow);
-
-        add(buildShowParentWin(parentWindow));
-        add(buildShowNestedWindow(parentWindow));
+        add(buildShowNestedWindow(nestedWindow));
     }
 
     private AjaxLink<Void> buildShowParentWin(ModalWindow parentWindow)
