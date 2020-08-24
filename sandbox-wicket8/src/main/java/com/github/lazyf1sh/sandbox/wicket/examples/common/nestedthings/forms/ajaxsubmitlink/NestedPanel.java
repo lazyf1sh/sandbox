@@ -13,12 +13,12 @@ import org.apache.wicket.model.Model;
  */
 public class NestedPanel extends Panel
 {
-    private final Form<?>     formToSubmit;
+    private final Form<?>     injectedForm;
     private TextField<String> nestedTextField;
     public NestedPanel(String id, Form<?> form)
     {
         super(id);
-        this.formToSubmit = form;
+        this.injectedForm = form;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class NestedPanel extends Panel
 
         nestedTextField = buildNestedTextField();
         add(nestedTextField);
-        if (formToSubmit != null)
+        if (injectedForm != null)
         {
             add(buildNestedSaveButtonAjaxSubmitLink());
         }
@@ -41,7 +41,7 @@ public class NestedPanel extends Panel
 
     private AjaxSubmitLink buildNestedSaveButtonAjaxSubmitLink()
     {
-        return new AjaxSubmitLink("nestedSaveButton", formToSubmit)
+        return new AjaxSubmitLink("nestedSaveButton", injectedForm)
         {
             @Override
             protected void onSubmit(AjaxRequestTarget target)
