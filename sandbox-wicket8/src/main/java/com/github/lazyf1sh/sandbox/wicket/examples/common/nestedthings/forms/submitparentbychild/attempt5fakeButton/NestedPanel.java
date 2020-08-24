@@ -1,12 +1,15 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.submitparentbychild.attempt4js;
+package com.github.lazyf1sh.sandbox.wicket.examples.common.nestedthings.forms.submitparentbychild.attempt5fakeButton;
 
 import com.github.lazyf1sh.sandbox.wicket.util.Util;
+import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
+import org.apache.wicket.event.Broadcast;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.util.visit.IVisitor;
 
 /**
  * @author Ivan Kopylov
@@ -16,12 +19,10 @@ public class NestedPanel extends Panel
 
     private TextField<String> textFieldNested;
 
-    private Form<?> parentForm;
 
-    public NestedPanel(String id, Form<?> parentForm)
+    public NestedPanel(String id)
     {
         super(id);
-        this.parentForm = parentForm;
     }
 
     @Override
@@ -49,9 +50,12 @@ public class NestedPanel extends Panel
                 String msg = String.format("parentTextField model object: %s, convertedInput: %s", textFieldNested.getModelObject(), textFieldNested.getConvertedInput());
                 Util.showComponentMessage(this, msg);
 
-                String markupId = parentForm.getMarkupId();
-                String js = "$(\"#" + markupId + "\")[0].submit(function(e) { e.preventDefault(); return false; });";
-                target.appendJavaScript(js);
+                NestedPanel.this.getPage().visitChildren((IVisitor<Component, Void>) (object, visit) -> {
+                    if (object.getId().equals("parentSaveButton"))
+                    {
+                        NestedPanel.this.send(object, Broadcast.EXACT, "qwe");
+                    }
+                });
 
                 super.onSubmit(target);
             }
