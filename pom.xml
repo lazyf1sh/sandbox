@@ -14,7 +14,14 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     <modules>
+        <module>sandbox-apache-commons</module>
+        <module>sandbox-websocket-client-javax</module>
+        <module>sandbox-websocket-client-nv</module>
+        <module>sandbox-log4j2</module>
         <module>sandbox-java</module>
+        <module>sandbox-javafx</module>
+        <module>sandbox-commons-logging-log4j</module>
+        <module>sandbox-commons-logging</module>
         <module>sandbox-javafx</module>
         <module>sandbox-java-applet</module>
         <module>sandbox-servlets</module>
@@ -27,7 +34,7 @@
         <module>sandbox-jxbrowser</module>
         <module>sandbox-pdfbox1</module>
         <module>sandbox-jackson</module>
-        <module>sandbox-wicket</module>
+        <module>sandbox-wicket8</module>
         <module>sandbox-slf4j</module>
         <module>sandbox-selenium</module>
         <module>sandbox-jasper-embedded</module>
@@ -38,6 +45,8 @@
         <module>sandbox-liquibase-maven</module>
         <module>sandbox-log4j</module>
         <module>sandbox-h2</module>
+        <module>sandbox-java10</module>
+        <module>sandbox-java</module>
         <module>sandbox-jsf-primefaces-apache-tomcat</module>
         <module>sandbox-tomcat-listener</module>
         <module>sandbox-tomcat-filter</module>
