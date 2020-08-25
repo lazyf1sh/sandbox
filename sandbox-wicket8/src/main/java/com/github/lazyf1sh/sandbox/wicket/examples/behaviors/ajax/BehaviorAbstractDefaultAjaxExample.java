@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.behaviors.ajax;
 
+import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AbstractDefaultAjaxBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -16,7 +17,7 @@ public class BehaviorAbstractDefaultAjaxExample extends WebPage
     protected void onInitialize()
     {
         super.onInitialize();
-        
+
         add(new AbstractDefaultAjaxBehavior()
         {
             private static final long serialVersionUID = -7194864693972841194L;
@@ -30,11 +31,14 @@ public class BehaviorAbstractDefaultAjaxExample extends WebPage
             @Override
             public void renderHead(Component component, IHeaderResponse response)
             {
+                String callBackScript = getCallbackScript().toString();
+                String callBackUrl = getCallbackUrl().toString();
+
+                String msg = String.format("%s | callback script: %s, callbackurl: %s", "renderHead", callBackScript, callBackUrl);
+                System.out.println(msg);
+
                 super.renderHead(component, response);
-                System.out.println("renderHead");
-                
-                String s = getCallbackScript().toString();
-                response.render(OnLoadHeaderItem.forScript(s));
+                response.render(OnLoadHeaderItem.forScript(callBackScript));//try to comment it
             }
         });
     }
