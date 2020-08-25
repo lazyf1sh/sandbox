@@ -1,6 +1,6 @@
 package com.github.lazyf1sh.sandbox.wicket.examples.components.standard.defaultnestedtree.updatetree;
 
-import com.sun.org.apache.xerces.internal.dom.DeferredElementImpl;
+//import com.sun.org.apache.xerces.internal.dom.DeferredElementImpl;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.extensions.markup.html.repeater.tree.DefaultNestedTree;
@@ -105,11 +105,11 @@ public class MyPage extends WebPage
             for(int i = 0; i < node.getChildNodes().getLength(); i++)
             {
                 Node subNode = list.item(i);
-                if(subNode instanceof DeferredElementImpl)
-                {
-                    DefaultMutableTreeNode child = new DefaultMutableTreeNode(subNode.getNodeName());
-                    treeNode.add(getStruct(child, subNode));
-                }
+//                if(subNode instanceof DeferredElementImpl)
+//                {
+//                    DefaultMutableTreeNode child = new DefaultMutableTreeNode(subNode.getNodeName());
+//                    treeNode.add(getStruct(child, subNode));
+//                }
             }
         }
         else
