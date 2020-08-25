@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.nestedthings.forms.submitparentbychild.attempt3;
+package com.github.lazyf1sh.sandbox.wicket.examples.nestedthings.forms.submitparentbychild.attempt6nonested;
 
 import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;

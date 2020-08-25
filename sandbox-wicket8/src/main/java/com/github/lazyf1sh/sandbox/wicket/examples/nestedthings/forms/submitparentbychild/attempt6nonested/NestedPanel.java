@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.wicket.examples.nestedthings.forms.submitparentbychild.attempt3;
+package com.github.lazyf1sh.sandbox.wicket.examples.nestedthings.forms.submitparentbychild.attempt6nonested;
 
 import com.github.lazyf1sh.sandbox.wicket.util.Util;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -8,8 +8,6 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
-
-import java.util.function.Consumer;
 
 /**
  * @author Ivan Kopylov
@@ -30,17 +28,15 @@ public class NestedPanel extends Panel
     {
         super.onInitialize();
 
-        Form<?> form = buildForm();
-        add(form);
         nestedTextField = buildNestedTextField();
-        form.add(nestedTextField);
+        add(nestedTextField);
         if (injectedForm != null)
         {
-            form.add(buildNestedSaveButtonAjaxSubmitLink(injectedForm));
+            add(buildNestedSaveButtonAjaxSubmitLink(injectedForm));
         }
         else
         {
-            form.add(buildNestedSaveButtonAjaxSubmitLink(form));
+            add(buildNestedSaveButtonAjaxLink());
         }
 
     }
