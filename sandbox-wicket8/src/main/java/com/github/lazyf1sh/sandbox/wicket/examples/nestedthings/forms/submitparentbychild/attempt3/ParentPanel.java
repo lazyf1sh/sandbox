@@ -36,7 +36,7 @@ public class ParentPanel extends Panel
 
         nestedWindow = new ModalWindow("nestedWindow");
         nestedWindow.setContent(new NestedPanel(nestedWindow.getContentId(), parentForm));
-        add(nestedWindow);
+        parentForm.add(nestedWindow);
 
         parentForm.add(buildShowNestedWindow());
         parentForm.add(buildSaveButton(parentForm));
@@ -127,6 +127,8 @@ public class ParentPanel extends Panel
                 return true;//wicket will iterate over parent components also and validate them
                 //also, place a breakpoint to FormComponent.validate and check what components are validated
             }
+
+
 
             @Override
             protected boolean wantSubmitOnParentFormSubmit()

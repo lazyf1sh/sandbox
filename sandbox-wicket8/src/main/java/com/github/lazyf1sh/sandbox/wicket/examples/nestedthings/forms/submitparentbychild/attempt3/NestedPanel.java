@@ -34,11 +34,11 @@ public class NestedPanel extends Panel
         form.add(nestedTextField);
         if (injectedForm != null)
         {
-            add(buildNestedSaveButtonAjaxSubmitLink(injectedForm));
+            form.add(buildNestedSaveButtonAjaxSubmitLink(injectedForm));
         }
         else
         {
-            add(buildNestedSaveButtonAjaxSubmitLink(form));
+            form.add(buildNestedSaveButtonAjaxSubmitLink(form));
         }
 
     }
@@ -85,7 +85,7 @@ public class NestedPanel extends Panel
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                String msg = String.format("parentForm - onSubmit. parentTextField model object: %s, convertedInput: %s", nestedTextField.getModelObject(), nestedTextField.getConvertedInput());
+                String msg = String.format("parentForm - onSubmit. nestedTextField model object: %s, convertedInput: %s", nestedTextField.getModelObject(), nestedTextField.getConvertedInput());
                 Util.showComponentMessage(this, msg);
             }
 
