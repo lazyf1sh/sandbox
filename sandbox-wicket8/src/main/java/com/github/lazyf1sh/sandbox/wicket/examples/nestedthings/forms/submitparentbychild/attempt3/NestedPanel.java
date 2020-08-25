@@ -114,7 +114,7 @@ public class NestedPanel extends Panel
 
     private TextField<String> buildNestedTextField()
     {
-        return new TextField<String>("nestedTextField", Model.of("nested text field value"))
+        return new TextField<String>("nestedTextField", Model.of("nested value"))
         {
             @Override
             protected void onBeforeRender()

@@ -91,7 +91,7 @@ public class ParentPanel extends Panel
 
     private TextField<String> buildTextField()
     {
-        return new TextField<String>("parentTextField", Model.of("parent text field value"))
+        return new TextField<String>("parentTextField", Model.of("parent value"))
         {
             @Override
             protected void onBeforeRender()
