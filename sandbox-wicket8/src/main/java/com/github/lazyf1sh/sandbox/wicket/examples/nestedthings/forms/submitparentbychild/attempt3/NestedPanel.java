@@ -9,6 +9,8 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
+import java.util.function.Consumer;
+
 /**
  * @author Ivan Kopylov
  */
@@ -85,7 +87,7 @@ public class NestedPanel extends Panel
             @Override
             public void onClick(AjaxRequestTarget target)
             {
-                String msg = String.format("parentForm - onSubmit. nestedTextField model object: %s, convertedInput: %s", nestedTextField.getModelObject(), nestedTextField.getConvertedInput());
+                String msg = String.format("nestedTextField model object: %s, convertedInput: %s", nestedTextField.getModelObject(), nestedTextField.getConvertedInput());
                 Util.showComponentMessage(this, msg);
             }
 
@@ -158,7 +160,7 @@ public class NestedPanel extends Panel
             @Override
             protected void onSubmit()
             {
-                String msg = String.format("parentForm - onSubmit. parentTextField model object: %s, convertedInput: %s", nestedTextField.getModelObject(), nestedTextField.getConvertedInput());
+                String msg = String.format("nestedTextField model object: %s, convertedInput: %s", nestedTextField.getModelObject(), nestedTextField.getConvertedInput());
                 Util.showComponentMessage(this, msg);
                 super.onSubmit();
             }

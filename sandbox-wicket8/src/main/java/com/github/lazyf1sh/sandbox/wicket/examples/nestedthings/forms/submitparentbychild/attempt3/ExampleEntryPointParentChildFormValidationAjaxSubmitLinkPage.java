@@ -34,6 +34,7 @@ public class ExampleEntryPointParentChildFormValidationAjaxSubmitLinkPage extend
             {
                 Util.showComponentMessage(this);
                 window.setContent(new ParentPanel(window.getContentId()));
+                window.setTitle("Parent window");
                 window.show(target);
             }
         };
@@ -48,6 +49,7 @@ public class ExampleEntryPointParentChildFormValidationAjaxSubmitLinkPage extend
             {
                 Util.showComponentMessage(this);
                 window.setContent(new NestedPanel(window.getContentId(), null));
+                window.setTitle("Parent window");
                 window.show(target);
             }
         };
