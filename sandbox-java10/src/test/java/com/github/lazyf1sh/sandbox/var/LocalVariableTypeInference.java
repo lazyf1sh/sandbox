@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox;
+package com.github.lazyf1sh.sandbox.var;
 
 import com.github.lazyf1sh.sandbox.domain.case2.CustomClass;
 import org.junit.Test;
