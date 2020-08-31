@@ -1,8 +1,8 @@
-package com.github.lazyf1sh.sandbox.java.mechanics.oop;
+package com.github.lazyf1sh.sandbox.java.mechanics.oop.hiding;
 
 import org.junit.Test;
 
-import com.github.lazyf1sh.sandbox.java.mechanics.oop.variablehiding.VariableHiding;
+import com.github.lazyf1sh.sandbox.java.mechanics.oop.hiding.VariableHiding;
 
 import static org.junit.Assert.assertEquals;
 
