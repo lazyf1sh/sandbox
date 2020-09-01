@@ -15,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 public class GroupingByBasicExampleTest
 {
     @Test
-    public void run() throws InterruptedException
+    public void run()
     {
         List<Integer> ints = new ArrayList<>();
         ints.add(1);
