@@ -18,8 +18,8 @@ public class ShutdownHook
                 {
                     try
                     {
-                        Thread.sleep(1000);
                         System.out.println("shutdown in " + i);
+                        Thread.sleep(1000);
                     }
                     catch (InterruptedException e)
                     {
