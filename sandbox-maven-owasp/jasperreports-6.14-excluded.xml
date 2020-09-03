@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.lazyf1sh</groupId>
+    <artifactId>sandbox-owasp-sandbox</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports</artifactId>
+                <version>6.14.0</version> <!-- BE VERY CAREFUL WITH THIS LIBRARY BECAUSE IT WAS CHANGED IN TSA MAVEN REPOSITORY (POM FILE WAS CHANGED)-->
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.lucene</groupId>
+                        <artifactId>lucene-analyzers-common</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.lucene</groupId>
+                        <artifactId>lucene-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.lucene</groupId>
+                        <artifactId>lucene-queryparser</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>stax-api</artifactId>
+                        <groupId>javax.xml.stream</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>core</artifactId>
+                        <groupId>com.google.zxing</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+    </dependencies>
+
+</project>
