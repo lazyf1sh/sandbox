@@ -1,5 +1,6 @@
-package com.github.lazyf1sh.sandbox.java.jcl.java.lang.strings;
+package com.github.lazyf1sh.sandbox.java.jcl.java.lang.string;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -7,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * @author Ivan Kopylov
  */
-public class SubstringTest
+public class StringTest
 {
     @Test
     public void test()
@@ -27,4 +28,28 @@ public class SubstringTest
         int endIndex = "qwee".lastIndexOf("_________"); //returns -1
         s.substring(0, endIndex); //throws exception
     }
+
+    @Test
+    public void lastIndexOf1()
+    {
+        int lastIndex = "abcdab".lastIndexOf("a");
+        Assert.assertEquals(4, lastIndex);
+    }
+
+    @Test
+    public void lastIndexOf11()
+    {
+        int lastIndex = "abcdab".lastIndexOf("a");
+        Assert.assertEquals(4, lastIndex);
+    }
+
+
+    @Test
+    public void lastIndexOf2()
+    {
+        int lastIndex = "abcdab".lastIndexOf("a", 2);
+        Assert.assertEquals(0, lastIndex);
+    }
+
+
 }

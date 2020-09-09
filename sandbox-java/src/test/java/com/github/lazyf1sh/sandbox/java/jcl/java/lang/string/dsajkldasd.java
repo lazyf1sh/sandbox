@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.jcl.java.lang.strings;
+package com.github.lazyf1sh.sandbox.java.jcl.java.lang.string;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
