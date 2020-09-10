@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.java.mechanics.exceptions;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -16,10 +17,10 @@ public class UnCheckedExceptionsExample
         }
         catch(Exception e)
         {
-            e.printStackTrace();
+            Assert.assertTrue(true);
+            return;
         }
-
-        System.out.println("a");
+        Assert.fail();
     }
 
     public void a()
