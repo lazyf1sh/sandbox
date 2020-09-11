@@ -1,16 +1,16 @@
 package com.github.lazyf1sh.sandbox.java.mechanics.serialversionuid;
 
-import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
+import java.util.UUID;
 
 /**
  * The default implementation.
@@ -20,55 +20,32 @@ import java.lang.reflect.Modifier;
 
 public class SerialVersionUid
 {
-
+    private static final String FILE_NAME  = System.getProperty("java.io.tmpdir") + "SerialVersionUid-sandbox-java-test.dat";
+    private static final String TEST_VALUE = "test value";
 
     @Before
-    public void writeToTempThenChangeSerialVersionUid() throws IOException
+    public void writeThenChangeSerialVersionUidManually() throws IOException
     {
-        FileOutputStream fileOutputStream = new FileOutputStream("1.dat");
-
+        File file = new File(FILE_NAME);
+        FileOutputStream fileOutputStream = new FileOutputStream(file);
         ObjectOutputStream os = new ObjectOutputStream(fileOutputStream);
-        os.writeObject(new SerializableClass());
+        os.writeObject(new SerializableClass(TEST_VALUE));
         os.flush();
         os.close();
+
+        Assert.assertTrue(file.exists());
     }
 
 
     @Test
     public void readWrittenFile() throws IOException, ClassNotFoundException
     {
-        FileInputStream fileInputStream = new FileInputStream("1.dat");
+        FileInputStream fileInputStream = new FileInputStream(FILE_NAME);
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-        SerializableClass p2 = (SerializableClass) objectInputStream.readObject();
-        System.out.println(p2.getValue());
-        objectInputStream.close();
-    }
+        SerializableClass result = (SerializableClass) objectInputStream.readObject();
 
-
-    @After
-    public void changeUidAndRead() throws IOException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException
-    {
-        Field serialVersionUID = SerializableClass.class.getDeclaredField("serialVersionUID");
-        setField(serialVersionUID, 10L);
-
-
-        FileInputStream fileInputStream = new FileInputStream("1.dat");
-        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-        SerializableClass p2 = (SerializableClass) objectInputStream.readObject();
-        System.out.println(p2.getValue());
         objectInputStream.close();
 
+        Assert.assertEquals(TEST_VALUE, result.getValue());
     }
-
-    private void setField(Field field, long l) throws NoSuchFieldException, IllegalAccessException
-    {
-        field.setAccessible(true);
-
-        Field modifiersField = Field.class.getDeclaredField("modifiers");
-        modifiersField.setAccessible(true);
-        modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
-
-        field.setLong(null, l);
-    }
-
 }

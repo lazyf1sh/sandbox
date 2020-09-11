@@ -17,7 +17,7 @@ public class Float
     public void run1()
     {
         float f2 = 1.0f;
-        Assert.assertEquals(1, f2);
+        Assert.assertEquals(1, f2, 0);
     }
 
     @Test
