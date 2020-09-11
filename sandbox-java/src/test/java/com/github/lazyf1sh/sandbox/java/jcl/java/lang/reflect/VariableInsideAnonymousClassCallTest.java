@@ -1,9 +1,9 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.lang.reflect;
 
+import org.junit.Test;
+
 import java.lang.reflect.Field;
 import java.util.stream.Stream;
-
-import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -43,7 +43,7 @@ public class VariableInsideAnonymousClassCallTest
                     try
                     {
                         field.setAccessible(true);
-                        ((B)field.get(a)).targetMethodToCall();
+                        ((B) field.get(a)).targetMethodToCall();
                     }
                     catch (Exception ex)
                     {

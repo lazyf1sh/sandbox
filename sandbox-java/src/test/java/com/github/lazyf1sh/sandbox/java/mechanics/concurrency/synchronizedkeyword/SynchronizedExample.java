@@ -1,11 +1,11 @@
 package com.github.lazyf1sh.sandbox.java.mechanics.concurrency.synchronizedkeyword;
 
+import org.junit.Test;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
-
-import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -44,7 +44,7 @@ public class SynchronizedExample
         ExecutorService service = Executors.newFixedThreadPool(3);
         CalculatorSynchronizedBlock synchronizedBlocks = new CalculatorSynchronizedBlock();
 
-        IntStream.range(0, 1000).forEach(count ->service.submit(synchronizedBlocks::calculate));
+        IntStream.range(0, 1000).forEach(count -> service.submit(synchronizedBlocks::calculate));
         service.awaitTermination(100, TimeUnit.MILLISECONDS);
 
         assertEquals(1000, synchronizedBlocks.getSum());

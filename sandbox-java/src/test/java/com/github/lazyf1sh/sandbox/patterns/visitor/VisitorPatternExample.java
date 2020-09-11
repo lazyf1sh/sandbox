@@ -1,9 +1,9 @@
 package com.github.lazyf1sh.sandbox.patterns.visitor;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.List;
-
-import org.junit.Test;
 
 /**
  * https://en.wikipedia.org/wiki/Visitor_pattern

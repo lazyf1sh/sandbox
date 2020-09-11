@@ -15,7 +15,7 @@ public class UnCheckedExceptionsExample
         {
             myMethod();
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             Assert.assertTrue(true);
             return;

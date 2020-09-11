@@ -10,6 +10,6 @@ public class twoTwoTest
     @Test
     public void twoTwo()
     {
-        twoTwo.twoTwo(new int[] { 4, 2, 2, 3 });
+        twoTwo.twoTwo(new int[]{4, 2, 2, 3});
     }
 }

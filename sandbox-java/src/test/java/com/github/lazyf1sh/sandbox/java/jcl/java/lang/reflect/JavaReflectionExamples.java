@@ -1,14 +1,13 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.lang.reflect;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-
-import org.junit.Assert;
-import org.junit.Test;
-
 import com.github.lazyf1sh.sandbox.domain.Lamp;
 import com.github.lazyf1sh.sandbox.domain.Picture;
 import com.github.lazyf1sh.sandbox.domain.Wall;
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 /**
  * Private modification via standart java reflection mechanism.

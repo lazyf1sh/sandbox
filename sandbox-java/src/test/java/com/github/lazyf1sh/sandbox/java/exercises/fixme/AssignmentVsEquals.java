@@ -5,6 +5,7 @@ import org.junit.Test;
 
 /**
  * Assignment vs equals
+ *
  * @author Ivan Kopylov
  */
 public class AssignmentVsEquals

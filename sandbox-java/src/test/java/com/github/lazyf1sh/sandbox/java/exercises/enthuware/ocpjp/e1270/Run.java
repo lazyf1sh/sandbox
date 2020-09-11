@@ -2,15 +2,19 @@ package com.github.lazyf1sh.sandbox.java.exercises.enthuware.ocpjp.e1270;
 
 import org.junit.Test;
 
-public class Run {
+public class Run
+{
 
     @Test
-    public void run() {
+    public void run()
+    {
         boolean b = false;
         int i = 1;
-        do {
+        do
+        {
             i++;
-        } while (b = !b);
+        }
+        while (b = !b);
         System.out.println(i);
     }
 }

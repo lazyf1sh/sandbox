@@ -1,9 +1,9 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util;
 
-import java.util.Date;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Date;
 
 /**
  * @author Ivan Kopylov

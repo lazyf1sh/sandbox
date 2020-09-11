@@ -1,9 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.mechanics.oop;
 
-import org.junit.Test;
-
 import com.github.lazyf1sh.sandbox.java.mechanics.oop.inheritance.methodoverriding.Child;
 import com.github.lazyf1sh.sandbox.java.mechanics.oop.inheritance.methodoverriding.Parent;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -44,7 +43,7 @@ public class MethodOverloadingOnInstanceMethods
         Child child = new Child();
 
         assertEquals("child", child.q);
-        assertEquals("parent", ((Parent)child).q);
+        assertEquals("parent", ((Parent) child).q);
     }
 
 }

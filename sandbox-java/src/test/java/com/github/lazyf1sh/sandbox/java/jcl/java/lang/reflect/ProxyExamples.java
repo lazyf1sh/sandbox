@@ -1,10 +1,10 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.lang.reflect;
 
-import java.lang.reflect.Proxy;
-import java.util.Map;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.lang.reflect.Proxy;
+import java.util.Map;
 
 public class ProxyExamples
 {

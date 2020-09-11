@@ -11,6 +11,6 @@ public class TestClassTest
     @Test
     public void main()
     {
-        TestClass.main(new String[] { "" });
+        TestClass.main(new String[]{""});
     }
 }

@@ -1,10 +1,10 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.time;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 /**
  * Majority of java.time.* classes are immutable.

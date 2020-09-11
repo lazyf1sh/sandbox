@@ -1,11 +1,11 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.function.Supplier;
-
-import org.junit.Assert;
-import org.junit.Test;
 
 /**
  * @author Ivan Kopylov

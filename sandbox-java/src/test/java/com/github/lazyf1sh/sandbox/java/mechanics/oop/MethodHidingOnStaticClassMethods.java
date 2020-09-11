@@ -1,9 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.mechanics.oop;
 
-import org.junit.Test;
-
 import com.github.lazyf1sh.sandbox.java.mechanics.oop.inheritance.methodhiding.Child;
 import com.github.lazyf1sh.sandbox.java.mechanics.oop.inheritance.methodhiding.Parent;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -19,7 +18,7 @@ public class MethodHidingOnStaticClassMethods
         Child child = new Child();
 
         assertEquals("child", child.getValue());
-        assertEquals("parent", ((Parent)child).getValue());
+        assertEquals("parent", ((Parent) child).getValue());
 
         assertEquals("child", Child.getValue());
         assertEquals("parent", Parent.getValue());
@@ -31,7 +30,7 @@ public class MethodHidingOnStaticClassMethods
         Parent instance = new Child();
 
         assertEquals("parent", instance.getValue());
-        assertEquals("child", ((Child)instance).getValue());
+        assertEquals("child", ((Child) instance).getValue());
     }
 
     @Test

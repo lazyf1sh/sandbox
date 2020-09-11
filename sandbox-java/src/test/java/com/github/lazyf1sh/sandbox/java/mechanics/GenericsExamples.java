@@ -1,14 +1,13 @@
 package com.github.lazyf1sh.sandbox.java.mechanics;
 
+import com.github.lazyf1sh.sandbox.domain.Box;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.junit.Test;
-
-import com.github.lazyf1sh.sandbox.domain.Box;
 
 import static org.junit.Assert.assertEquals;
 

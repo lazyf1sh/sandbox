@@ -1,13 +1,12 @@
 package com.github.lazyf1sh.sandbox.java.mechanics;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.Test;
-
 import com.github.lazyf1sh.sandbox.domain.Animal;
 import com.github.lazyf1sh.sandbox.domain.Cat;
 import com.github.lazyf1sh.sandbox.domain.RedCat;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * https://www.tutorialspoint.com/java_generics/java_generics_quick_guide.htm

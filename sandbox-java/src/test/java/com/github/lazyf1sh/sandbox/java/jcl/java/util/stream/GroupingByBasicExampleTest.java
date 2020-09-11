@@ -1,11 +1,11 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util.stream;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 

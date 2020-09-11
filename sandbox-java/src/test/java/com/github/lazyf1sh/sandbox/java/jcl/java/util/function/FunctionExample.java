@@ -1,11 +1,10 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util.function;
 
-import java.util.function.Function;
-
+import com.github.lazyf1sh.sandbox.java.java8.SquareCalculator;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.github.lazyf1sh.sandbox.java.java8.SquareCalculator;
+import java.util.function.Function;
 
 /**
  * @author Ivan Kopylov

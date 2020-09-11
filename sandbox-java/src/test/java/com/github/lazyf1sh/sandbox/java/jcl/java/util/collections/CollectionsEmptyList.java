@@ -1,9 +1,9 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util.collections;
 
+import org.junit.Test;
+
 import java.util.Collections;
 import java.util.List;
-
-import org.junit.Test;
 
 /**
  * @author Ivan Kopylov

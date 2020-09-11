@@ -1,11 +1,11 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.time;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
-
-import org.junit.Assert;
-import org.junit.Test;
 
 /**
  * @author Ivan Kopylov

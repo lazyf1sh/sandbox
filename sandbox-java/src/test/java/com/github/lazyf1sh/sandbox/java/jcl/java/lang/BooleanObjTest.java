@@ -1,11 +1,11 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.lang;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.junit.Test;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class BooleanObjTest
 {

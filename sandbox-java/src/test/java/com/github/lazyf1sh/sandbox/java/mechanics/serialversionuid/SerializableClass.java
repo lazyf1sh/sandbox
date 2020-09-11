@@ -11,7 +11,7 @@ public class SerializableClass implements Serializable
 {
     private              String value            = "123";
     private static final long   serialVersionUID = 3L;
-    private static final long   qwe = 3L;
+    private static final long   qwe              = 3L;
 
     public String getValue()
     {

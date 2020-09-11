@@ -7,19 +7,20 @@ import static org.junit.Assert.assertNull;
 
 /**
  * Threadlocal value is accesible only from thread it is created in.
+ *
  * @author Ivan Kopylov
  */
 public class ThreadLocalExampleTest
 {
-    private static ThreadLocal<Integer> threadLocalValue1 = new ThreadLocal<>();
-    private static ThreadLocal<Integer> threadLocalValue2 = ThreadLocal.withInitial(() -> 2);
+    private static ThreadLocal<Integer> THREAD_LOCAL_ONE = new ThreadLocal<>();
+    private static ThreadLocal<Integer> THREAD_LOCAL_TWO = ThreadLocal.withInitial(() -> 2);
 
     @Test
     public void run()
     {
-        threadLocalValue1.set(1);
-        assertEquals(Integer.valueOf(1), threadLocalValue1.get());
-        assertEquals(Integer.valueOf(2), threadLocalValue2.get());
+        THREAD_LOCAL_ONE.set(1);
+        assertEquals(Integer.valueOf(1), THREAD_LOCAL_ONE.get());
+        assertEquals(Integer.valueOf(2), THREAD_LOCAL_TWO.get());
     }
 
     @Test
@@ -29,12 +30,12 @@ public class ThreadLocalExampleTest
         {
             public void run()
             {
-                assertNull(threadLocalValue1.get());
-                assertEquals(Integer.valueOf(2), threadLocalValue2.get());
+                assertNull(THREAD_LOCAL_ONE.get());
+                assertEquals(Integer.valueOf(2), THREAD_LOCAL_TWO.get());
                 System.out.println("finished");
             }
         };
-        thread.run();
+        thread.start();
 
     }
 

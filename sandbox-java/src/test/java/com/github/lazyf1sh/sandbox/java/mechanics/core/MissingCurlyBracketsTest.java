@@ -15,12 +15,14 @@ public class MissingCurlyBracketsTest
         int c = 0;
 
 
-        if(false)
-        a = 1;
+        if (false)
+        {
+            a = 1;
+        }
         b = 1;
 
 
-        if(false)
+        if (false)
         {
             c = 1;
         }

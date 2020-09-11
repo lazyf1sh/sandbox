@@ -34,9 +34,6 @@ public class UnZipSingleFileTest extends TestCase
         File compressed = new File("files/compressed.zip");
 
 
-
-
-
         if (compressed.exists())
         {
             String fileZip = "files/compressed.zip";

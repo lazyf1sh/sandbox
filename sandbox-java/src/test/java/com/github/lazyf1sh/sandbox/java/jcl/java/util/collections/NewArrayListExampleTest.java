@@ -1,10 +1,10 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util.collections;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class NewArrayListExampleTest
 {

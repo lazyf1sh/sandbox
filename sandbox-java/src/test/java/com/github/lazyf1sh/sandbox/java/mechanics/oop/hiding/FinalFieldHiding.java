@@ -15,7 +15,8 @@ public class FinalFieldHiding
         Assert.assertEquals("test", child.f2);
         Assert.assertEquals(10, ((Parent) child).f2);
     }
-     @Test
+
+    @Test
     public void reference_type_a()
     {
         Parent parent = new Child();

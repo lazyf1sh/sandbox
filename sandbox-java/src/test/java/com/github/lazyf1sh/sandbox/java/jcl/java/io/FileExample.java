@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.io;
+package com.github.lazyf1sh.sandbox.java.jcl.java.io;
 
 import java.io.File;
 import java.io.IOException;

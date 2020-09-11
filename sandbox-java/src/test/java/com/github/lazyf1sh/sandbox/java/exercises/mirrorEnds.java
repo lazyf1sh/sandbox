@@ -12,7 +12,7 @@ public class mirrorEnds
     public void mirrorEnds()
     {
 
-        String[] data = { "abXYZba", "abca","aba" };
+        String[] data = {"abXYZba", "abca", "aba"};
         for (int i = 0; i < data.length; i++)
         {
             String result = get(data[i]);

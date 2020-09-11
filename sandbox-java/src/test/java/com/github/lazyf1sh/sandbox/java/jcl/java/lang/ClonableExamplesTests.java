@@ -1,12 +1,11 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.lang;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
-
-import org.junit.Test;
-
 import com.github.lazyf1sh.sandbox.domain.MyClonableObj;
 import com.github.lazyf1sh.sandbox.domain.MyNotClonableObj;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
 
 public class ClonableExamplesTests
 {

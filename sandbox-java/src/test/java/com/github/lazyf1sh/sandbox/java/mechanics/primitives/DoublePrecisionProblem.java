@@ -8,8 +8,10 @@ public class DoublePrecisionProblem
     @Test
     public void a()
     {
-        for ( float value = 0.0f; value < 1.0f; value += 0.1f )
-            System.out.println( value );
+        for (float value = 0.0f; value < 1.0f; value += 0.1f)
+        {
+            System.out.println(value);
+        }
     }
 
     @Test
@@ -17,7 +19,7 @@ public class DoublePrecisionProblem
     {
         double d = 0.3;
         double result = d * 3;
-        System.out.println( result );
+        System.out.println(result);
         Assert.assertEquals(0.8999999999999999, result, 0);
     }
 }

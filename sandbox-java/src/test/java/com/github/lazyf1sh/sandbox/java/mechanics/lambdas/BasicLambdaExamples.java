@@ -1,9 +1,9 @@
 package com.github.lazyf1sh.sandbox.java.mechanics.lambdas;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.List;
-
-import org.junit.Test;
 
 /**
  * @author Ivan Kopylov

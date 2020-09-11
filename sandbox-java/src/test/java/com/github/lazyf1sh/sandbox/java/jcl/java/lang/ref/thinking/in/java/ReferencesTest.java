@@ -1,11 +1,11 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.lang.ref.thinking.in.java;
 
+import org.junit.Test;
+
 import java.lang.ref.PhantomReference;
 import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 import java.util.LinkedList;
-
-import org.junit.Test;
 
 /**
  * SoftReference > Weak Reference > PhantomReference
@@ -26,7 +26,7 @@ public class ReferencesTest
             References.checkQueue();
         }
         LinkedList<WeakReference<VeryBig>> wa = new LinkedList<>();
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
         {
             wa.add(new WeakReference<VeryBig>(new VeryBig("Weak " + i)));
             System.out.println("Just created: " + wa.getLast());
@@ -37,7 +37,7 @@ public class ReferencesTest
         System.gc();
 
         LinkedList<PhantomReference<VeryBig>> pa = new LinkedList<>();
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
         {
             pa.add(new PhantomReference<>(new VeryBig("Phanom " + i), References.getRq()));
             System.out.println("Just created: " + pa.getLast());

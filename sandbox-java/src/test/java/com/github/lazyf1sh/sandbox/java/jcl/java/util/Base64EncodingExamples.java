@@ -1,5 +1,9 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util;
 
+import com.github.lazyf1sh.sandbox.java.util.Util;
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -8,11 +12,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
-
-import org.junit.Assert;
-import org.junit.Test;
-
-import com.github.lazyf1sh.sandbox.java.util.Util;
 
 /**
  * @author Ivan Kopylov

@@ -12,8 +12,19 @@ public class Base
     protected String str5;
     protected String str6;
 
-    public void someAction1(){}
-    public void someAction2(){}
-    public void someAction3(){}
-    public void someAction4(){}
+    public void someAction1()
+    {
+    }
+
+    public void someAction2()
+    {
+    }
+
+    public void someAction3()
+    {
+    }
+
+    public void someAction4()
+    {
+    }
 }

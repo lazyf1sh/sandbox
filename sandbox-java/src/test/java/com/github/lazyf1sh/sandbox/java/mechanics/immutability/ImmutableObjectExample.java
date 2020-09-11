@@ -1,13 +1,14 @@
-package com.github.lazyf1sh.sandbox.java.bit64;
+package com.github.lazyf1sh.sandbox.java.mechanics.immutability;
 
 /**
  * 1. no setters and not method to modify inner variables
  * 2. final class
  * 3. final variables
  */
-final public class ImmutableObjectExample {
+final public class ImmutableObjectExample
+{
     final private String color;
-    final private int speed;
+    final private int    speed;
 
     public ImmutableObjectExample(String color, int speed)
     {
@@ -16,11 +17,13 @@ final public class ImmutableObjectExample {
     }
 
 
-    public String getColor() {
+    public String getColor()
+    {
         return color;
     }
 
-    public int getSpeed() {
+    public int getSpeed()
+    {
         return speed;
     }
 }

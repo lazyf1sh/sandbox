@@ -7,7 +7,8 @@ public class Calculator
 {
     private int sum = 0;
 
-    public void calculate() {
+    public void calculate()
+    {
         setSum(getSum() + 1);
     }
 

@@ -1,8 +1,8 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util;
 
-import java.util.PriorityQueue;
-
 import org.junit.Test;
+
+import java.util.PriorityQueue;
 
 import static org.junit.Assert.assertEquals;
 

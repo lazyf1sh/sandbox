@@ -1,10 +1,10 @@
 package com.github.lazyf1sh.sandbox.patterns.singleton;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 public class MyEnumSingletonTest
 {

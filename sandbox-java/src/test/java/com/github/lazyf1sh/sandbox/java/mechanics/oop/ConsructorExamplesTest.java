@@ -1,10 +1,9 @@
 package com.github.lazyf1sh.sandbox.java.mechanics.oop;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import com.github.lazyf1sh.sandbox.domain.Bottle;
 import com.github.lazyf1sh.sandbox.domain.Flask;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * Constructor is a way to set initial value(s) to an object.

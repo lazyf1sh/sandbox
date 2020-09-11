@@ -14,7 +14,7 @@ public class CastNullToObjTest
     @Test
     public void run()
     {
-        String str = (String)null; //no exception
+        String str = (String) null; //no exception
 
         Assert.assertTrue(true);
     }

@@ -56,7 +56,7 @@ public class StringsPool
         Assert.assertTrue(a.intern() == b.intern());
     }
 
-     @Test
+    @Test
     public void test5()
     {
         String a = "012";

@@ -1,13 +1,13 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.io;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-
-import org.junit.Assert;
-import org.junit.Test;
 
 /**
  * @author Ivan Kopylov
