@@ -10,7 +10,7 @@ public class ExceptionsBasic
     /**
      * Exception (aka checked exceptions) and its successors must be handled.
      */
-    @Test(expected = Exception.class)
+    @Test
     public void basic_exception()
     {
         try

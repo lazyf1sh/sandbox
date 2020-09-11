@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author Ivan Kopylov
@@ -15,39 +16,105 @@ import static org.junit.Assert.assertEquals;
 public class SynchronizedExample
 {
     @Test
-    public void not_synchronized() throws InterruptedException
+    public void threadDangerousRun() throws InterruptedException
     {
-        ExecutorService service = Executors.newFixedThreadPool(3);
-        Calculator calculator = new Calculator();
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        CounterThreadDangerous summation = new CounterThreadDangerous();
 
-        IntStream.range(0, 1000).forEach(count -> service.submit(calculator::calculate));
-        service.awaitTermination(1000, TimeUnit.MILLISECONDS);
+        IntStream.range(0, 1000).forEach(count -> executorService.submit(summation::calculate));
+        executorService.awaitTermination(2000, TimeUnit.MILLISECONDS);
 
-        assertEquals(1000, calculator.getSum());
+        assertTrue(summation.getSum() < 1000);
     }
 
     @Test
-    public void example_synchronized() throws InterruptedException
+    public void threadSafeRun() throws InterruptedException
     {
-        ExecutorService service = Executors.newFixedThreadPool(3);
-        CalculatorSynchronized calculator = new CalculatorSynchronized();
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        CounterThreadSafe summation = new CounterThreadSafe();
 
-        IntStream.range(0, 1000).forEach(count -> service.submit(calculator::calculate));
-        service.awaitTermination(1000, TimeUnit.MILLISECONDS);
+        IntStream.range(0, 1000).forEach(count -> executorService.submit(summation::calculate));
+        executorService.awaitTermination(2000, TimeUnit.MILLISECONDS);
 
-        assertEquals(1000, calculator.getSum());
+        assertEquals(1000, summation.getSum());
     }
 
     @Test
-    public void givenMultiThread_whenBlockSync() throws InterruptedException
+    public void threadSafeRun2() throws InterruptedException
     {
-        ExecutorService service = Executors.newFixedThreadPool(3);
-        CalculatorSynchronizedBlock synchronizedBlocks = new CalculatorSynchronizedBlock();
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        CounterThreadSafeBlock summation = new CounterThreadSafeBlock();
 
-        IntStream.range(0, 1000).forEach(count -> service.submit(synchronizedBlocks::calculate));
-        service.awaitTermination(100, TimeUnit.MILLISECONDS);
+        IntStream.range(0, 1000).forEach(count -> executorService.submit(summation::calculate));
+        executorService.awaitTermination(2000, TimeUnit.MILLISECONDS);
 
-        assertEquals(1000, synchronizedBlocks.getSum());
+        assertEquals(1000, summation.getSum());
     }
 
+
+    public class CounterThreadSafe
+    {
+        private int sum = 0;
+
+        public synchronized void calculate()
+        {
+            setSum(getSum() + 1);
+        }
+
+        public int getSum()
+        {
+            return sum;
+        }
+
+        public void setSum(final int sum)
+        {
+            this.sum = sum;
+        }
+    }
+
+    public class CounterThreadSafeBlock
+    {
+        private int sum = 0;
+
+        public void calculate()
+        {
+            synchronized (this)
+            {
+                setSum(getSum() + 1);
+            }
+        }
+
+        public int getSum()
+        {
+            return sum;
+        }
+
+        public void setSum(final int sum)
+        {
+            this.sum = sum;
+        }
+    }
+
+    /**
+     * @author Ivan Kopylov
+     */
+    public class CounterThreadDangerous
+    {
+        private int sum = 0;
+
+        public void calculate()
+        {
+            setSum(getSum() + 1);
+        }
+
+        public int getSum()
+        {
+            return sum;
+        }
+
+        public void setSum(final int sum)
+        {
+            this.sum = sum;
+        }
+    }
 }
