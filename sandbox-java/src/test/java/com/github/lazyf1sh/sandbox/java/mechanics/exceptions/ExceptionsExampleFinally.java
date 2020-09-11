@@ -1,11 +1,11 @@
 package com.github.lazyf1sh.sandbox.java.mechanics.exceptions;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 
 /**
  * @author Ivan Kopylov
@@ -13,36 +13,38 @@ import java.io.IOException;
 public class ExceptionsExampleFinally
 {
     @Test
-    public void basic_exception()
+    public void basicException()
     {
 
         BufferedReader br = null;
         try
         {
-            File file = new File("test.txt");
+            File file = new File("non-existing file.");
 
             br = new BufferedReader(new FileReader(file));
             br.read();
         }
         catch (Exception e)
         {
+            Assert.assertTrue(true);
             System.out.println("Something bad happened.");
-            System.out.println(e.getMessage());
-            e.printStackTrace();
         }
         finally
         {
-            try
+            Assert.assertTrue(true);
+
+            Assert.assertTrue(true);
+            System.out.println("Closing resource.");
+            if (br != null)
             {
-                System.out.println("Closing resource.");
-                br.close();
                 System.out.println("Closed resource.");
+                Assert.fail();
             }
-            catch (IOException e)
+            else
             {
-                e.printStackTrace();
+                Assert.assertTrue(true);
+                System.out.println("resource is null.");
             }
         }
-
     }
 }

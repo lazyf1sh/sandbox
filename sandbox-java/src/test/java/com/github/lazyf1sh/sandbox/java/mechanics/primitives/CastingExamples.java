@@ -12,26 +12,26 @@ public class CastingExamples
     @Test
     public void wideningCasting()
     {
-        byte i = 40;
+        byte b = 40;
         // No casting needed for below conversion, because automatic widening is performed
-        short j = i;
-        int k = j;
-        long l = k;
-        float m = l;
-        double n = m;
-        System.out.println("byte value : " + i);
-        System.out.println("short value : " + j);
-        System.out.println("int value : " + k);
+        short s = b;
+        int i = s;
+        long l = i;
+        float f = l;
+        double d = f;
+        System.out.println("byte value : " + b);
+        System.out.println("short value : " + s);
+        System.out.println("int value : " + i);
         System.out.println("long value : " + l);
-        System.out.println("float value : " + m);
-        System.out.println("double value : " + n);
+        System.out.println("float value : " + f);
+        System.out.println("double value : " + d);
 
+        Assert.assertEquals(40, b);
+        Assert.assertEquals(40, s);
         Assert.assertEquals(40, i);
-        Assert.assertEquals(40, j);
-        Assert.assertEquals(40, k);
         Assert.assertEquals(40, l);
-        Assert.assertEquals(40, m);
-        Assert.assertEquals(40, n);
+        Assert.assertEquals(40L, f, 0);
+        Assert.assertEquals(40, d, 0);
     }
 
     /**
