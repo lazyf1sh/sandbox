@@ -18,7 +18,7 @@
         <module>sandbox-websocket-client-javax</module>
         <module>sandbox-websocket-client-nv</module>
         <module>sandbox-log4j2</module>
-        <module>sandbox-java</module>
+
         <module>sandbox-javafx</module>
         <module>sandbox-commons-logging-log4j</module>
         <module>sandbox-commons-logging</module>
@@ -45,8 +45,9 @@
         <module>sandbox-liquibase-maven</module>
         <module>sandbox-log4j</module>
         <module>sandbox-h2</module>
+        <module>sandbox-java8</module>
+        <module>sandbox-java9</module>
         <module>sandbox-java10</module>
-        <module>sandbox-java</module>
         <module>sandbox-jsf-primefaces-apache-tomcat</module>
         <module>sandbox-tomcat-listener</module>
         <module>sandbox-tomcat-filter</module>
