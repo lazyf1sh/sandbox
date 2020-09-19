@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.java8.streams;
+package com.github.lazyf1sh.sandbox.java.jcl.java.util.function;
 
 /**
  * @author Ivan Kopylov

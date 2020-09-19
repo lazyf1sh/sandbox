@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.concurrency.threadJoinExample;
+package com.github.lazyf1sh.sandbox.java.mechanics.concurrency.threadJoinExample;
 
 /**
  * @author Ivan Kopylov

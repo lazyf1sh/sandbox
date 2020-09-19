@@ -1,6 +1,5 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util.function;
 
-import com.github.lazyf1sh.sandbox.java.java8.streams.Foo;
 import org.junit.Assert;
 import org.junit.Test;
 

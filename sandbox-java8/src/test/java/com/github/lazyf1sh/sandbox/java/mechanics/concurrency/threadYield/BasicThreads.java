@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.mechanics.concurrency.das;
+package com.github.lazyf1sh.sandbox.java.mechanics.concurrency.threadYield;
 
 import org.junit.Test;
 
