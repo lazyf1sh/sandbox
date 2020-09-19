@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.java.exercises.solutions;
 
+import com.github.lazyf1sh.sandbox.java.exercises.codingbat.impl.twoTwo;
 import org.junit.Test;
 
 /**

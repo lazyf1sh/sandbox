@@ -23,8 +23,8 @@ public class OperatorPrecedence
         String result1 = "1 + 2 = " + 1 + 2;
         String result2 = "1 + 2 = " + (1 + 2);
 
-//        Assert.assertEquals("1 + 2 = ", result1);
-//        Assert.assertEquals("1 + 2 = ", result2);
+//        Assert.assertEquals("", result1);
+//        Assert.assertEquals("", result2);
     }
 
     @Test
@@ -33,8 +33,8 @@ public class OperatorPrecedence
         String result1 = 1 + 2 + "abc";
         String result2 = "abc" + 1 + 2;
 
-        Assert.assertEquals("", result1);
-        Assert.assertEquals("", result2);
+//        Assert.assertEquals("", result1);
+//        Assert.assertEquals("", result2);
     }
 
 
