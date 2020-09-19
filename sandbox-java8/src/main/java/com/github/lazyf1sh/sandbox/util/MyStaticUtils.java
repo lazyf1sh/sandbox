@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.util;
+package com.github.lazyf1sh.sandbox.util;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;

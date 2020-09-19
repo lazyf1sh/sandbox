@@ -1,6 +1,6 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util;
 
-import com.github.lazyf1sh.sandbox.java.util.Util;
+import com.github.lazyf1sh.sandbox.util.Util;
 import org.junit.Assert;
 import org.junit.Test;
 
