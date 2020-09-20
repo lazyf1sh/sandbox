@@ -1,6 +1,6 @@
-package com.github.lazyf1sh.persistence.jpa;
+package com.github.lazyf1sh.persistence.jpa.fetchvsjoin;
 
-import com.github.lazyf1sh.sandbox.persistence.entities.fetchvsjoin.Gamer;
+import com.github.lazyf1sh.sandbox.persistence.jpa.fetchvsjoin.Gamer;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 import org.junit.Test;
 

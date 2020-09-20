@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.persistence.entities.fetchvsjoin;
+package com.github.lazyf1sh.sandbox.persistence.jpa.fetchvsjoin;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
