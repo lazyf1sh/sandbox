@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.persistence.jpa;
+package com.github.lazyf1sh.persistence.jpa.flushmode;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.ParentEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.HibernateSessionFactory;

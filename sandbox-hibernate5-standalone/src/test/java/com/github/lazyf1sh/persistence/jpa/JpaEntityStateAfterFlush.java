@@ -41,7 +41,7 @@ public class JpaEntityStateAfterFlush
         ParentEntity parent = entityManager.find(ParentEntity.class, 3000);
         parent.setName("1");
 
-        entityManager.flush(); //hits db
+        entityManager.flush(); //commits accumulated changes to the database
 
         parent.setName("2");
 

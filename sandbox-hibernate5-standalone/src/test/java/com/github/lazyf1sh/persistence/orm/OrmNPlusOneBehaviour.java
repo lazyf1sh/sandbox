@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.persistence.jpa;
+package com.github.lazyf1sh.persistence.orm;
 
 import java.util.List;
 import java.util.Random;
@@ -56,7 +56,7 @@ public class OrmNPlusOneBehaviour
      * No additional queries without proxy's getter call
      */
     @Test
-    public void no_db_hits()
+    public void noDbHits()
     {
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
 
@@ -79,7 +79,7 @@ public class OrmNPlusOneBehaviour
      * N+1 additional queries when accessing db through child proxy
      */
     @Test
-    public void n_plus_one()
+    public void nPlusOne()
     {
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
@@ -106,7 +106,7 @@ public class OrmNPlusOneBehaviour
     }
 
     @Test
-    public void solution_fetch()
+    public void solutionIsFetch()
     {
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
         entityManager.getTransaction().begin();
@@ -135,7 +135,7 @@ public class OrmNPlusOneBehaviour
     }
 
     @Test
-    public void join_isnt_a_solution()
+    public void joinIsntASolution()
     {
         EntityManager entityManager = JpaEntityManagerFactory.getEntityManger();
 

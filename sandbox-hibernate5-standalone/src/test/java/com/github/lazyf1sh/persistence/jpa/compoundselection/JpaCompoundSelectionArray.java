@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.persistence.jpa;
+package com.github.lazyf1sh.persistence.jpa.compoundselection;
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CompoundSelection;
