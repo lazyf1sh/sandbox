@@ -17,7 +17,7 @@
 <!--        <property name="hibernate.javax.cache.uri">classpath://ehcache.xml</property>-->
 <!--        <property name="hibernate.cache.region.factory_class">jcache</property>-->
 
-        <mapping class="com.github.lazyf1sh.sandbox.persistence.jpa.orderby.Building"/>
+
         <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity"/>
         <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.BookEntity"/>
         <mapping class="com.github.lazyf1sh.sandbox.persistence.entities.PageEntity"/>
