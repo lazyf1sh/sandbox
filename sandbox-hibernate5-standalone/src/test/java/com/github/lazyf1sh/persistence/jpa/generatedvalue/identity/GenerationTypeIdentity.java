@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.persistence.jpa.identity;
+package com.github.lazyf1sh.persistence.jpa.generatedvalue.identity;
 
 import com.github.lazyf1sh.sandbox.persistence.jpa.identity.IdentityExampleEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;

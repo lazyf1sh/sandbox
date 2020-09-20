@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.persistence.jpa;
+package com.github.lazyf1sh.persistence.jpa.generatedvalue.sequence;
 
 import javax.persistence.EntityManager;
 
