@@ -1,4 +1,6 @@
-package com.github.lazyf1sh.sandbox.persistence.entities.a;
+package com.github.lazyf1sh.sandbox.persistence.jpa.join;
+
+import com.github.lazyf1sh.sandbox.persistence.entities.a.TicketDetails;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;

@@ -10,7 +10,7 @@
         <class>com.github.lazyf1sh.sandbox.persistence.entities.UserEntity</class>
         <class>com.github.lazyf1sh.sandbox.persistence.entities.Car</class>
         <class>com.github.lazyf1sh.sandbox.persistence.entities.DocumentEntity</class>
-        <class>com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket</class>
+        <class>com.github.lazyf1sh.sandbox.persistence.jpa.join.Ticket</class>
         <class>com.github.lazyf1sh.sandbox.persistence.entities.BookEntity</class>
         <class>com.github.lazyf1sh.sandbox.persistence.entities.ChildEntity</class>
         <class>com.github.lazyf1sh.sandbox.persistence.entities.MyEmbeddable</class>

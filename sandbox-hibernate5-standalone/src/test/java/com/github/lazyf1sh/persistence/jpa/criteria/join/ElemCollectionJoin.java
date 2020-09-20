@@ -1,6 +1,6 @@
-package com.github.lazyf1sh.persistence.jpa;
+package com.github.lazyf1sh.persistence.jpa.criteria.join;
 
-import com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket;
+import com.github.lazyf1sh.sandbox.persistence.jpa.join.Ticket;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 import org.junit.Test;
 
