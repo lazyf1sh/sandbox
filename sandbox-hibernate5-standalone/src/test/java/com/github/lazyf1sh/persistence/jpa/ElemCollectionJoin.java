@@ -1,6 +1,8 @@
 package com.github.lazyf1sh.persistence.jpa;
 
-import java.util.List;
+import com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket;
+import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
+import org.junit.Test;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -8,16 +10,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
-
-import org.hibernate.boot.registry.BootstrapServiceRegistry;
-import org.hibernate.boot.registry.BootstrapServiceRegistryBuilder;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.junit.Test;
-
-import com.github.lazyf1sh.sandbox.persistence.entities.a.Ticket;
-import com.github.lazyf1sh.sandbox.persistence.util.MetadataExtractorIntegrator;
-import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
+import java.util.List;
 
 /**
  * @author Ivan Kopylov
@@ -34,7 +27,10 @@ public class ElemCollectionJoin
         Root<Ticket> root = cr.from(Ticket.class);
         cr.select(root);
 
-        Join<Object, Object> objectObjectObjectMapJoin = root.join("ticketDetails").join("genericProperties").join("properties");
+        Join<Object, Object> objectObjectObjectMapJoin = root
+                .join("ticketDetails")
+                .join("genericProperties")
+                .join("properties");
 
         TypedQuery<Ticket> query = entityManager.createQuery(cr);
         List<Ticket> parents = query.getResultList();

@@ -1,4 +1,6 @@
-package com.github.lazyf1sh.sandbox.persistence.entities;
+package com.github.lazyf1sh.sandbox.persistence.jpa.cascade;
+
+import com.github.lazyf1sh.sandbox.persistence.entities.AddressEntity;
 
 import java.util.List;
 

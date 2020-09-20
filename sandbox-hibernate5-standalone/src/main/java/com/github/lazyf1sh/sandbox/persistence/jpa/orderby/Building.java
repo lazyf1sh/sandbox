@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.persistence.entities;
+package com.github.lazyf1sh.sandbox.persistence.jpa.orderby;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;

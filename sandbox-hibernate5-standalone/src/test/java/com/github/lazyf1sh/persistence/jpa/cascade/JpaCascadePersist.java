@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.persistence.jpa;
+package com.github.lazyf1sh.persistence.jpa.cascade;
 
 import java.util.Collections;
 
@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import org.junit.Test;
 
 import com.github.lazyf1sh.sandbox.persistence.entities.AddressEntity;
-import com.github.lazyf1sh.sandbox.persistence.entities.PersonEntity;
+import com.github.lazyf1sh.sandbox.persistence.jpa.cascade.PersonEntity;
 import com.github.lazyf1sh.sandbox.persistence.util.JpaEntityManagerFactory;
 
 /**

@@ -32,7 +32,7 @@ public class JpaFlushMode
     }
 
     @Test
-    public void run()
+    public void commitMode()
     {
         EntityManager entityManager = HibernateSessionFactory.openSession();
         entityManager.getTransaction().begin();

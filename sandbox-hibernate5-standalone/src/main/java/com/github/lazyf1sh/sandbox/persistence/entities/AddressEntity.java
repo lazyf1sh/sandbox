@@ -1,5 +1,7 @@
 package com.github.lazyf1sh.sandbox.persistence.entities;
 
+import com.github.lazyf1sh.sandbox.persistence.jpa.cascade.PersonEntity;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;

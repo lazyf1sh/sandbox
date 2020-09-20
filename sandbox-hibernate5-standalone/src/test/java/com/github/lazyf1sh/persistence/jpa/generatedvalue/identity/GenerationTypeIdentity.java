@@ -9,6 +9,9 @@ import javax.persistence.EntityManager;
 
 public class GenerationTypeIdentity
 {
+    /**
+     * This example is intended to show basic working example of GenerationType.IDENTITY.
+     */
     @Test
     public void generationTypeIdentity()
     {
