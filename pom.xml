@@ -18,8 +18,8 @@
         <module>sandbox-websocket-client-javax</module>
         <module>sandbox-websocket-client-nv</module>
         <module>sandbox-log4j2</module>
-
         <module>sandbox-javafx</module>
+        <module>sandbox-spring-test-context</module>
         <module>sandbox-commons-logging-log4j</module>
         <module>sandbox-commons-logging</module>
         <module>sandbox-javafx</module>

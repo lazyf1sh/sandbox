@@ -3,7 +3,7 @@ package com.github.lazyf1sh.sandbox.java.mechanics.serialversionuid;
 import java.io.Serializable;
 
 /**
- * The default implementation.
+ *
  *
  * @author Ivan Kopylov
  */

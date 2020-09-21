@@ -13,7 +13,7 @@ import java.io.ObjectOutputStream;
 import java.util.UUID;
 
 /**
- * The default implementation.
+ *
  *
  * @author Ivan Kopylov
  */

@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.concurrent.Executor;
 
 /**
- * The default implementation.
+ *
  *
  * @author Ivan Kopylov
  */

@@ -1,0 +1,49 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-2.5.xsd
+               http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-2.5.xsd
+               http://www.springframework.org/schema/util
+               http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer"/>
+    <bean name="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"/>
+
+    <context:component-scan base-package="com.github.lazyf1sh.sandbox.spring.test.context.entities" scoped-proxy="interfaces"/>
+
+    <bean id="testDbDataSource" name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${spring.datasource.driverClassName}"/>
+        <property name="url" value="${spring.datasource.url}"/>
+        <property name="username" value="${spring.datasource.username}"/>
+        <property name="password" value="${spring.datasource.password}"/>
+    </bean>
+
+    <bean id="testSessionFactory"
+          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
+          p:dataSource-ref="testDbDataSource" p:packagesToScan="com.github.lazyf1sh.sandbox.spring.test.context.entities">
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.format_sql">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="testTransactionManager"
+          class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="testSessionFactory"/>
+    </bean>
+
+
+
+</beans>
