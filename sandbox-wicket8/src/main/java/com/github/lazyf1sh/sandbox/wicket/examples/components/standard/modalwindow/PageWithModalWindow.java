@@ -30,7 +30,7 @@ public class PageWithModalWindow extends WebPage
             }
         });
 
-        Form<Void> form = new Form<Void>("form");
+        Form<Void> form = new Form<>("form");
 
         AjaxButton trigger2 = new AjaxButton("trigger2")
         {
@@ -40,8 +40,6 @@ public class PageWithModalWindow extends WebPage
             {
                 super.onSubmit(target);
             }
-
-
         };
         form.add(trigger2);
 
