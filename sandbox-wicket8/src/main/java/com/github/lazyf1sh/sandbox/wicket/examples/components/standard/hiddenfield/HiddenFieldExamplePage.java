@@ -24,7 +24,7 @@ public class HiddenFieldExamplePage extends WebPage
             @Override
             protected void onEvent(AjaxRequestTarget target)
             {
-                System.out.println("AjaxEventBehavior - onEvent");
+                System.out.println("AjaxEventBehavior - onEvent.");
             }
         });
         add(hiddenField);
