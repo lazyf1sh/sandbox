@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.dsadsada;
+package com.github.lazyf1sh.sandbox.java.exercises;
 
 import com.github.lazyf1sh.sandbox.domain.Child;
 import org.junit.Test;
