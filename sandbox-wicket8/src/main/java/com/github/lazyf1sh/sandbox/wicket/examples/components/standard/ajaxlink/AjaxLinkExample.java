@@ -43,8 +43,6 @@ public class AjaxLinkExample extends WebPage
             }
         };
 
-
-
         add(link, linkButton, divAjaxLink);
     }
 }

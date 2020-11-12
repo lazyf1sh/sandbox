@@ -27,7 +27,7 @@ public class ButtonExample extends WebPage
             @Override
             protected void onEvent(AjaxRequestTarget target)
             {
-                System.out.println("123");
+                System.out.println("onEvent: click");
             }
         });
         add(myButton);

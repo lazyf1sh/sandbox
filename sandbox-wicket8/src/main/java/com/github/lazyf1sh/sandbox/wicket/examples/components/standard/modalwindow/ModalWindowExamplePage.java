@@ -23,8 +23,6 @@ public class ModalWindowExamplePage extends WebPage
 
         add(new AjaxLink<Void>("showModalWindow")
         {
-
-
             @Override
             public void onClick(AjaxRequestTarget target)
             {

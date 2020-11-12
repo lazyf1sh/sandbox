@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * The default implementation.
+ *
  *
  * @author Ivan Kopylov
  */

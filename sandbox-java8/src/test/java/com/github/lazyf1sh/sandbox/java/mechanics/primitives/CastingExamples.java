@@ -96,4 +96,16 @@ public class CastingExamples
     }
 
 
+    /**
+     * Explicit cast is required to case byte primitive to Integer wrapper.
+     */
+    @Test
+    public void noAutobox()
+    {
+//        byte b = 1;
+//        Integer i = b; //no automatic widening to int and then auto box.
+
+        byte q = 1;
+        int i = q; // automatic widening
+    }
 }

@@ -4,7 +4,7 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.jasperserver.reportUnit" value="/pva/hello_world"/>
-	<property name="ireport.jasperserver.url" value="http://tvision.srv.dsh.at:9008/jasperserver/services/repository"/>
+	<property name="ireport.jasperserver.url" value="http://localhost:9008/jasperserver/services/repository"/>
 	<property name="ireport.jasperserver.report.resource" value="/pva/PVA_documents/printouts/PRINT_AEB_files/MainJrxml"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
