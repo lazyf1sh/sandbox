@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.jcl.java.lang.ref.thinking.in.java;
+package com.github.lazyf1sh.sandbox.java.exercises.thinking.in.java;
 
 /**
  * @author Ivan Kopylov
