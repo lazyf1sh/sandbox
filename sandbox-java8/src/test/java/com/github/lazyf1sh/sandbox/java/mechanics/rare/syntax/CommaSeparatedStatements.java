@@ -24,4 +24,26 @@ public class CommaSeparatedStatements
         int i4 = i1 + (i2 = i3);
         Assert.assertEquals(4, i4);
     }
+
+    @Test
+    public void evalInsideSwitch()
+    {
+        {
+            char[] ca = {'a', 'b', 'c', 'd'};
+            int i = 0;
+            for (char c : ca)
+            {
+                switch (c)
+                {
+                    case 'a':
+                        i++;
+                    case 'b':
+                        ++i;
+                    case 'c' | 'd':
+                        i++;
+                }
+            }
+            Assert.assertEquals(5, i);
+        }
+    }
 }
