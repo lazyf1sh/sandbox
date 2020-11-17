@@ -33,14 +33,73 @@ public class LocalDateTimeExamples
     }
 
     @Test
-    public void LocalDateLenient()
+    public void localDateLenientBasicExample()
     {
-        LocalDate result = LocalDate.parse("31.02.2020", DateTimeFormatter.ofPattern("dd.MM.yyyy").withResolverStyle(ResolverStyle.LENIENT));
+        DateTimeFormatter formatter = DateTimeFormatter
+                .ofPattern("dd.MM.yyyy")
+                .withResolverStyle(ResolverStyle.LENIENT);
+
+        LocalDate result = LocalDate.parse("31.02.2020", formatter);
+
         Assert.assertEquals("2020-03-02", result.toString());
     }
 
     @Test
-    public void LocalDateStrict()
+    public void localDateTimeLenient()
+    {
+        DateTimeFormatter formatter = DateTimeFormatter
+                .ofPattern("dd.MM.yyyy HH:mm")
+                .withResolverStyle(ResolverStyle.LENIENT);
+
+        LocalDateTime result = LocalDateTime.parse("18.02.2020 15:23", formatter);
+
+        Assert.assertEquals("2020-02-18T15:23", result.toString());
+    }
+
+    @Test(expected = DateTimeParseException.class)
+    public void localDateTimeStrict()
+    {
+        DateTimeFormatter formatter = DateTimeFormatter
+                .ofPattern("dd.MM.yyyy HH:mm")
+                .withResolverStyle(ResolverStyle.STRICT);
+
+        LocalDateTime.parse("18.02.2020 15:23", formatter);
+    }
+
+    /**
+     * {@link ResolverStyle.LENIENT} overflows result.
+     */
+    @Test
+    public void localDateTimeLenientIncorrectDate()
+    {
+        DateTimeFormatter formatter = DateTimeFormatter
+                .ofPattern("dd.MM.yyyy HH:mm")
+                .withResolverStyle(ResolverStyle.LENIENT);
+
+        LocalDateTime result = LocalDateTime.parse("31.02.2020 15:23", formatter);
+
+        Assert.assertEquals(2, result.getDayOfMonth());
+        Assert.assertEquals(3, result.getMonthValue());
+    }
+
+    /**
+     * {@link ResolverStyle.SMART} fixes result to maximum available date.
+     */
+    @Test
+    public void localDateTimeSmartIncorrectDate()
+    {
+        DateTimeFormatter formatter = DateTimeFormatter
+                .ofPattern("dd.MM.yyyy HH:mm")
+                .withResolverStyle(ResolverStyle.SMART);
+
+        LocalDateTime result = LocalDateTime.parse("31.02.2020 15:23", formatter);
+
+        Assert.assertEquals(29, result.getDayOfMonth());
+        Assert.assertEquals(2, result.getMonthValue());
+    }
+
+    @Test(expected = DateTimeParseException.class)
+    public void localDateStrict()
     {
         String input = "31.02.2020";
         DateTimeFormatter formatter = DateTimeFormatter
@@ -82,7 +141,7 @@ public class LocalDateTimeExamples
         long a = localDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
         long b = new Date().getTime();
 
-        if (b - a > 5)
+        if (b - a > 15)
         {
             Assert.fail();
         }

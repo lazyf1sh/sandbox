@@ -25,6 +25,34 @@ public class SimpleDateFormatExample
         Assert.assertEquals("2017-02-14", result);
     }
 
+    @Test(expected = ParseException.class)
+    public void setLenientFalse() throws ParseException
+    {
+        SimpleDateFormat ddMMyyyy = new SimpleDateFormat("ddMMyyyy");
+        ddMMyyyy.setLenient(false);
+        ddMMyyyy.parse("31022020");
+    }
+
+    @Test
+    public void setLenientTrueOverflowedDate() throws ParseException
+    {
+        SimpleDateFormat ddMMyyyy = new SimpleDateFormat("ddMMyyyy");
+        ddMMyyyy.setLenient(true);
+        Date result = ddMMyyyy.parse("31022020");
+        Assert.assertEquals(2, result.getMonth());
+        Assert.assertEquals(2, result.getDate());
+    }
+
+    @Test
+    public void setLenientTrueValidDate() throws ParseException
+    {
+        SimpleDateFormat ddMMyyyy = new SimpleDateFormat("ddMMyyyy");
+        ddMMyyyy.setLenient(true);
+        Date result = ddMMyyyy.parse("28022020");
+        Assert.assertEquals(1, result.getMonth());
+        Assert.assertEquals(28, result.getDate());
+    }
+
     @Test
     public void happyPath01() throws ParseException
     {
