@@ -32,7 +32,8 @@ public class BehaviorAbstractDefaultAjaxExample2 extends WebPage
                 WebRequest webRequest = (WebRequest) cycle.getRequest();
                 StringValue param1 = webRequest.getQueryParameters().getParameterValue("param1");
                 StringValue param2 = webRequest.getQueryParameters().getParameterValue("param2");
-                int i = 0;
+                System.out.println(param1);
+                System.out.println(param2);
                 // do whatever you need with param1 and param2
             }
 
@@ -43,6 +44,8 @@ public class BehaviorAbstractDefaultAjaxExample2 extends WebPage
                 String script = "var param1Value = '123';";
                 script += "var param2Value = '456';";
                 script += getCallbackScript();
+                script = script.replace("\"PARAM_PLACEHOLDER_1\"", "param1Value"); //remove quotes
+                script = script.replace("\"PARAM_PLACEHOLDER_2\"", "param2Value"); //remove quotes
                 response.render(OnDomReadyHeaderItem.forScript(script));
             }
 
@@ -50,17 +53,8 @@ public class BehaviorAbstractDefaultAjaxExample2 extends WebPage
             protected void updateAjaxAttributes(AjaxRequestAttributes attributes)
             {
                 super.updateAjaxAttributes(attributes);
-                attributes.getExtraParameters().put("param1", "PLACEHOLDER1");
-                attributes.getExtraParameters().put("param2", "PLACEHOLDER2");
-            }
-
-            @Override
-            public CharSequence getCallbackScript()
-            {
-                String script = super.getCallbackScript().toString();
-                script = script.replace("\"PLACEHOLDER1\"", "param1Value");
-                script = script.replace("\"PLACEHOLDER2\"", "param2Value");
-                return script;
+                attributes.getExtraParameters().put("param1", "PARAM_PLACEHOLDER_1");
+                attributes.getExtraParameters().put("param2", "PARAM_PLACEHOLDER_2");
             }
         });
     }

@@ -18,7 +18,7 @@ public class BehaviorAbstractDefaultAjaxExample extends WebPage
     {
         super.onInitialize();
 
-        add(new AbstractDefaultAjaxBehavior()
+        AbstractDefaultAjaxBehavior abstractDefaultAjaxBehavior = new AbstractDefaultAjaxBehavior()
         {
             private static final long serialVersionUID = -7194864693972841194L;
 
@@ -40,6 +40,10 @@ public class BehaviorAbstractDefaultAjaxExample extends WebPage
                 super.renderHead(component, response);
                 response.render(OnLoadHeaderItem.forScript(callBackScript));//try to comment it
             }
-        });
+        };
+        add(abstractDefaultAjaxBehavior);
+        System.out.println(abstractDefaultAjaxBehavior.getCallbackScript());
+        System.out.println(abstractDefaultAjaxBehavior.getCallbackUrl());
+
     }
 }

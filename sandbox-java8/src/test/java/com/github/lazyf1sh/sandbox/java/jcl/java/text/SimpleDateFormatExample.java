@@ -24,4 +24,25 @@ public class SimpleDateFormatExample
 
         Assert.assertEquals("2017-02-14", result);
     }
+
+    @Test
+    public void happyPath01() throws ParseException
+    {
+        String input = "23.12.2020";
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+        Date result = format.parse(input);
+
+        Assert.assertEquals(23, result.getDate());
+        Assert.assertEquals(11, result.getMonth());
+    }
+
+    @Test
+    public void happyPath02() throws ParseException
+    {
+        String input = "23:59";
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        Date result = format.parse(input);
+
+        Assert.assertNotNull(result);
+    }
 }

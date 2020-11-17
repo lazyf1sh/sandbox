@@ -3,8 +3,14 @@ package com.github.lazyf1sh.sandbox.java.jcl.java.time;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 import java.util.Date;
 
 /**
@@ -12,11 +18,50 @@ import java.util.Date;
  */
 public class LocalDateTimeExamples
 {
+    @Test
+    public void happyPathLocalDateTime()
+    {
+        LocalDateTime result = LocalDateTime.parse("24.12.2020 14:58", DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"));
+        Assert.assertEquals("2020-12-24T14:58", result.toString());
+    }
+
+    @Test
+    public void happyPathLocalDate()
+    {
+        LocalDate result = LocalDate.parse("24.12.2020", DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        Assert.assertEquals("2020-12-24", result.toString());
+    }
+
+    @Test
+    public void LocalDateLenient()
+    {
+        LocalDate result = LocalDate.parse("31.02.2020", DateTimeFormatter.ofPattern("dd.MM.yyyy").withResolverStyle(ResolverStyle.LENIENT));
+        Assert.assertEquals("2020-03-02", result.toString());
+    }
+
+    @Test
+    public void LocalDateStrict()
+    {
+        String input = "31.02.2020";
+        DateTimeFormatter formatter = DateTimeFormatter
+                .ofPattern("dd.MM.yyyy")
+                .withResolverStyle(ResolverStyle.STRICT);
+
+        LocalDate.parse(input, formatter);
+    }
+
+    @Test
+    public void happyPathLocalTime()
+    {
+        LocalTime result = LocalTime.parse("23:55", DateTimeFormatter.ofPattern("HH:mm"));
+        Assert.assertEquals("23:55", result.toString());
+    }
+
     /**
      * Purpose: to show that java.util.Date differs from java.time.LocalDateTime .
      */
     @Test
-    public void run()
+    public void dateDiffersFromLocalDateTime()
     {
         LocalDateTime localDateTime = LocalDateTime.of(2020, 6, 15, 15, 15);
         long a = localDateTime.atZone(ZoneId.of("UTC+03:00")).toInstant().toEpochMilli();
@@ -31,9 +76,53 @@ public class LocalDateTimeExamples
      * This example shows how to convert LocalDateTime to epoch milliseconds
      */
     @Test
-    public void test()
+    public void localDateTimeToMillis()
     {
         LocalDateTime localDateTime = LocalDateTime.now();
+        long a = localDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
+        long b = new Date().getTime();
+
+        if (b - a > 5)
+        {
+            Assert.fail();
+        }
+        Assert.assertTrue(true);
+    }
+
+    @Test(expected = DateTimeParseException.class)
+    public void unableToParse()
+    {
+        DateTimeFormatter.ofPattern("YY").format(LocalDateTime.now());
+        LocalDateTime.parse("24.12.2020", DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+    }
+
+    /**
+     * LocalDate is not suited to parse Date and time. Only date.
+     */
+    @Test(expected = DateTimeParseException.class)
+    public void unableToParseDateTime()
+    {
+        LocalDate.parse("24.12.2020 14:58", DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+    }
+
+    @Test
+    public void zonedDateTimeExample()
+    {
+        ZonedDateTime zonedDateTime = ZonedDateTime.parse("2011-12-03T10:15:30+01:00");
+    }
+
+    @Test
+    public void noErrorIfUseLocalDateTime()
+    {
+        LocalDateTime.parse("24.12.2020 14:58", DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"));
+    }
+
+    @Test
+    public void dle()
+    {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        String format = localDateTime.format(DateTimeFormatter.ofPattern("d/m/yyyy HH:MM"));
+
         long a = localDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
         long b = new Date().getTime();
 
@@ -45,10 +134,10 @@ public class LocalDateTimeExamples
     }
 
     /**
-     * To show that same timezone has many aliases
+     * To show that same timezone has many aliases.
      */
     @Test
-    public void test2()
+    public void timeZoneHasAliases()
     {
         LocalDateTime localDateTime = LocalDateTime.of(2020, 6, 15, 15, 15);
         long a = localDateTime.atZone(ZoneId.of("Europe/Moscow")).toInstant().toEpochMilli();
