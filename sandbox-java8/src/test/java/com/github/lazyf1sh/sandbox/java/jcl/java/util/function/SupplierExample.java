@@ -1,5 +1,6 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util.function;
 
+import com.github.lazyf1sh.sandbox.mc.b.MyClass;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -26,6 +27,17 @@ public class SupplierExample
 
         Assert.assertEquals("1", s1.get());
         Assert.assertEquals("2", s2.get());
+    }
+
+    /**
+     * Method reference.
+     */
+    @Test
+    public void eachGetCreatesNewObject()
+    {
+        Supplier<MyClass> abc = MyClass::new;
+        abc.get();
+        abc.get();
     }
 
     @Test

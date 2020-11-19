@@ -86,7 +86,10 @@ public class OptionalExample
     public void whenOrElseGetWorks_thenCorrect()
     {
         String nullName = null;
-        String name = Optional.ofNullable(nullName).orElseGet(() -> "john");
+        String name = Optional.ofNullable(nullName).orElseGet(() -> {
+            System.out.println("orElseGetCalled");
+            return "john";
+        });
         assertEquals("john", name);
     }
 
