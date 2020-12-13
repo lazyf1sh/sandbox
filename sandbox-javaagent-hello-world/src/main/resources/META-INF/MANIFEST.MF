@@ -1,0 +1,4 @@
+Agent-Class: com.github.lazyf1sh.sandbox.instrumentation.agent.MyInstrumentationAgent
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+Premain-Class: com.github.lazyf1sh.sandbox.instrumentation.agent.MyInstrumentationAgent

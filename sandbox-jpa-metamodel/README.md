@@ -1,0 +1,1 @@
+Minimal example of JPA metamodel.

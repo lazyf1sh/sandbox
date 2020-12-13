@@ -1,5 +1,7 @@
 package com.github.lazyf1sh.sandbox.java.finalVariableInsideCallback;
 
+import java.lang.instrument.Instrumentation;
+
 /**
  * @author Ivan Kopylov
  */

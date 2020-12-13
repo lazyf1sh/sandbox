@@ -45,6 +45,7 @@
         <module>sandbox-liquibase-maven</module>
         <module>sandbox-log4j</module>
         <module>sandbox-h2</module>
+        <module>sandbox-java</module>
         <module>sandbox-java8</module>
         <module>sandbox-java9</module>
         <module>sandbox-java10</module>
