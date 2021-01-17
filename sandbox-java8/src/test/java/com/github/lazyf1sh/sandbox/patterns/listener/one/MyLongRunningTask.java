@@ -1,11 +1,10 @@
 package com.github.lazyf1sh.sandbox.patterns.listener.one;
 
-public class LongRunningTask implements Runnable
+public class MyLongRunningTask implements Runnable
 {
-
     private OnCompleteListener onCompleteListener;
 
-    public LongRunningTask(OnCompleteListener onCompleteListener)
+    public MyLongRunningTask(OnCompleteListener onCompleteListener)
     {
         this.onCompleteListener = onCompleteListener;
     }

@@ -1,6 +1,6 @@
 package com.github.lazyf1sh.sandbox.java.jcl.java.util.function;
 
-import com.github.lazyf1sh.sandbox.mc.b.MyClass;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -36,8 +36,12 @@ public class SupplierExample
     public void eachGetCreatesNewObject()
     {
         Supplier<MyClass> abc = MyClass::new;
-        abc.get();
-        abc.get();
+
+        MyClass one = abc.get();
+        MyClass two = abc.get();
+
+
+        Assert.assertNotEquals(one.hashCode(), two.hashCode());
     }
 
     @Test

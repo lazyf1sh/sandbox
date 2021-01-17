@@ -1,4 +1,4 @@
-package com.github.lazyf1sh.sandbox.java.playground.droptoframeplayground;
+package com.github.lazyf1sh.sandbox.java.exercises.droptoframe;
 
 import org.junit.Test;
 

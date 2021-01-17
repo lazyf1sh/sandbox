@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @see <a href="https://www.baeldung.com/java-adapter-pattern">https://www.baeldung.com/java-adapter-pattern</a>
+ * Adapter is converter.
  */
 public class AdapterPatternExampleRunner
 {

@@ -3,9 +3,9 @@ package com.github.lazyf1sh.sandbox.java.mechanics.lambdas;
 /**
  * @author Ivan Kopylov
  */
-public class Person
+class Person
 {
-    public Person(String givenName, String surName, int age)
+    Person(String givenName, String surName, int age)
     {
         this.givenName = givenName;
         this.surName = surName;

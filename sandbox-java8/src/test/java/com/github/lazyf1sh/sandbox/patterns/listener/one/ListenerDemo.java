@@ -8,7 +8,7 @@ public class ListenerDemo
     public void run()
     {
 
-        LongRunningTask longRunningTask = new LongRunningTask(new OnCompleteListener()
+        MyLongRunningTask myLongRunningTask = new MyLongRunningTask(new OnCompleteListener()
         {
             @Override
             public void onComplete()
@@ -18,6 +18,6 @@ public class ListenerDemo
         });
 
         System.out.println("Starting the long running task.");
-        longRunningTask.run();
+        myLongRunningTask.run();
     }
 }

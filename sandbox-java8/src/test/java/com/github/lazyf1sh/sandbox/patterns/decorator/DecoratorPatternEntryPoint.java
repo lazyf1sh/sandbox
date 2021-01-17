@@ -8,10 +8,8 @@ import org.junit.Test;
  *
  * @author Ivan Kopylov
  */
-public class DecoratorPatternExample
+public class DecoratorPatternEntryPoint
 {
-    // example from
-    // https://en.wikipedia.org/wiki/Decorator_pattern
     @Test
     public void main()
     {
